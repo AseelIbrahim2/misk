@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Misk Schools</title>
+    
+    <!-- Bootstrap CSS -->
+     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+   
+</head>
+<style>
+  
+
+</style>
+<body>
+
+    <!-- Navigation Bar (Transparent) -->
+    <nav class="navbar fixed-top p-4" id="mainNavbar">
+        <div class="container-fluid d-flex justify-content-end align-items-center">
+            <!-- Logo & Title (Desktop) -->
+            <div class="d-flex align-items-center gap-3 text-white logo-container">
+                <!-- SVG Logo Injected Directly -->
+                <div class="logo-img">
+                  <img src="/assets/images/logo-colored.svg">
+                
+                </div>
+            </div>
+
+            <!-- Hamburger Button with Substructure -->
+            <!-- Updated to match the "Subtraction" design provided -->
+            <div class="burger-container d-flex align-items-center justify-content-center  ">
+                <img src="/assets/images/Subtract.svg">
+                
+                <button class="btn btn-menu" id="sidebarToggle">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="mainSidebar">
+        <!-- Sidebar Header: Logo Left, Close Right -->
+        <div class="sidebar-header">
+            <div class="d-flex align-items-center gap-3 text-white">
+                <!-- SVG Logo inside Sidebar -->
+                 <img src="/assets/images/logo-colored.svg">
+            </div>
+            
+            <button class="btn-close-custom" id="sidebarClose">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <div class="sidebar-content">
+            <ul class="list-unstyled menu-list">
+                <li class="menu-item">
+                    <a href="#" class="menu-link">About Us</a>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="#" class="menu-link d-flex justify-content-between align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#submenu-admissions">
+                        Admissions
+                        <span class="arrow-icon">▼</span>
+                    </a>
+                    <div class="collapse" id="submenu-admissions">
+                        <ul class="list-unstyled submenu-list">
+                            <li><a href="#" class="submenu-link">Admissions Process</a></li>
+                            <li><a href="#" class="submenu-link">Admission Fees</a></li>
+                            <li><a href="#" class="submenu-link">Term Dates & FAQ's</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link d-flex justify-content-between align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#submenu-learning">
+                        Learning Journey
+                        <span class="arrow-icon">▼</span>
+                    </a>
+                    <div class="collapse" id="submenu-learning">
+                        <ul class="list-unstyled submenu-list">
+                            <!-- Level 2 with nested items -->
+                            <li>
+                                <a href="#" class="submenu-link d-flex justify-content-between align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#nested-curriculum">
+                                    Academic Curriculum
+                                    <span class="arrow-icon">▼</span>
+                                </a>
+                                <div class="collapse" id="nested-curriculum">
+                                    <ul class="list-unstyled nested-submenu-list">
+                                        <li><a href="#" class="nested-link">Kindergarten</a></li>
+                                        <li><a href="#" class="nested-link">Lower Primary</a></li>
+                                        <li><a href="#" class="nested-link">Upper Primary</a></li>
+                                        <li><a href="#" class="nested-link">Senior Schools</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#" class="submenu-link">MISK Schools Diploma</a></li>
+                            <li><a href="#" class="submenu-link">High Performance Learning</a></li>
+                            <li><a href="#" class="submenu-link">Leadership & Critical Thinking</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link d-flex justify-content-between align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#submenu-work">
+                        Work With Us
+                        <span class="arrow-icon">▼</span>
+                    </a>
+                    <div class="collapse" id="submenu-work">
+                        <ul class="list-unstyled submenu-list">
+                            <li><a href="#" class="submenu-link">Careers</a></li>
+                            <li><a href="#" class="submenu-link">Culture</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Sidebar Search / Footer (Integrated into Sidebar) -->
+         <div class="p-5 mt-auto">
+            <div class="input-group search-group bg-white rounded-1 p-2">
+                <span class="input-group-text bg-transparent border-0 text-muted">Search</span>
+                <input type="text" class="form-control border-0 shadow-none">
+                <span class="input-group-text bg-transparent border-0">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay (Hidden/Removed function) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Hero Slider -->
+    <div class="hero-slider-container">
+        <div class="hero-slider">
+            <!-- Slide 1 - New Header Image -->
+            <div class="hero-slide" style="background-image: url('/assets/images/header.jpg');">
+                <div class="slide-overlay"></div>
+                <div class="hero-content-wrapper">
+                    <h1 class="hero-title">Setting Trends for a Nation on the Move</h1>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero-slide" style="background-image: url('/assets/images/header.jpg');">
+                <div class="slide-overlay"></div>
+                <div class="hero-content-wrapper">
+                    <h1 class="hero-title">World Class Sports Facilities</h1>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="hero-slide" style="background-image: url('/assets/images/header.jpg');">
+                <div class="slide-overlay"></div>
+                <div class="hero-content-wrapper">
+                    <h1 class="hero-title">Architecture that Inspires Learning</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            // Initialize Slick Slider
+            $('.hero-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 1000,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: false,
+                arrows: false,
+                fade: true,
+                cssEase: 'linear',
+                customPaging: function(slider, i) {
+                    return `<div class="custom-dot-wrapper">
+                        <svg class="dot-active" viewBox="0 0 24 24" fill="none" style="display:none; width:100%; height:100%;">
+                            <path d="M5 3L19 12L5 21V3Z" fill="#D9E378" stroke="#D9E378" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg class="dot-regular" viewBox="0 0 24 24" fill="none" style="display:block; width:100%; height:100%;">
+                            <path d="M5 3L19 12L5 21V3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>`;
+                }
+            });
+
+            // Update dots visually
+            function updateDots() {
+                $('.slick-dots li').each(function() {
+                    if ($(this).hasClass('slick-active')) {
+                        $(this).find('.dot-active').show();
+                        $(this).find('.dot-regular').hide();
+                    } else {
+                        $(this).find('.dot-active').hide();
+                        $(this).find('.dot-regular').show();
+                    }
+                });
+            }
+            
+            updateDots();
+            $('.hero-slider').on('afterChange', function() {
+                updateDots();
+            });
+
+            // Sidebar Toggle
+            $('#sidebarToggle').click(function() {
+                $('#mainSidebar').addClass('active');
+                // Removed overlay activation to prevent shading/blurring the slider
+                // $('#sidebarOverlay').addClass('active');
+                $('body').addClass('overflow-hidden');
+            });
+
+            $('#sidebarClose').click(function() {
+                $('#mainSidebar').removeClass('active');
+                // $('#sidebarOverlay').removeClass('active');
+                $('body').removeClass('overflow-hidden');
+            });
+
+            // Arrow rotation
+            $('.collapse').on('show.bs.collapse', function () {
+                $(this).prev('a').find('.arrow-icon').text('▲');
+            });
+
+            $('.collapse').on('hide.bs.collapse', function () {
+                $(this).prev('a').find('.arrow-icon').text('▼');
+            });
+        });
+    </script>
+</body>
+</html>

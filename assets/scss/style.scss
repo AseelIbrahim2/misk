@@ -1,0 +1,12 @@
+// 1) Import variables first – override Bootstrap variables here
+@import "./variables";
+
+// 2) Import Bootstrap 
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+
+
+
+// 4) Extra custom classes
+@import "./custom";
