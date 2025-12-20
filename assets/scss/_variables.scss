@@ -78,40 +78,23 @@ h6 { font-size: $h6-font-size; }
 
 
 
-
 // ===============================
-// Font Weights (Correct)
+// Font Weights
 // ===============================
-$font-weight-light: 300;
-$font-weight-normal: 300; 
-$font-weight-bold: 700;   
+$font-weight-normal: 300;
+$font-weight-bold: 700;
 
 $font-weight-base: $font-weight-normal;
 $headings-font-weight: $font-weight-bold;
 
-// Body variables
 
-
+// ===============================
+// Font Family
+// ===============================
 $font-family-base: 'Codec Pro', sans-serif !default;
-$body-font-family: $font-family-base;
-
 $font-size-base: 1.125rem;
-$font-weight-base: 300px;
 
 
-body {
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-  font-weight: $font-weight-base;
-  line-height: 1.688 ;
-}
-
-@media (max-width: 576px) {
-  body {
-    font-size: 0.875rem;
-    line-height: 1.4;
-  }
-}
 
 
 

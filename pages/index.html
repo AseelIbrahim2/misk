@@ -7,14 +7,12 @@
     <meta name="robots" content="noindex, noarchive">
     <meta name="format-detection" content="telephone=no">
     <title>Misk Schools</title>
- 
-    <!-- Bootstrap CSS -->
-     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    
+
+   
     <!-- Slick Carousel CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/css/styles.css">
 
@@ -27,44 +25,44 @@
 <header>
 
     <!-- Navigation Bar (Transparent) -->
-    <nav class="navbar navbar-overlay  px-4 py-0 " id="mainNavbar">
-        <div class="container-fluid d-flex justify-content-end align-items-center">
-            <!-- Logo & Title (Desktop) -->
-            <div class="d-flex align-items-center gap-3 text-white logo-container">
-                <!-- SVG Logo Injected Directly -->
+    <nav class="navbar navbar-overlay px-4 py-0" id="mainNavbar">
+        <div class="container-fluid d-flex justify-content-end align-items-center flex-nowrap">
+            
+            <!-- Logo Container -->
+            <div class="d-flex align-items-center gap-3 text-white me-5">
                 <div class="logo-img1">
-                  <img src="/assets/images/logo-colored.svg">
-                
+                  <img src="/assets/images/logo-colored.svg" class="img-fluid">
                 </div>
             </div>
 
-            <!-- Hamburger Button with Substructure -->
-            <!-- Updated to match the "Subtraction" design provided -->
-            <div class="burger-container d-flex align-items-center justify-content-center  ">
-                <img src="/assets/images/Subtract.svg">
-                
-                <button class="btn btn-menu" id="sidebarToggle">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
+            <!-- Hamburger Button -->
+            <div class="burger-container d-flex align-items-center justify-content-center">
+                <img src="/assets/images/Subtract.svg" class="img-fluid">
+                <button class="btn btn-menu text-primary" id="sidebarToggle">
+                  <svg width="48" height="32" viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.2"
+                      stroke-linecap="butt"> 
+                      <line x1="0.5" y1="6"  x2="23.5" y2="6"></line>
+                      <line x1="0.5" y1="12" x2="23.5" y2="12"></line>
+                      <line x1="0.5" y1="18" x2="23.5" y2="18"></line>
+                  </svg>
                 </button>
             </div>
+
         </div>
     </nav>
 
     <!-- Sidebar -->
-    <div class="sidebar" id="mainSidebar">
-        <!-- Sidebar Header: Logo Left, Close Right -->
-        <div class="sidebar-header">
-            <div class="d-flex align-items-center gap-3 logo-img1 ">
-                <!-- SVG Logo inside Sidebar -->
-                 <img src="/assets/images/logo-colored.svg">
+    <div class="sidebar bg-primary d-flex flex-column" id="mainSidebar">
+        <div class="d-flex justify-content-between align-items-center px-5 py-4">
+            <div class="logo-img1">
+                 <img src="/assets/images/logo-colored.svg" class="img-fluid">
             </div>
             
             <button class="btn-close-custom" id="sidebarClose">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
@@ -72,19 +70,36 @@
         </div>
 
         <!-- Sidebar Menu -->
-        <div class="sidebar-content">
+        <div class="sidebar-content px-5">
             <ul class="list-unstyled menu-list">
-                <li class="menu-item">
-                    <a href="#" class="menu-link">About Us</a>
+                 <li class="menu-item">
+                    <a href="#" class="menu-link d-flex  align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#About-Us">
+                        About Us
+                       
+                    </a>
+                    <div class="collapse" id="About-Us">
+                        <ul class="list-unstyled submenu-list ps-3 ">
+                            <li><a href="#" class="submenu-link">Director General Welcome</a></li>
+                            <li><a href="#" class="submenu-link">Mission, Vision & Values</a></li>
+                            <li><a href="#" class="submenu-link">Vision 2023</a></li>
+                            <li><a href="#" class="submenu-link">Student Leaders</a></li>
+                            <li><a href="#" class="submenu-link">Campus</a></li>
+                            <li><a href="#" class="submenu-link">School Leaders & Governance</a></li>
+                            <li><a href="#" class="submenu-link">Our Policies</a></li>
+                            <li><a href="#" class="submenu-link">MMISK Schools Academy</a></li>
+                            <li><a href="#" class="submenu-link">MISK Foundation</a></li>
+                            <li><a href="#" class="submenu-link">News & Gallery</a></li>
+                            <li><a href="#" class="submenu-link">Media Center</a></li> 
+                        </ul>
+                    </div>
                 </li>
-                
                 <li class="menu-item">
-                    <a href="#" class="menu-link d-flex justify-content-between align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#submenu-admissions">
+                    <a href="#" class="menu-link d-flex  align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#submenu-admissions">
                         Admissions
                         <span class="arrow-icon">▼</span>
                     </a>
                     <div class="collapse" id="submenu-admissions">
-                        <ul class="list-unstyled submenu-list">
+                        <ul class="list-unstyled submenu-list ps-3">
                             <li><a href="#" class="submenu-link">Admissions Process</a></li>
                             <li><a href="#" class="submenu-link">Admission Fees</a></li>
                             <li><a href="#" class="submenu-link">Term Dates & FAQ's</a></li>
@@ -93,52 +108,60 @@
                 </li>
 
                 <li class="menu-item">
-                    <a href="#" class="menu-link d-flex justify-content-between align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#submenu-learning">
+                    <a href="#" class="menu-link d-flex  align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#submenu-learning">
                         Learning Journey
                         <span class="arrow-icon">▼</span>
                     </a>
                     <div class="collapse" id="submenu-learning">
-                        <ul class="list-unstyled submenu-list">
-                            <!-- Level 2 with nested items -->
+                        <ul class="list-unstyled submenu-list ps-3">
                             <li>
-                                <a href="#" class="submenu-link d-flex justify-content-between align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#nested-curriculum">
-                                    Academic Curriculum
-                                    <span class="arrow-icon">▼</span>
-                                </a>
-                                <div class="collapse" id="nested-curriculum">
-                                    <ul class="list-unstyled nested-submenu-list">
-                                        <li><a href="#" class="nested-link">Kindergarten</a></li>
-                                        <li><a href="#" class="nested-link">Lower Primary</a></li>
-                                        <li><a href="#" class="nested-link">Upper Primary</a></li>
-                                        <li><a href="#" class="nested-link">Senior Schools</a></li>
-                                    </ul>
-                                </div>
+                              <a href="#" class="submenu-link d-flex align-items-center collapsed" 
+                                data-bs-toggle="collapse" data-bs-target="#nested-curriculum">
+                                  Academic Curriculum
+                                  <span class="arrow-icon">▼</span>
+                              </a>
+                              <div class="collapse" id="nested-curriculum">
+                                  <ul class="list-unstyled nested-submenu-list ps-3">
+                                      <li><a href="#" class="nested-link">Kindergarten</a></li>
+                                      <li><a href="#" class="nested-link">Lower Primary</a></li>
+                                      <li><a href="#" class="nested-link">Upper Primary</a></li>
+                                      <li><a href="#" class="nested-link">Senior Schools</a></li>
+                                  </ul>
+                              </div>
                             </li>
                             <li><a href="#" class="submenu-link">MISK Schools Diploma</a></li>
                             <li><a href="#" class="submenu-link">High Performance Learning</a></li>
                             <li><a href="#" class="submenu-link">Leadership & Critical Thinking</a></li>
+                            <li><a href="#" class="submenu-link">Internship & Service Ethics</a></li>
+                            <li><a href="#" class="submenu-link">Project 10: Becoming one of the World's Top 10 Schools</a></li>
+                            <li><a href="#" class="submenu-link " > Co-Curricular Activities <span class="arrow-icon">▼</span></a></li>
+                            <li><a href="#" class="submenu-link " > Safeguarding & Wellbeing<span class="arrow-icon">▼</span></a></li>
+                               
                         </ul>
                     </div>
                 </li>
 
                 <li class="menu-item">
-                    <a href="#" class="menu-link d-flex justify-content-between align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#submenu-work">
+                    <a href="#" class="menu-link d-flex align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#submenu-work">
                         Work With Us
                         <span class="arrow-icon">▼</span>
                     </a>
                     <div class="collapse" id="submenu-work">
-                        <ul class="list-unstyled submenu-list">
-                            <li><a href="#" class="submenu-link">Careers</a></li>
-                            <li><a href="#" class="submenu-link">Culture</a></li>
+                        <ul class="list-unstyled submenu-list ps-3">
+                            <li><a href="#" class="submenu-link">Why Join Us?</a></li>
+                            <li><a href="#" class="submenu-link">Meet The Teachers</a></li>
+                            <li><a href="#" class="submenu-link">Current Vacancies</a></li>
                         </ul>
                     </div>
                 </li>
+
             </ul>
         </div>
-        
-        <!-- Sidebar Search / Footer (Integrated into Sidebar) -->
-         <div class="p-5 mt-auto">
-            <div class="input-group search-group bg-white rounded-1 p-2">
+
+        <!-- Sidebar Footer / Search -->
+        <div class="mt-auto px-5 py-4">
+          <hr class="custom-hr">
+            <div class="input-group search-group bg-white rounded-0 p-2">
                 <span class="input-group-text bg-transparent border-0 text-muted">Search</span>
                 <input type="text" class="form-control border-0 shadow-none">
                 <span class="input-group-text bg-transparent border-0">
@@ -151,31 +174,28 @@
         </div>
     </div>
 
-    <!-- Overlay (Hidden/Removed function) -->
+    <!-- Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <!-- Hero Slider -->
     <div class="hero-slider-container">
         <div class="hero-slider">
-            <!-- Slide 1 - New Header Image -->
             <div class="hero-slide" style="background-image: url('/assets/images/header.jpg');">
                 <div class="slide-overlay"></div>
                 <div class="hero-content-wrapper">
-                    <h1 class="hero-title">Setting Trends for a Nation on the Move</h1>
+                    <h1 class=" h1 text-white hero-title">Setting Trends for a Nation on the Move</h1>
                 </div>
             </div>
-            <!-- Slide 2 -->
             <div class="hero-slide" style="background-image: url('/assets/images/header.jpg');">
                 <div class="slide-overlay"></div>
                 <div class="hero-content-wrapper">
-                    <h1 class="hero-title">Setting Trends for a Nation on the Move</h1>
+                    <h1 class=" h1 text-white hero-title">Setting Trends for a Nation on the Move</h1>
                 </div>
             </div>
-            <!-- Slide 3 -->
             <div class="hero-slide" style="background-image: url('/assets/images/header.jpg');">
                 <div class="slide-overlay"></div>
                 <div class="hero-content-wrapper">
-                    <h1 class="hero-title">Setting Trends for a Nation on the Move</h1>
+                    <h1 class=" h1 text-white hero-title">Setting Trends for a Nation on the Move</h1>
                 </div>
             </div>
         </div>
@@ -187,24 +207,37 @@
 
 
 <!-- Section 1 -->
-<section class="container  section-spacing  d-flex justify-content-center flex-column    g-3 p-2 bg-primary rounded-4 text-center ">
-  <h2 class="h2 text-white my-2 p-5 fw-bold">At a Glance</h2>
+<!-- Mobile margin wrapper -->
+<div class="px-3 px-md-0">
 
-  <div class="row text-center py-4  mb-3 ">
-    <div class="col-12 col-md-4   ">
-      <h1 class="display-1 text-primary-hover  mb-2 fw-bold mb-3  ">9</h1>
+  <section class="container section-spacing p-2 bg-primary rounded-4 text-center">
+
+    <h2 class="text-white my-2 p-3 p-md-5">
+      At a Glance
+    </h2>
+
+    <div class="row g-3 py-4 mb-3">
+
+     <div class="col-12 col-md-4">
+      <p id="counter-buildings" class="display-1 fw-bold text-primary-hover mb-3">0</p>
       <p class="text-white mb-0">School Buildings</p>
     </div>
-    <div class="col-12 col-md-4 mb-2">
-      <h1 class="display-1 text-primary-hover mb-2 fw-bold  mb-3  ">15</h1>
+
+    <div class="col-12 col-md-4">
+      <p id="counter-students" class="display-1 fw-bold text-primary-hover mb-3">0</p>
       <p class="text-white mb-0">Students Max Class Sizes</p>
     </div>
-    <div class="col-12 col-md-4   mb-2 ">
-      <h1 class="display-1 text-primary-hover mb-2 fw-bold  mb-3 ">100+</h1>
+
+    <div class="col-12 col-md-4">
+      <p id="counter-activities" class="display-1 fw-bold text-primary-hover mb-3">0</p>
       <p class="text-white mb-0">Co-curricular Activities</p>
     </div>
-  </div>
-</section>
+
+
+    </div>
+  </section>
+
+</div>
 
 
 <!-- section  2 -->
@@ -250,16 +283,16 @@
 
   </div>
 
-  <div class="d-flex justify-content-center gap-3 ">
-    <button class="btn btn-primary arrow-btn prev-btn">&#8249;</button>
-    <button class="btn btn-primary arrow-btn next-btn">&#8250;</button>
-    <!-- <img src="/assets/images/Arrow (1).svg" class="btn btn-primary arrow-btn prev-btn" >
-    <img src="/assets/images/Arrow.svg" class="btn btn-primary arrow-btn next-btn" > -->
-  </div>
+    <div class="d-flex justify-content-center align-items-center gap-3 mt-3">
+  <button class="btn btn-primary arrow-btn d-flex justify-content-center align-items-center prev-btn" aria-label="Previous"></button>
+  <button class="btn btn-primary arrow-btn  d-flex justify-content-center align-items-center next-btn" aria-label="Next"></button>
+</div>
+
+
 
   <div  class="d-flex justify-content-center  mt-4 mb-5 " >
       <!-- BUTTON -->
-  <button class="btn btn-primary btn-md rounded-5 px-5 py-3">
+  <button class="btn btn-primary btn-md rounded-5 px-5 py-3 fw-bold">
     See All News
   </button>
   </div>
@@ -412,8 +445,8 @@
 
               <!-- logos aligned under first list -->
               <div class="d-flex gap-3 mt-4 justify-content-center">
-                <img src="/assets/images/footer2.svg" class="img-fluid" style="max-height:50px;">
-                <img src="/assets/images/footer1.svg" class="img-fluid" style="max-height:55px;">
+                <img src="/assets/images/footer2.svg" style="max-height:50px; margin-left: 150px;">
+                <img src="/assets/images/footer1.svg" style="max-height:55px;">
               </div>
             </div>
 
@@ -454,7 +487,7 @@
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
 
       <!-- social -->
-      <div class="d-flex align-items-center gap-3 mb-3 mb-md-0">
+      <div class="d-flex align-items-center gap-3 mb-3 mb-md-0 ">
         <img src="/assets/images/social-links (1).svg" class="social-icon">
         <img src="/assets/images/social-links (2).svg" class="social-icon">
         <img src="/assets/images/social-links (3).svg" class="social-icon">
@@ -462,13 +495,12 @@
       </div>
 
       <!-- privacy & terms -->
-      <div class="d-flex flex-wrap align-items-center gap-3 text-center">
-        <span class="footer-bottom-text mx-5">Privacy Policy</span>
-        <span class="footer-bottom-text ">Terms & Conditions</span>
-        <span class="footer-bottom-text">
-          © Copyright MISK 2023-2024. All Rights Reserved
-        </span>
-      </div>
+<div class="d-flex flex-wrap align-items-center gap-3  justify-content-center mt-2  mt-md-0">
+  <span class="small m-1  m-md-0">Privacy Policy</span>
+  <span class="small   m-1  m-md-0">Terms & Conditions</span>
+  <span class="small  m-1  m-md-0">© Copyright MISK 2023-2024. All Rights Reserved</span>
+</div>
+
 
     </div>
   </div>
@@ -482,103 +514,19 @@
 
 
 
-    <!-- slick  -->
-
+    <!-- Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.umd.js"></script>
 
-<script>
-  $(function () {
-    const slider = $('.news-slider');
+    <!-- Custom JS -->
+    <script src="/assets/js/main.js"></script>
 
-    slider.slick({
-      centerMode: true,
-      variableWidth: true, 
-      slidesToShow: 1,
-      arrows: false,
-      infinite: true,
-      speed: 550
-    });
 
-    $('.prev-btn').on('click', function () {
-      slider.slick('slickPrev');
-    });
 
-    $('.next-btn').on('click', function () {
-      slider.slick('slickNext');
-    });
-  });
 
-          $(document).ready(function(){
-            // Initialize Slick Slider
-            $('.hero-slider').slick({
-                dots: true,
-                infinite: true,
-                speed: 800,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: false,
-                arrows: false,
-                fade: false,
-                cssEase: 'ease-in-out',
-                swipe: true,
-                touchMove: true,
 
-                customPaging: function(slider, i) {
-                    return `<div class="custom-dot-wrapper">
-                        <svg class="dot-active" viewBox="0 0 24 24" fill="none" style="display:none; width:100%; height:100%;">
-                            <path d="M5 3L19 12L5 21V3Z" fill="#D9E378" stroke="#D9E378" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <svg class="dot-regular" viewBox="0 0 24 24" fill="none" style="display:block; width:100%; height:100%;">
-                            <path d="M5 3L19 12L5 21V3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>`;
-                }
-            });
-
-            // Update dots visually
-            function updateDots() {
-                $('.slick-dots li').each(function() {
-                    if ($(this).hasClass('slick-active')) {
-                        $(this).find('.dot-active').show();
-                        $(this).find('.dot-regular').hide();
-                    } else {
-                        $(this).find('.dot-active').hide();
-                        $(this).find('.dot-regular').show();
-                    }
-                });
-            }
-            
-            updateDots();
-            $('.hero-slider').on('afterChange', function() {
-                updateDots();
-            });
-
-            // Sidebar Toggle
-            $('#sidebarToggle').click(function() {
-                $('#mainSidebar').addClass('active');
-                // Removed overlay activation to prevent shading/blurring the slider
-                // $('#sidebarOverlay').addClass('active');
-                $('body').addClass('overflow-hidden');
-            });
-
-            $('#sidebarClose').click(function() {
-                $('#mainSidebar').removeClass('active');
-                // $('#sidebarOverlay').removeClass('active');
-                $('body').removeClass('overflow-hidden');
-            });
-
-            // Arrow rotation
-            $('.collapse').on('show.bs.collapse', function () {
-                $(this).prev('a').find('.arrow-icon').text('▲');
-            });
-
-            $('.collapse').on('hide.bs.collapse', function () {
-                $(this).prev('a').find('.arrow-icon').text('▼');
-            });
-        });
-</script>
 
 </body>
 </html>
