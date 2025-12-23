@@ -11886,14 +11886,14 @@ textarea.form-control-lg {
 @font-face {
   font-family: "Codec Pro";
   src: url("/assets/fonts/CodecPro-Bold.woff2") format("woff2"), url("/assets/fonts/CodecPro-Bold.woff") format("woff");
-  font-weight: 700;
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Codec Pro";
   src: url("/assets/fonts/CodecPro-Italic.woff2") format("woff2"), url("/assets/fonts/CodecPro-Italic.woff") format("woff");
-  font-weight: 300;
+  font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
@@ -11904,10 +11904,6 @@ body {
   font-size: 1.125rem;
   font-weight: 300;
   line-height: 1.688;
-}
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  font-weight: 700;
 }
 
 html, body {
@@ -12124,7 +12120,7 @@ ul.custom-disc li::marker {
   top: -100%;
   right: 0;
   width: 450px;
-  height: 95vh;
+  height: 90vh;
   z-index: 2000;
   transition: top 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   overflow-y: auto;
@@ -12136,7 +12132,7 @@ ul.custom-disc li::marker {
 @media (max-width: 768px) {
   .sidebar {
     width: 100%;
-    height: 95vh;
+    height: 90vh;
   }
 }
 
@@ -12227,13 +12223,13 @@ ul.custom-disc li::marker {
 
 /* ---------- HERO SLIDER ---------- */
 .hero-slider-container {
-  height: 95vh;
+  height: 90vh;
   position: relative;
   background: #000;
 }
 
 .hero-slide {
-  height: 95vh;
+  height: 90vh;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -12334,9 +12330,6 @@ ul.custom-disc li::marker {
   background-image: url("/assets/images/Group.svg");
   background-repeat: repeat-y;
   background-size: 40px 116px;
-}
-
-.triangles-bg {
   filter: brightness(2) opacity(0.2);
 }
 
@@ -12374,7 +12367,7 @@ ul.custom-disc li::marker {
   position: relative;
   display: inline-block;
   text-decoration: underline;
-  transition: text-decoration 0.3s ease;
+  transition: transform 0.3s ease, text-decoration 0.3s ease;
 }
 .link-hover-effect::after {
   content: url("/assets/images/link.svg");
@@ -12386,6 +12379,7 @@ ul.custom-disc li::marker {
 }
 .link-hover-effect:hover {
   text-decoration: none;
+  transform: translateX(8px);
 }
 .link-hover-effect:hover::after {
   right: 100%;
@@ -12406,16 +12400,13 @@ ul.custom-disc li::marker {
     width: 600px !important;
     height: 400px !important;
     opacity: 0.5;
-    transition: all 0.4s ease;
-    padding: 0 40px;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
+    padding: 0 20px;
   }
   .news-slider .slick-center {
     width: 1000px !important;
     height: 800px !important;
     opacity: 1;
-  }
-  .news-slider {
-    height: 800px;
   }
 }
 /* ===== IMAGE BOX ===== */
@@ -12425,7 +12416,7 @@ ul.custom-disc li::marker {
   overflow: hidden;
   border-radius: 12px;
   position: relative;
-  transition: transform 0.4s ease;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
 }
 
 .slick-center .img-box {
@@ -12436,10 +12427,10 @@ ul.custom-disc li::marker {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
 }
 
-/* ===== ZOOM HOVER على كامل الكارد ===== */
+/* ===== ZOOM HOVER ===== */
 .news-card:hover .img-box img {
   transform: scale(1.08);
 }
@@ -12447,9 +12438,9 @@ ul.custom-disc li::marker {
 /* ===== TEXT INSIDE IMAGE ===== */
 .img-box .overlay-text {
   position: absolute;
-  bottom: 15px;
-  left: 15px;
-  padding: 6px 12px;
+  bottom: 50px;
+  left: 50px;
+  padding: 5px 12px;
 }
 
 /* ===== CONTENT ===== */
@@ -12464,11 +12455,12 @@ ul.custom-disc li::marker {
   font-size: 16px;
 }
 
-/* ===== LINK HOVER EFFECT عند hover على الكارد بالكامل ===== */
+/* ===== LINK HOVER EFFECT ===== */
 .news-card .inline-link2 {
   position: relative;
   text-decoration: underline;
-  transition: text-decoration 0.3s ease;
+  display: inline-block;
+  transition: transform 0.3s ease, text-decoration 0.3s ease;
 }
 
 .news-card .inline-link2::after {
@@ -12482,6 +12474,7 @@ ul.custom-disc li::marker {
 
 .news-card:hover .inline-link2 {
   text-decoration: none;
+  transform: translateX(8px);
 }
 
 .news-card:hover .inline-link2::after {

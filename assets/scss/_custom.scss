@@ -5,7 +5,7 @@
   font-family: 'Codec Pro';
   src: url('/assets/fonts/CodecPro-Regular.woff2') format('woff2'),
        url('/assets/fonts/CodecPro-Regular.woff') format('woff');
-  font-weight: 300;
+  font-weight:300;
   font-style: normal;
   font-display: swap;
 }
@@ -14,7 +14,7 @@
   font-family: 'Codec Pro';
   src: url('/assets/fonts/CodecPro-Bold.woff2') format('woff2'),
        url('/assets/fonts/CodecPro-Bold.woff') format('woff');
-  font-weight: 700;
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
@@ -23,45 +23,13 @@
   font-family: 'Codec Pro';
   src: url('/assets/fonts/CodecPro-Italic.woff2') format('woff2'),
        url('/assets/fonts/CodecPro-Italic.woff') format('woff');
-  font-weight: 300;
+  font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 
 
 
-// ===============================
-// Responsive Mixins (NO STYLE CHANGE)
-// ===============================
-@mixin mobile {
-  @media (max-width: 576px) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (max-width: 768px) {
-    @content;
-  }
-}
-
-@mixin laptop {
-  @media (max-width: 991px) {
-    @content;
-  }
-}
-
-@mixin desktop-only {
-  @media (min-width: 769px) {
-    @content;
-  }
-}
-
-@mixin md-up {
-  @media (min-width: 768px) {
-    @content;
-  }
-}
 
 
 body {
@@ -73,12 +41,6 @@ body {
   line-height: 1.688;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: $headings-font-weight;
-}
-
-
-// FIX SCROLL ON MOBILE
 html, body {
   overflow-x: hidden;
 }
@@ -344,7 +306,7 @@ ul.custom-disc {
   top: -100%;
   right: 0;
   width: 450px;
-  height: 95vh;
+  height: 90vh;
   z-index: 2000;
   transition: top 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   overflow-y: auto;
@@ -355,7 +317,7 @@ ul.custom-disc {
 
   @media (max-width: 768px) {
     width: 100%;
-    height: 95vh;
+    height: 90vh;
   }
 }
 
@@ -460,13 +422,13 @@ ul.custom-disc {
 
 /* ---------- HERO SLIDER ---------- */
 .hero-slider-container {
-  height: 95vh;
+  height: 90vh;
   position: relative;
   background: #000;
 }
 
 .hero-slide {
-  height: 95vh;
+  height: 90vh;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -572,8 +534,6 @@ ul.custom-disc {
     background-image: url('/assets/images/Group.svg');
     background-repeat: repeat-y;
     background-size: 40px 116px;  
-}
-.triangles-bg {
     filter: brightness(2) opacity(0.2);
 }
 
@@ -610,26 +570,29 @@ ul.custom-disc {
 /* link effect  */
 
 .link-hover-effect {
-  position: relative;         
+  position: relative;
   display: inline-block;
   text-decoration: underline;
-  transition: text-decoration 0.3s ease;
+  transition: 
+    transform 0.3s ease,
+    text-decoration 0.3s ease;
 
   &::after {
     content: url('/assets/images/link.svg');
-    position: absolute;     
-    top: 50%;             
-    right: -20px;           
+    position: absolute;
+    top: 50%;
+    right: -20px;
     transform: translateY(-50%);
     transition: all 0.3s ease;
   }
 
   &:hover {
-    text-decoration: none;     
+    text-decoration: none;
+    transform: translateX(8px); 
 
     &::after {
-      right: 100%;           
-      transform: translateY(-50%) translateX(-8px); 
+      right: 100%;
+      transform: translateY(-50%) translateX(-8px);
     }
   }
 }
@@ -649,8 +612,9 @@ ul.custom-disc {
     width: 600px !important;
     height: 400px !important;
     opacity: 0.5;
-    transition: all 0.4s ease;
-    padding: 0 40px;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.45s ease;
+    padding: 0 20px;
   }
 
   .news-slider .slick-center {
@@ -658,9 +622,7 @@ ul.custom-disc {
     height: 800px !important;
     opacity: 1;
   }
-   .news-slider {
-    height: 800px;
-  }
+  
 
 }
 
@@ -671,7 +633,9 @@ ul.custom-disc {
       overflow: hidden;
       border-radius: 12px;
       position: relative;
-      transition: transform 0.4s ease;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.45s ease;
+
     }
 
     .slick-center .img-box {
@@ -682,10 +646,12 @@ ul.custom-disc {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.45s ease;
+
     }
 
-    /* ===== ZOOM HOVER على كامل الكارد ===== */
+    /* ===== ZOOM HOVER ===== */
     .news-card:hover .img-box img {
       transform: scale(1.08);
     }
@@ -693,9 +659,9 @@ ul.custom-disc {
     /* ===== TEXT INSIDE IMAGE ===== */
     .img-box .overlay-text {
       position: absolute;
-      bottom: 15px;
-      left: 15px;
-      padding: 6px 12px;
+      bottom: 50px;
+      left: 50px;
+      padding: 5px 12px;
     }
 
 
@@ -712,30 +678,35 @@ ul.custom-disc {
     }
 
 
-    /* ===== LINK HOVER EFFECT عند hover على الكارد بالكامل ===== */
-       .news-card .inline-link2 {
-      position: relative;         
-      text-decoration: underline;
-      transition: text-decoration 0.3s ease;
-    }
+/* ===== LINK HOVER EFFECT ===== */
+.news-card .inline-link2 {
+  position: relative;         
+  text-decoration: underline;
+  display: inline-block;
+  transition:
+    transform 0.3s ease,
+    text-decoration 0.3s ease;
+}
 
-    .news-card .inline-link2::after {
-      content: url('/assets/images/Vectorsider.svg');
-      position: absolute;     
-      top: 50%;             
-      right: -20px;           
-      transform: translateY(-50%);
-      transition: all 0.3s ease;
-    }
-    
-    .news-card:hover .inline-link2 {
-      text-decoration: none;
-    }
+.news-card .inline-link2::after {
+  content: url('/assets/images/Vectorsider.svg');
+  position: absolute;     
+  top: 50%;             
+  right: -20px;           
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
 
-    .news-card:hover .inline-link2::after {
-      right: 100%;           
-      transform: translateY(-50%) translateX(-8px); 
-    }
+.news-card:hover .inline-link2 {
+  text-decoration: none;
+  transform: translateX(8px); 
+}
+
+.news-card:hover .inline-link2::after {
+  right: 100%;           
+  transform: translateY(-50%) translateX(-8px); 
+}
+
 
     /* ===== BLACK OVERLAY ON HOVER ONLY ===== */
     .news-card .img-box::before {

@@ -11,7 +11,10 @@ $(function () {
     slidesToShow: 1,
     arrows: false,
     infinite: true,
-    speed: 550
+    speed: 700,
+    cssEase: 'cubic-bezier(0.22, 1, 0.36, 1)',
+    useTransform: true,
+    useCSS: true
   });
 
   $('.prev-btn').on('click', function () {
@@ -22,6 +25,7 @@ $(function () {
     slider.slick('slickNext');
   });
 });
+
 
 
 /* ================= HERO SLIDER + SIDEBAR ================= */
