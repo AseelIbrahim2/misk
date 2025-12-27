@@ -32,152 +32,158 @@
 
 
 
+
+// ===============================
+// Base
+// ===============================
 body {
   margin: 0;
   padding: 0;
   font-family: $font-family-base;
   font-size: $font-size-base;
   font-weight: $font-weight-base;
-  line-height: 1.688;
+  line-height: $body-line-height;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
 
-// ===============================
-// Mobile
-// ===============================
-@media (max-width: 576px) {
-  body {
-    font-size: 0.875rem;
-    line-height: 1.4;
+section {
+  margin-bottom: $section-spacing;
+
+  &:last-child {
+    margin-bottom: 0; 
   }
 }
 
 
-// Quote Section
+
+// ===============================
+// Quote
+// ===============================
 .quote {
   display: flex;
-  flex-direction: column; 
-  width: 585px;
-  padding-left: 30px;
+  flex-direction: column;
+  width: $quote-width;
+  padding-left: $quote-padding-left;
   align-items: flex-start;
-  gap: 10px;
-  border-left: 2px solid $primary; 
-  align-self: stretch;
-  color: $body-color; 
+  gap: $quote-gap;
+  border-left: $quote-border-width solid $primary;
+  color: $body-color;
 
-  // Quote Text - Desktop
   &-text {
-    font-family: $font-family-base; 
-    font-size: 25px;
+    font-family: $font-family-base;
+    font-size: $quote-text-font-size;
     font-style: italic;
-    font-weight: 300;
-    line-height: 1.5; 
+    font-weight: $font-weight-light;
+    line-height: $quote-text-line-height;
     color: $body-color;
   }
 
-  // Quotee Name / Position - Desktop
   &-author {
     font-family: $font-family-base;
-    font-size: 16px;
+    font-size: $quote-author-font-size;
     font-style: normal;
-    font-weight: 300;
-    line-height: 1.5;
+    font-weight: $font-weight-light;
+    line-height: $quote-author-line-height;
     color: $body-color;
-    align-self: stretch;
   }
 
-  // Mobile Styles
-  @media (max-width: 576px) {
+  @include media-breakpoint-down(sm) {
     width: 100%;
-    padding-left: 30px;
+    padding-left: $quote-padding-left;
 
     &-text {
-      font-size: 16px;   
-      line-height: 1.4; 
+      font-size: 16px;
+      line-height: 1.4;
     }
 
     &-author {
-      font-size: 12px;   
-      line-height: 1.4;  
-      align-self: stretch;
+      font-size: 12px;
+      line-height: 1.4;
     }
   }
 }
 
-
-// Date 
-
+// ===============================
+// Date
+// ===============================
 .date {
-  align-self: stretch;
-  font-family: $font-family-base; 
-  font-size: 16px;               
-  font-style: normal;
-  font-weight: 300;
-  line-height: 1.4;               
-  color: $body-color;            
+  font-family: $font-family-base;
+  font-size: $date-font-size;
+  font-weight: $font-weight-light;
+  line-height: $date-line-height;
+  color: $body-color;
 
-  // Mobile Styles
-  @media (max-width: 576px) {
-    font-size: 14px;                         
+  @include media-breakpoint-down(sm) {
+    font-size: $date-font-size-mobile;
   }
 }
 
-
-
-// inline  link 
+// ===============================
+// Inline Link
+// ===============================
 .inline-link {
-  font-size: 18px;                
-  font-style: normal;
-  color: $primary;           
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-skip-ink: none;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font ;
+  font-size: $inline-link-font-size;
+  color: $primary;
+  text-decoration: underline;
 
-  // Mobile
-  @media (max-width: 576px) {
-    font-size: 14px;
-    line-height: 1.4;       
+  @include media-breakpoint-down(sm) {
+    font-size: $inline-link-font-size-mobile;
+    line-height: $inline-link-line-height-mobile;
   }
 
   &:hover {
-    color: shift-color($primary, 20%); 
-    text-decoration: underline;        
+    color: shift-color($primary, 20%);
   }
 }
 
-//unorder list icon
-
+// ===============================
+// Custom List
+// ===============================
 ul.custom-disc {
   li::marker {
-    color: $primary; 
-    font-size: 1.8em; 
+    color: $primary;
+    font-size: $list-marker-size;
+  }
+}
+
+// ===============================
+// Buttons
+// ===============================
+.btn:hover {
+  color: $primary;
+  background-color: $btn-primary-hover-bg;
+  border-color: $btn-primary-hover-bg;
+}
+
+.btn-secondary:hover,
+.btn-tertiary:hover {
+  background-color: $btn-secondary-hover-bg;
+  border-color: $btn-secondary-hover-bg;
+  color: #000;
+}
+
+.btn {
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $btn-font-size;
+  border-radius: $btn-border-radius;
+
+  @media (max-width: 576px) {
+    padding: $btn-padding-y-sm $btn-padding-x-sm;
+    font-size: $btn-font-size-sm;
+    border-radius: $btn-border-radius-sm;
   }
 }
 
 
 
-
-
-// ==========================
-// FIX PRIMARY HOVER & COLORS
-// ==========================
-.btn  {
-
-  &:hover {
-    color: $primary ;       
-    background-color: $primary-hover ; 
-    border-color: $primary-hover ;    
-  }
-}
-/* ===== DISABLE HOVER BACKGROUND FOR BURGER ===== */
-
+// ===============================
+// Burger Buttons
+// ===============================
 .btn-menu,
 .btn-menu:hover,
 .btn-menu:focus,
@@ -187,82 +193,58 @@ ul.custom-disc {
   box-shadow: none !important;
 }
 
-/* ===  BURGER BUTTON COLOR  page 2 === */
 .btn-menu2,
 .btn-menu2:hover,
 .btn-menu2:focus,
 .btn-menu2:active {
   position: relative;
-  z-index: 2; 
-  background: transparent;
-  color: $primary-hover !important;
+  z-index: 2;
   background-color: transparent !important;
   border-color: transparent !important;
   box-shadow: none !important;
+  color: $primary-hover !important;
 }
 
-
-
-
-.btn-secondary:hover, .btn-tertiary:hover {
-  background-color: $secondary-hover ;
-  border-color: $secondary-hover ;
-  color: #000 ; 
-}
-
-// primary-hover text 
+// ===============================
+// Utilities
+// ===============================
 .text-primary-hover {
-  color: $primary-hover; 
+  color: $primary-hover;
 }
 
-// primary-background
 .bg-primary-hover {
-    background-color: $primary-hover; 
+  background-color: $primary-hover;
 }
-
-// tertiary-hover background 
 
 .bg-tertiary-hover {
-    background-color: $tertiary-hover; 
+  background-color: $tertiary-hover;
 }
 
-//hr primary hover color 
- .custom-hr {
-    border: 1px solid $primary-hover;
-    opacity: 0.5;
- }
+.custom-hr {
+  border: 1px solid $primary-hover;
+  opacity: $custom-hr-opacity;
+}
+
 
 
 
 //page1
 
-/* =========================================
-   HEADER + SIDEBAR + SLIDER (SAFE VERSION)
-   Uses Bootstrap Variables – No Conflicts
-========================================= */
+/* ================= NAVBAR ================= */
 
-
-/* ---------- NAVBAR ---------- */
 .navbar {
-  z-index: 1070;
-  transition: all 0.3s;
-  padding-right: 15px ;
-
-  @media (max-width: 768px) {
-    padding-right: 15px ;
-  }
+  z-index: $navbar-z;
+  transition: $transition-base;
 }
-/* ===== NAVBAR OVER HERO (NOT STICKY) ===== */
+
 .navbar-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  inset: 0 0 auto 0;
   background: transparent;
   z-index: 1050;
 }
 
-
+/* Logo */
 .logo-img1 {
   width: 150px;
   height: 50px;
@@ -273,90 +255,72 @@ ul.custom-disc {
   }
 }
 
-/* ---------- BURGER BUTTON ---------- */
-/* ===== BURGER WITH SUBTRACT FIX ===== */
+/* Burger */
 .burger-container {
   position: relative;
   width: 164px;
   height: 59px;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+  }
 }
-
-
-.burger-container img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  z-index: 1;
-  pointer-events: none; 
-}
-
 
 .btn-menu {
-  position: relative;
-  z-index: 2; 
   background: transparent;
+  z-index: 2;
 }
 
 
-/* ---------- SIDEBAR ---------- */
+/* ================= SIDEBAR ================= */
+
 .sidebar {
   position: fixed;
   top: -100%;
   right: 0;
-  width: 450px;
-  height: 90vh;
-  z-index: 2000;
-  transition: top 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  width: $sidebar-width;
+  height: $sidebar-height;
+  z-index: $sidebar-z;
+  transition: $sidebar-transition;
   overflow-y: auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
   &.active {
     top: 0;
   }
 
   @media (max-width: 768px) {
     width: 100%;
-    height: 90vh;
   }
 }
 
-
-
+/* Close Button */
 .btn-close-custom {
   background: none;
   border: none;
   padding: 10px;
-  cursor: pointer;
   color: $primary-hover;
-  transition: transform 0.3s;
+  transition: transform $transition-base;
 
   &:hover {
     transform: rotate(90deg);
   }
 }
 
-
-/* ===================== SIDEBAR LINKS ===================== */
-
-/* ---------- MENU LINKS ---------- */
-.sidebar-content {
-  flex: 1;
-  padding: 0 50px;
-}
-
-
-/* Menu link  */
+/* Menu */
 .menu-link {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: $menu-font-size;
   color: $white;
-  padding: 12px 0;
+  padding: 18px 0;
+  font-weight: 600;
   text-decoration: none;
   border-bottom: 1px solid transparent;
-  transition: color 0.3s, border-color 0.3s;
-  cursor: pointer;
-  user-select: none;
+  transition: color $transition-base, border-color $transition-base;
 
   &:hover {
     color: rgba($white, 0.7);
@@ -364,100 +328,85 @@ ul.custom-disc {
   }
 }
 
-.arrow-icon {
-  margin-left: 5px;     
-  font-size: 1.8rem;      
-  display: inline-block;
-  transition: transform 0.3s;
-  color: $primary-hover ;
-}
-
-.menu-link:not(.collapsed) .arrow-icon,
-.submenu-link.d-flex:not(.collapsed) .arrow-icon {
-  transform: rotate(180deg);
-}
-
-
-
-
-/* Submenu links */
 .submenu-link {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: $submenu-font-size;
+  font-weight: 600; 
   color: rgba($white, 0.9);
   text-decoration: none;
   border-bottom: 1px solid transparent;
+  transition: color $transition-base, border-color $transition-base;
 
   &:hover {
-    color: $secondary;
+     color: rgba($white, 0.7);
     border-bottom-color: $white;
   }
 }
-.submenu-list li {
-  margin-top: 10px; 
+.submenu-list > li {
+  margin-bottom: 14px; 
 }
-
-/* Nested submenu */
-.nested-submenu-list {
-  padding-left: 15px;
-  border-left: 1px solid rgba($white, 0.2);
-  margin: 5px 0 15px;
-}
-
 
 .nested-link {
-  font-size: 0.95rem;
+  font-size: $nested-font-size;
+   text-decoration: none;
   font-weight: 300;
   color: rgba($white, 0.6);
-  padding: 5px 0;
-  display: block;
-  text-decoration: none;
 
   &:hover {
     color: $white;
   }
 }
 
+.nested-link > li {
+  margin-bottom: 10px; 
+}
 
 
-/* ---------- HERO SLIDER ---------- */
+/* Arrows */
+.arrow-icon {
+  margin-left: 5px;
+  transition: transform $transition-base;
+  color: $secondary;
+}
+
+[data-bs-toggle="collapse"]:not(.collapsed) .arrow-icon {
+  transform: rotate(180deg);
+}
+
+/* ================= HERO SLIDER ================= */
+
 .hero-slider-container {
-  height: 90vh;
+  height: $hero-height;
   position: relative;
-  background: #000;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .hero-slide {
-  height: 90vh;
+  height: $hero-height;
   background-size: cover;
   background-position: center;
   position: relative;
 }
-
-// Hero & slider
-.hero-slider-container,
-.hero-slide {
-  max-width: 100vw;
-  overflow: hidden;
-} 
 
 .slide-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0,0,0,0.8) 0%,
-    rgba(0,0,0,0.2) 50%,
-    rgba(0,0,0,0.4) 100%
+    rgba(0,0,0,0.8),
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.4)
   );
 }
 
 .hero-content-wrapper {
   position: absolute;
-  bottom: 25%;
-  left: 80px;
+  bottom: 20%;
+  left: $hero-content-left;
   max-width: 800px;
   z-index: 20;
+
+
 
   @media (max-width: 768px) {
     left: 20px;
@@ -465,65 +414,41 @@ ul.custom-disc {
   }
 }
 
-.hero-title {
-  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  @media (max-width: 768px) {
-    font-size: 3rem;
-  }
-}
-
-/* ---------- SLICK DOTS ---------- */
+/* ---------- SLICK DOTS ---------- */ 
 .slick-dots {
-  position: absolute;
-  bottom: 15%;
-  left: 80px;
-  display: flex !important;
-  gap: 15px;
-  list-style: none;
-  padding: 0;
-  z-index: 30;
+   position: absolute; 
+   bottom: 12%; left: 250px; 
+   display: flex !important; 
+   gap: 5px; 
+   list-style: none; 
+   padding: 0; 
+   z-index: 30; 
+   @media (max-width: 768px) {
+     left: 20px;
+     } 
+     li {
+      width: 24px; 
+      height: 24px; 
+    } 
+    } 
+    .custom-dot { 
+      width: 24px;
+      height: 24px; 
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+      cursor: pointer; 
+      transition: transform 0.3s; 
+    } 
+    .slick-active .custom-dot { 
+      transform: scale(1.1); 
+    }
 
-  @media (max-width: 768px) {
-    left: 20px;
-  }
 
-  li {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-.custom-dot {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.slick-active .custom-dot {
-  transform: scale(1.1);
-}
-
-/* ---------- FOOTER GLANCE ---------- */
-.footer-glance {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: $primary;
-  padding: 30px 80px;
-  border-top-left-radius: 20px;
-
-  @media (max-width: 768px) {
-    padding: 20px;
-  }
-}
-
+    
 // home page sections 
 
+//section 3
 
 .triangles-bg {
     position: absolute;
@@ -537,34 +462,43 @@ ul.custom-disc {
     filter: brightness(2) opacity(0.2);
 }
 
+//section 4 
+
+
+
+.partners-section {
   .partner-card {
-  width: 150px;
-  height: 140px;
-  background-color: #fff;
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
-  padding: 10px;
+    width: $partner-width;
+    height: $partner-height;
+    border-radius: $partner-radius;
+    transition: box-shadow $transition-speed ease;
+    background-color: #fff;
 
+    .partner-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform $transition-speed ease;
+    }
+
+    &:hover {
+      box-shadow: $partner-shadow;
+
+      .partner-img {
+        transform: scale($partner-hover-scale);
+      }
+    }
+  }
 }
 
-.partner-card img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.partner-card:hover img {
-  transform: scale(1.08);
-}
-
-.partner-card:hover {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+/* ================= MOBILE ================= */
+@media (max-width: 576px) {
+  .partners-section {
+    .partner-card {
+      width: 130px;
+      height: 120px;
+    }
+  }
 }
 
 /* link effect  */
@@ -597,11 +531,15 @@ ul.custom-disc {
   }
 }
 
+
+// section 2
+
   /* ===== SLIDER WRAPPER ===== */
     .news-slider {
       overflow: hidden;
       margin: 0 auto;
        height: 800px;
+      contain: paint;
     }
 
     /* ===== SLIDES WIDTH CONTROL ===== */
@@ -615,6 +553,7 @@ ul.custom-disc {
     transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
     opacity 0.45s ease;
     padding: 0 20px;
+    will-change: transform;
   }
 
   .news-slider .slick-center {
@@ -622,9 +561,8 @@ ul.custom-disc {
     height: 800px !important;
     opacity: 1;
   }
-  
-
 }
+
 
     /* ===== IMAGE BOX ===== */
     .img-box {
@@ -682,10 +620,11 @@ ul.custom-disc {
 .news-card .inline-link2 {
   position: relative;         
   text-decoration: underline;
+  font-weight: $font-weight-bold ; 
   display: inline-block;
   transition:
-    transform 0.3s ease,
-    text-decoration 0.3s ease;
+  transform 0.3s ease,
+  text-decoration 0.3s ease;
 }
 
 .news-card .inline-link2::after {
@@ -733,11 +672,16 @@ ul.custom-disc {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: var(--bs-primary);
+  background-color: $primary;
   position: relative;
   border: none;
 }
 
+.arrow-btn:hover{
+    color: $primary ;       
+    background-color: $primary-hover ; 
+    border-color: $primary-hover ;  
+}
 /* السهم */
 .arrow-btn::after {
   content: "";
@@ -775,7 +719,7 @@ ul.custom-disc {
 
 
     /* ===== RESPONSIVE للموبايل ===== */
-    @media (max-width: 768px) {
+   @media (max-width: 768px) {
 
   .news-slider .slick-slide {
     width: 70vw !important;   
@@ -802,10 +746,41 @@ ul.custom-disc {
   width: 100%;
    height: auto;
 }
-
-  
+  .img-box .overlay-text {
+      bottom: 25px;
+      left: 25px;
+      padding: 3px 6px;
+    }
 
 }
+
+@media (max-width: 576px) {
+  .arrow-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .arrow-btn::after {
+    width: 12px;
+    height: 2px;
+  }
+
+  .arrow-btn::before {
+    width: 5px;
+    height: 5px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+  }
+
+  .prev-btn::before {
+    transform: translate(-7px, -50%) rotate(-135deg);
+  }
+
+  .next-btn::before {
+    transform: translate(2px, -50%) rotate(45deg);
+  }
+}
+
 
 
 /* ===== FOOTER LINK HOVER ===== */

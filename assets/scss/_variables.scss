@@ -49,7 +49,7 @@ $display-font-sizes-mobile: (
 // heading variables  
 
 // heading  font sizes
-$enable-rfs: false;
+
 $h1-font-size: 76px !default;
 $h2-font-size: 40px !default;
 $h3-font-size: 27px !default;
@@ -123,3 +123,139 @@ $small-font-size: 1rem !default;
 
 
 
+// Button  variables
+$btn-padding-y: 1rem;     
+$btn-padding-x: 1.5rem;        
+$btn-font-weight: 700;       // fw-bold
+$btn-border-radius: 3rem;    // rounded-5
+
+
+
+
+// Button sizing 
+$btn-padding-y-lg: 1rem;
+$btn-padding-x-lg: 2.5rem;
+$btn-font-size-lg: 1.125rem;
+$btn-border-radius-lg: 3rem;
+
+// Button font
+$btn-font-size: 1.125rem;
+$btn-font-size-mobile: 1rem;
+
+// Primary button color
+$btn-primary-bg: $primary;
+$btn-primary-border: $primary;
+$btn-primary-color: #fff;
+
+// Buttons
+$btn-primary-hover-bg: $primary-hover;
+$btn-secondary-hover-bg: $secondary-hover;
+$btn-tertiary-hover-bg: $secondary-hover;
+
+// ================= Buttons – Mobile Overrides =================
+// ================= Buttons – Mobile Overrides (REM) =================
+$btn-padding-y-sm: 0.625rem ;
+$btn-padding-x-sm: 0.625rem ;
+$btn-font-size-sm: 0.875rem ;
+$btn-border-radius-sm: 1.25rem ;
+$btn-gap-sm: 0.3125rem ;
+
+
+
+// ===============================
+// Typography
+// ===============================
+$body-line-height: 1.688;
+
+$font-weight-light: 300;
+
+// Quote
+$quote-width: 585px;
+$quote-padding-left: 30px;
+$quote-gap: 10px;
+$quote-border-width: 2px;
+
+$quote-text-font-size: 25px;
+$quote-text-line-height: 1.5;
+
+$quote-author-font-size: 16px;
+$quote-author-line-height: 1.5;
+
+// Date
+$date-font-size: 16px;
+$date-font-size-mobile: 14px;
+$date-line-height: 1.4;
+
+// Inline link
+$inline-link-font-size: 18px;
+$inline-link-font-size-mobile: 14px;
+$inline-link-line-height-mobile: 1.4;
+
+// Lists
+$list-marker-size: 1.8em;
+
+
+// HR
+$custom-hr-opacity: 0.5;
+
+
+
+
+// ===============================
+// Forms – Design Tokens
+// ===============================
+
+// Label
+$form-label-font-weight: $font-weight-bold;
+$form-label-font-size: $font-size-base;
+
+// Input / Select / Textarea
+$input-font-size: $font-size-base;
+$input-font-weight: $font-weight-normal;
+$input-line-height: 1.4;
+
+// Border
+$input-border-width: 1px;
+$input-border-radius: 0;         
+
+// Select
+$form-select-border-radius: 0;
+
+// Textarea
+$textarea-resize: vertical;
+
+
+
+$section-spacing: 100px;
+
+
+
+
+ /* ================= PARTNERS SECTION ================= */
+
+$partner-width: 150px;
+$partner-height: 140px;
+$partner-radius: 25px;
+$partner-hover-scale: 1.08;
+$partner-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+$transition-speed: 0.3s;
+
+
+
+/* ================= PROJECT VARIABLES ================= */
+
+$sidebar-width: 450px;
+$sidebar-height: 90vh;
+
+$hero-height: 90vh;
+$hero-content-left: 250px;
+
+$navbar-z: 1070;
+$sidebar-z: 2000;
+
+$menu-font-size: 1.75rem;
+$submenu-font-size: 1.1rem;
+$nested-font-size: 0.95rem;
+
+$transition-base: 0.3s ease;
+$sidebar-transition: top 0.6s cubic-bezier(0.22, 1, 0.36, 1);

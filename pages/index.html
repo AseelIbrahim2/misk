@@ -24,197 +24,247 @@
 
 <header>
 
-    <!-- Navigation Bar (Transparent) -->
-    <nav class="navbar navbar-overlay px-4 py-0" id="mainNavbar">
-        <div class="container-fluid d-flex justify-content-end align-items-center flex-nowrap">
-            
-            <!-- Logo Container -->
-            <div class="d-flex align-items-center gap-3 text-white me-5">
-                <div class="logo-img1">
-                  <a href="#" class="d-flex align-items-center text-decoration-none">
-                            <img src="/assets/images/logo-colored.svg" class="img-fluid">
-                        </a>
-                  
-                </div>
-                
-            </div>
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-overlay px-4 py-0" id="mainNavbar">
+    <div class="container-fluid d-flex justify-content-end align-items-center flex-nowrap">
 
-            <!-- Hamburger Button -->
-            <div class="burger-container d-flex align-items-center justify-content-center">
-                <img src="/assets/images/Subtract.svg" class="img-fluid">
-                <button class="btn btn-menu text-primary" id="sidebarToggle">
-                  <svg width="48" height="32" viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.2"
-                      stroke-linecap="butt"> 
-                      <line x1="0.5" y1="6"  x2="23.5" y2="6"></line>
-                      <line x1="0.5" y1="12" x2="23.5" y2="12"></line>
-                      <line x1="0.5" y1="18" x2="23.5" y2="18"></line>
-                  </svg>
-                </button>
-            </div>
-
+      <!-- Logo -->
+      <div class="d-flex align-items-center me-5">
+        <div class="logo-img1">
+          <a href="#" class="d-flex align-items-center text-decoration-none">
+            <img src="/assets/images/logo-colored.svg" class="img-fluid" alt="Logo">
+          </a>
         </div>
-    </nav>
+      </div>
 
-    <!-- Sidebar -->
-    <div class="sidebar bg-primary d-flex flex-column" id="mainSidebar">
-        <div class="d-flex justify-content-between align-items-center px-5 py-4">
-            <div class="logo-img1">
-                 <img src="/assets/images/logo-colored.svg" class="img-fluid">
-            </div>
-            
-            <button class="btn-close-custom" id="sidebarClose">
-                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
+      <!-- Burger -->
+      <div class="burger-container d-flex align-items-center justify-content-center">
+        <img src="/assets/images/Subtract.svg" class="img-fluid" alt="">
+        <button class="btn btn-menu text-primary p-0" id="sidebarToggle">
+          <svg width="48" height="32" viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2.2"
+               stroke-linecap="butt">
+            <line x1="0.5" y1="6"  x2="23.5" y2="6"></line>
+            <line x1="0.5" y1="12" x2="23.5" y2="12"></line>
+            <line x1="0.5" y1="18" x2="23.5" y2="18"></line>
+          </svg>
+        </button>
+      </div>
 
-        <!-- Sidebar Menu -->
-        <div class="sidebar-content px-5">
-            <ul class="list-unstyled menu-list">
-                 <li class="menu-item">
-                    <a href="#" class="menu-link d-flex  align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#About-Us">
-                        About Us
-                       
-                    </a>
-                    <div class="collapse" id="About-Us">
-                        <ul class="list-unstyled submenu-list ps-3 ">
-                            <li><a href="#" class="submenu-link">Director General Welcome</a></li>
-                            <li><a href="#" class="submenu-link">Mission, Vision & Values</a></li>
-                            <li><a href="#" class="submenu-link">Vision 2023</a></li>
-                            <li><a href="#" class="submenu-link">Student Leaders</a></li>
-                            <li><a href="#" class="submenu-link">Campus</a></li>
-                            <li><a href="#" class="submenu-link">School Leaders & Governance</a></li>
-                            <li><a href="#" class="submenu-link">Our Policies</a></li>
-                            <li><a href="#" class="submenu-link">MMISK Schools Academy</a></li>
-                            <li><a href="#" class="submenu-link">MISK Foundation</a></li>
-                            <li><a href="#" class="submenu-link">News & Gallery</a></li>
-                            <li><a href="#" class="submenu-link">Media Center</a></li> 
-                        </ul>
-                    </div>
-                </li>
-                <li class="menu-item">
-                    <a href="#" class="menu-link d-flex  align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#submenu-admissions">
-                        Admissions
-                        <span class="arrow-icon">▼</span>
-                    </a>
-                    <div class="collapse" id="submenu-admissions">
-                        <ul class="list-unstyled submenu-list ps-3">
-                            <li><a href="#" class="submenu-link">Admissions Process</a></li>
-                            <li><a href="#" class="submenu-link">Admission Fees</a></li>
-                            <li><a href="#" class="submenu-link">Term Dates & FAQ's</a></li>
-                        </ul>
-                    </div>
-                </li>
+    </div>
+  </nav>
 
-                <li class="menu-item">
-                    <a href="#" class="menu-link d-flex  align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#submenu-learning">
-                        Learning Journey
-                        <span class="arrow-icon">▼</span>
-                    </a>
-                    <div class="collapse" id="submenu-learning">
-                        <ul class="list-unstyled submenu-list ps-3">
-                            <li>
-                              <a href="#" class="submenu-link d-flex align-items-center collapsed" 
-                                data-bs-toggle="collapse" data-bs-target="#nested-curriculum">
-                                  Academic Curriculum
-                                  <span class="arrow-icon">▼</span>
-                              </a>
-                              <div class="collapse" id="nested-curriculum">
-                                  <ul class="list-unstyled nested-submenu-list ps-3">
-                                      <li><a href="#" class="nested-link">Kindergarten</a></li>
-                                      <li><a href="#" class="nested-link">Lower Primary</a></li>
-                                      <li><a href="#" class="nested-link">Upper Primary</a></li>
-                                      <li><a href="#" class="nested-link">Senior Schools</a></li>
-                                  </ul>
-                              </div>
-                            </li>
-                            <li><a href="#" class="submenu-link">MISK Schools Diploma</a></li>
-                            <li><a href="#" class="submenu-link">High Performance Learning</a></li>
-                            <li><a href="#" class="submenu-link">Leadership & Critical Thinking</a></li>
-                            <li><a href="#" class="submenu-link">Internship & Service Ethics</a></li>
-                            <li><a href="#" class="submenu-link">Project 10: Becoming one of the World's Top 10 Schools</a></li>
-                            <li><a href="#" class="submenu-link " > Co-Curricular Activities <span class="arrow-icon">▼</span></a></li>
-                            <li><a href="#" class="submenu-link " > Safeguarding & Wellbeing<span class="arrow-icon">▼</span></a></li>
-                               
-                        </ul>
-                    </div>
-                </li>
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar bg-primary d-flex flex-column" id="mainSidebar">
 
-                <li class="menu-item">
-                    <a href="#" class="menu-link d-flex align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#submenu-work">
-                        Work With Us
-                        <span class="arrow-icon">▼</span>
-                    </a>
-                    <div class="collapse" id="submenu-work">
-                        <ul class="list-unstyled submenu-list ps-3">
-                            <li><a href="#" class="submenu-link">Why Join Us?</a></li>
-                            <li><a href="#" class="submenu-link">Meet The Teachers</a></li>
-                            <li><a href="#" class="submenu-link">Current Vacancies</a></li>
-                        </ul>
-                    </div>
-                </li>
+    <!-- Sidebar Header -->
+    <div class="d-flex justify-content-between align-items-center px-5 py-4">
+      <div class="logo-img1">
+        <img src="/assets/images/logo-colored.svg" class="img-fluid" alt="Logo">
+      </div>
 
+      <button class="btn-close-custom" id="sidebarClose" aria-label="Close menu">
+        <svg width="50" height="50" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-content px-5">
+      <ul class="list-unstyled menu-list">
+
+        <!-- About -->
+        <li class="menu-item">
+          <a href="#"
+             class="menu-link d-flex align-items-center collapsed"
+             data-bs-toggle="collapse"
+             data-bs-target="#about-us">
+            About Us
+          </a>
+
+          <div class="collapse" id="about-us">
+            <ul class="list-unstyled submenu-list ps-3">
+              <li><a href="#" class="submenu-link">Director General Welcome</a></li>
+              <li><a href="#" class="submenu-link">Mission, Vision & Values</a></li>
+              <li><a href="#" class="submenu-link">Vision 2023</a></li>
+              <li><a href="#" class="submenu-link">Student Leaders</a></li>
+              <li><a href="#" class="submenu-link">Campus</a></li>
+              <li><a href="#" class="submenu-link">School Leaders & Governance</a></li>
+              <li><a href="#" class="submenu-link">Our Policies</a></li>
+              <li><a href="#" class="submenu-link">MMISK Schools Academy</a></li>
+              <li><a href="#" class="submenu-link">MISK Foundation</a></li>
+              <li><a href="#" class="submenu-link">News & Gallery</a></li>
+              <li><a href="#" class="submenu-link">Media Center</a></li>
             </ul>
-        </div>
+          </div>
+        </li>
 
-        <!-- Sidebar Footer / Search -->
-        <div class="mt-auto px-5 py-4">
-          <hr class="custom-hr">
-            <div class="input-group search-group bg-white rounded-0 p-2">
-                <span class="input-group-text bg-transparent border-0 text-muted">Search</span>
-                <input type="text" class="form-control border-0 shadow-none">
-                <span class="input-group-text bg-transparent border-0">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </span>
-            </div>
-        </div>
+        <!-- Admissions -->
+        <li class="menu-item">
+          <a href="#"
+             class="menu-link d-flex align-items-center collapsed"
+             data-bs-toggle="collapse"
+             data-bs-target="#submenu-admissions">
+            Admissions
+            <span class="arrow-icon ms-2">▼</span>
+          </a>
+
+          <div class="collapse" id="submenu-admissions">
+            <ul class="list-unstyled submenu-list ps-3">
+              <li><a href="#" class="submenu-link">Admissions Process</a></li>
+              <li><a href="#" class="submenu-link">Admission Fees</a></li>
+              <li><a href="#" class="submenu-link">Term Dates & FAQ's</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Learning Journey -->
+        <li class="menu-item">
+          <a href="#"
+             class="menu-link d-flex align-items-center collapsed"
+             data-bs-toggle="collapse"
+             data-bs-target="#submenu-learning">
+            Learning Journey
+            <span class="arrow-icon ms-2">▼</span>
+          </a>
+
+          <div class="collapse" id="submenu-learning">
+            <ul class="list-unstyled submenu-list ps-3">
+
+              <li>
+                <a href="#"
+                   class="submenu-link d-flex align-items-center collapsed"
+                   data-bs-toggle="collapse"
+                   data-bs-target="#nested-curriculum">
+                  Academic Curriculum
+                  <span class="arrow-icon ms-2">▼</span>
+                </a>
+
+                <div class="collapse" id="nested-curriculum">
+                  <ul class="list-unstyled nested-submenu-list ps-3">
+                    <li><a href="#" class="nested-link">Kindergarten</a></li>
+                    <li><a href="#" class="nested-link">Lower Primary</a></li>
+                    <li><a href="#" class="nested-link">Upper Primary</a></li>
+                    <li><a href="#" class="nested-link">Senior Schools</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li><a href="#" class="submenu-link">MISK Schools Diploma</a></li>
+              <li><a href="#" class="submenu-link">High Performance Learning</a></li>
+              <li><a href="#" class="submenu-link">Leadership & Critical Thinking</a></li>
+              <li><a href="#" class="submenu-link">Internship & Service Ethics</a></li>
+              <li><a href="#" class="submenu-link">Project 10: Becoming one of the World's Top 10 Schools</a></li>
+              <li>
+              <a href="#" class="submenu-link d-flex align-items-center ">
+                Co-Curricular Activities
+                <span class="arrow-icon ms-2">▼</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="submenu-link d-flex align-items-center">
+                Safeguarding & Wellbeing
+                <span class="arrow-icon ms-2">▼</span>
+              </a>
+            </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Work With Us -->
+        <li class="menu-item">
+          <a href="#"
+             class="menu-link d-flex align-items-center collapsed"
+             data-bs-toggle="collapse"
+             data-bs-target="#submenu-work">
+            Work With Us
+            <span class="arrow-icon ms-2">▼</span>
+          </a>
+
+          <div class="collapse" id="submenu-work">
+            <ul class="list-unstyled submenu-list ps-3">
+              <li><a href="#" class="submenu-link">Why Join Us?</a></li>
+              <li><a href="#" class="submenu-link">Meet The Teachers</a></li>
+              <li><a href="#" class="submenu-link">Current Vacancies</a></li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
     </div>
 
-    <!-- Overlay -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-    <!-- Hero Slider -->
-    <div class="hero-slider-container">
-        <div class="hero-slider">
-            <div class="hero-slide" style="background-image: url('/assets/images/header.jpg');">
-                <div class="slide-overlay"></div>
-                <div class="hero-content-wrapper">
-                    <h1 class=" h1 text-white hero-title">Setting Trends for a Nation on the Move</h1>
-                </div>
-            </div>
-            <div class="hero-slide" style="background-image: url('/assets/images/header.jpg');">
-                <div class="slide-overlay"></div>
-                <div class="hero-content-wrapper">
-                    <h1 class=" h1 text-white hero-title">Setting Trends for a Nation on the Move</h1>
-                </div>
-            </div>
-            <div class="hero-slide" style="background-image: url('/assets/images/header.jpg');">
-                <div class="slide-overlay"></div>
-                <div class="hero-content-wrapper">
-                    <h1 class=" h1 text-white hero-title">Setting Trends for a Nation on the Move</h1>
-                </div>
-            </div>
-        </div>
+    <!-- Sidebar Footer -->
+    <div class="mt-auto px-5 py-4">
+      <hr class="custom-hr">
+      <div class="input-group bg-white rounded-0 p-2">
+        <span class="input-group-text bg-transparent border-0 text-muted">Search</span>
+        <input type="text" class="form-control border-0 shadow-none">
+        <span class="input-group-text bg-transparent border-0">
+          <svg width="18" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
+      </div>
     </div>
+
+  </aside>
+
+  <!-- Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ================= HERO SLIDER ================= -->
+  <div class="hero-slider-container">
+    <div class="hero-slider">
+
+      <div class="hero-slide" style="background-image:url('/assets/images/header.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="hero-content-wrapper">
+          <h1 class="h1 text-white ">
+            Setting Trends for a Nation on the Move
+          </h1>
+        </div>
+      </div>
+
+      <div class="hero-slide" style="background-image:url('/assets/images/header.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="hero-content-wrapper">
+          <h2 class="h1 text-white ">
+            Setting Trends for a Nation on the Move
+          </h2>
+        </div>
+      </div>
+
+      <div class="hero-slide" style="background-image:url('/assets/images/header.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="hero-content-wrapper">
+          <h2 class="h1 text-white ">
+            Setting Trends for a Nation on the Move
+          </h2>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 </header>
 
 
 
 
+
 <!-- Section 1 -->
 <!-- Mobile margin wrapper -->
-<div class="px-3 px-md-0">
+<section class="px-3 px-md-0  section-spacing  ">
 
-  <section class="container section-spacing p-2 bg-primary rounded-4 text-center">
+  <div class="container p-2 bg-primary rounded-4 text-center">
 
     <h2 class="text-white my-2 p-3 p-md-5">
       At a Glance
@@ -239,14 +289,14 @@
 
 
     </div>
-  </section>
+  </div>
 
-</div>
+</section>
 
 
 <!-- section  2 -->
 
-<section class="container-fluid   ">
+<section class="container-fluid  ">
   <h2 class=" h2 text-center mt-5 mb-3    ">Featured News</h2>
 
   <div class="news-slider">
@@ -288,15 +338,15 @@
   </div>
 
     <div class="d-flex justify-content-center align-items-center gap-3 ">
-  <button class="btn btn-primary arrow-btn d-flex justify-content-center align-items-center prev-btn" aria-label="Previous"></button>
-  <button class="btn btn-primary arrow-btn  d-flex justify-content-center align-items-center next-btn" aria-label="Next"></button>
+  <button class="  arrow-btn d-flex justify-content-center align-items-center prev-btn" aria-label="Previous"></button>
+  <button class=" arrow-btn  d-flex justify-content-center align-items-center next-btn" aria-label="Next"></button>
 </div>
 
 
 
-  <div  class="d-flex justify-content-center  mt-4 mb-5 " >
+  <div  class="d-flex justify-content-center  mt-4 mb-5  my-5" >
       <!-- BUTTON -->
-  <button class="btn btn-primary btn-md rounded-5 px-5 py-3 fw-bold ">
+  <button class="btn btn-primary  ">
     See All News
   </button>
   </div>
@@ -308,7 +358,7 @@
 
 <!-- Section 3 -->
 
-<section class="container-fluid p-0  section-spacing ">
+<section class="container-fluid p-0  ">
 
   <div class="row g-0">
 
@@ -339,7 +389,7 @@
       </p>
 
       <div class="p-3">
-        <a class="inline-link link-hover-effect text-white  fw-bold">Learn More</a>
+        <a class="inline-link link-hover-effect text-white  ">Learn More</a>
 
       </div>
 
@@ -358,64 +408,75 @@
 
 
 
+
+
 <!-- SECTION 4 -->
+<section class="container partners-section d-flex flex-column align-items-center">
 
-<section class="container d-flex flex-column align-items-center section-spacing ">
-
-  <h2 class="h2  my-5 text-center">
+  <h2 class="h2 my-5 text-center">
     Our Partners
   </h2>
 
   <!-- ROW 1 -->
   <div class="row gx-5 gy-4 justify-content-center mb-3">
+
     <div class="col-6 col-sm-6 col-md-3 d-flex justify-content-center">
-      <div class="partner-card">
-        <img src="/assets/images/image1.png" alt="Partner">
+      <div class="partner-card d-flex align-items-center justify-content-center p-2 overflow-hidden">
+        <img src="/assets/images/image1.png" class="img-fluid partner-img" alt="Partner">
       </div>
     </div>
+
     <div class="col-6 col-sm-6 col-md-3 d-flex justify-content-center">
-      <div class="partner-card">
-        <img src="/assets/images/image2.png" alt="Partner">
+      <div class="partner-card d-flex align-items-center justify-content-center p-2 overflow-hidden">
+        <img src="/assets/images/image2.png" class="img-fluid partner-img" alt="Partner">
       </div>
     </div>
+
     <div class="col-6 col-sm-6 col-md-3 d-flex justify-content-center">
-      <div class="partner-card">
-        <img src="/assets/images/image3.png" alt="Partner">
+      <div class="partner-card d-flex align-items-center justify-content-center p-2 overflow-hidden">
+        <img src="/assets/images/image3.png" class="img-fluid partner-img" alt="Partner">
       </div>
     </div>
+
     <div class="col-6 col-sm-6 col-md-3 d-flex justify-content-center">
-      <div class="partner-card">
-        <img src="/assets/images/image4.png" alt="Partner">
+      <div class="partner-card d-flex align-items-center justify-content-center p-2 overflow-hidden">
+        <img src="/assets/images/image4.png" class="img-fluid partner-img" alt="Partner">
       </div>
     </div>
+
   </div>
 
   <!-- ROW 2 -->
   <div class="row gx-5 gy-4 justify-content-center mb-3">
+
     <div class="col-6 col-sm-6 col-md-3 d-flex justify-content-center">
-      <div class="partner-card">
-        <img src="/assets/images/image5.png" alt="Partner">
+      <div class="partner-card d-flex align-items-center justify-content-center p-2 overflow-hidden">
+        <img src="/assets/images/image5.png" class="img-fluid partner-img" alt="Partner">
       </div>
     </div>
+
     <div class="col-6 col-sm-6 col-md-3 d-flex justify-content-center">
-      <div class="partner-card">
-        <img src="/assets/images/image6.png" alt="Partner">
+      <div class="partner-card d-flex align-items-center justify-content-center p-2 overflow-hidden">
+        <img src="/assets/images/image6.png" class="img-fluid partner-img" alt="Partner">
       </div>
     </div>
+
     <div class="col-6 col-sm-6 col-md-3 d-flex justify-content-center">
-      <div class="partner-card">
-        <img src="/assets/images/image7.png" alt="Partner">
+      <div class="partner-card d-flex align-items-center justify-content-center p-2 overflow-hidden">
+        <img src="/assets/images/image7.png" class="img-fluid partner-img" alt="Partner">
       </div>
     </div>
+
     <div class="col-6 col-sm-6 col-md-3 d-flex justify-content-center">
-      <div class="partner-card">
-        <img src="/assets/images/image8.png" alt="Partner">
+      <div class="partner-card d-flex align-items-center justify-content-center p-2 overflow-hidden">
+        <img src="/assets/images/image8.png" class="img-fluid partner-img" alt="Partner">
       </div>
     </div>
+
   </div>
 
   <!-- BUTTON -->
-  <button class="btn btn-primary btn-lg rounded-5 px-5 py-3 fw-bold my-5 ">
+  <button class="btn btn-primary btn-lg my-5">
     Load More
   </button>
 

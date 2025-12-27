@@ -4,18 +4,23 @@
 /* ================= NEWS SLIDER ================= */
 $(function () {
   const slider = $('.news-slider');
+  
 
-  slider.slick({
-    centerMode: true,
-    variableWidth: true,
-    slidesToShow: 1,
-    arrows: false,
-    infinite: true,
-    speed: 700,
-    cssEase: 'cubic-bezier(0.22, 1, 0.36, 1)',
-    useTransform: true,
-    useCSS: true
-  });
+slider.slick({
+  centerMode: true,
+  variableWidth: true,
+  slidesToShow: 1,
+  arrows: false,
+  infinite: true,
+  speed: 700,
+  cssEase: 'ease-out',
+  waitForAnimate: true,
+  useTransform: true,   
+  useCSS: true,         
+  adaptiveHeight: false
+});
+
+
 
   $('.prev-btn').on('click', function () {
     slider.slick('slickPrev');
@@ -24,6 +29,8 @@ $(function () {
   $('.next-btn').on('click', function () {
     slider.slick('slickNext');
   });
+
+
 });
 
 
