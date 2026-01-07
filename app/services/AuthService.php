@@ -51,37 +51,34 @@ class AuthService
     /* -------------------------
        LOGIN
     ------------------------- */
-    public function login(string $value, string $password): void
-    {
-        $user = $this->userRepo->findUser(trim($value));
+   public function login(string $value, string $password): array
+{
+    $user = $this->userRepo->findUser(trim($value));
 
-        if (!$user) {
-            throw new Exception('User not found.');
-        }
-
-        if (!password_verify($password, $user['password'])) {
-            throw new Exception('Invalid credentials.');
-        }
-
-        if ($user['status'] !== 'active') {
-            throw new Exception('Account inactive.');
-        }
-
-        if (session_status() !== PHP_SESSION_ACTIVE) {
-            session_start();
-        }
-
-        // ✅ delegation to UserService
-        $roles = $this->userService->getUserWithRoles($user['id']);
-        $permissions = $this->userService->getUserPermissions($user['id']);
-
-        $_SESSION['user'] = [
-            'id' => $user['id'],
-            'username' => $user['username'],
-            'roles' => array_column($roles['roles'], 'name'),
-            'permissions' => $permissions
-        ];
+    if (!$user) {
+        throw new Exception('User not found.');
     }
+
+    if (!password_verify($password, $user['password'])) {
+        throw new Exception('Invalid credentials.');
+    }
+
+    if ($user['status'] !== 'active') {
+        throw new Exception('Account inactive.');
+    }
+
+    // roles & permissions
+    $rolesData = $this->userService->getUserWithRoles($user['id']);
+    $permissions = $this->userService->getUserPermissions($user['id']);
+
+    return [
+        'id' => $user['id'],
+        'username' => $user['username'],
+        'roles' => array_column($rolesData['roles'], 'name'),
+        'permissions' => $permissions
+    ];
+}
+
 
     /* -------------------------
        LOGOUT

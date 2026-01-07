@@ -14,3 +14,4 @@ class RoleRepository
         return $this->role->getUserRoles($userId);
     }
 }
+

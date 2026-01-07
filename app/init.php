@@ -10,12 +10,10 @@ require_once __DIR__ . '/core/App.php';
 require_once __DIR__ . '/core/Controller.php';
 require_once __DIR__ . '/core/Model.php';
 require_once  __DIR__ . '/core/Validator.php';
-require_once  __DIR__ . '/core/Middleware.php';
+
 
 // Middlewares
-require_once __DIR__ . '/core/middlewares/AuthMiddleware.php';
-require_once __DIR__ . '/core/middlewares/GuestMiddleware.php';
-
+require_once __DIR__ . '/middleware/AuthMiddleware.php';
 
 // Models
 require_once __DIR__ . '/models/User.php';

@@ -20,3 +20,4 @@ class Role extends BaseModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
+
