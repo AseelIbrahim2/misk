@@ -29,4 +29,35 @@ class UserRepository
             'r' => $roleId
         ]);
     }
+
+    public function all(): array
+    {
+        $stmt = $this->db->query("SELECT id, username, email FROM users");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function find(int $id): ?array
+    {
+        $stmt = $this->db->prepare("SELECT * FROM users WHERE id = ?");
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC) ?: null;
+    }
+
+    public function update(int $id, array $data): void
+    {
+        $stmt = $this->db->prepare(
+            "UPDATE users SET username = ?, email = ?, password = COALESCE(?, password) WHERE id = ?"
+        );
+        $stmt->execute([
+            $data['username'],
+            $data['email'],
+            $data['password'] ?? null,
+            $id
+        ]);
+    }
+    public function delete(int $id): void
+    {
+        $stmt = $this->db->prepare("DELETE FROM users WHERE id = ?");
+        $stmt->execute([$id]);
+    }
+
 }

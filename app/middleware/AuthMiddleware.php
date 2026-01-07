@@ -14,14 +14,23 @@ class AuthMiddleware
     }
 
     // 🔹 Protect page for guests (not logged in)
-    public static function guest(): void
-    {
-        if (session_status() !== PHP_SESSION_ACTIVE) session_start();
-        if (isset($_SESSION['user'])) {
-            header('Location: /auth/dashboard');
+   public static function guest(): void
+{
+    if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+
+    if (isset($_SESSION['user'])) {
+        //  admin dashboard
+        if (in_array('admin', $_SESSION['user']['roles'])) {
+            header('Location: /admin/dashboard');
             exit;
         }
+
+
+        header('Location: /auth/dashboard');
+        exit;
     }
+}
+
 
     // 🔹 Protect page by role
     public static function protectRole(string $roleName): void

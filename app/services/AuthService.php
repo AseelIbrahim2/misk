@@ -51,7 +51,7 @@ class AuthService
     /* -------------------------
        LOGIN
     ------------------------- */
-   public function login(string $value, string $password): array
+public function login(string $value, string $password): array
 {
     $user = $this->userRepo->findUser(trim($value));
 
@@ -74,10 +74,11 @@ class AuthService
     return [
         'id' => $user['id'],
         'username' => $user['username'],
-        'roles' => array_column($rolesData['roles'], 'name'),
+        'roles' => $rolesData['roles'], // ✅ هنا التعديل
         'permissions' => $permissions
     ];
 }
+
 
 
     /* -------------------------

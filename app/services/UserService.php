@@ -1,7 +1,5 @@
 <?php
 
-
-
 class UserService
 {
     private UserRepository $userRepo;
@@ -20,11 +18,16 @@ class UserService
      */
     public function getUserWithRoles(int $userId): array
     {
-        $roles = $this->roleRepo->getUserRoles($userId);
+        $user = $this->userRepo->find($userId);
+        if (!$user) {
+            throw new Exception("User not found");
+        }
 
-        return [
-            'roles' => $roles
-        ];
+        // جلب الأدوار الخاصة بالمستخدم
+        $roles = $this->roleRepo->getUserRoles($userId);
+        $user['roles'] = array_column($roles, 'name'); // نضمن أن كل دور عبارة عن string
+
+        return $user;
     }
 
     /**
@@ -37,15 +40,51 @@ class UserService
 
         foreach ($roles as $role) {
             $rolePermissions = $this->permissionRepo->getPermissionsByRole($role['id']);
-
             foreach ($rolePermissions as $permission) {
                 $permissions[$permission['name']] = true;
             }
         }
 
-        // return unique permission names
         return array_keys($permissions);
     }
+
+    /**
+     * Get all users with roles
+     */
+    public function getAllUsers(): array
+    {
+        $users = $this->userRepo->all();
+
+        // أضف كل الأدوار لكل مستخدم
+        foreach ($users as &$user) {
+            $roles = $this->roleRepo->getUserRoles($user['id']);
+            $user['roles'] = array_column($roles, 'name'); // array of role names
+        }
+
+        return $users;
+    }
+
+    public function getUser(int $id): array
+    {
+        $user = $this->getUserWithRoles($id); // استخدام الدالة المعدلة
+        return $user;
+    }
+
+    public function createUser(array $data): void
+    {
+        if (empty($data['password'])) {
+            throw new Exception("Password required");
+        }
+        $this->userRepo->createUser($data);
+    }
+
+    public function updateUser(int $id, array $data): void
+    {
+        $this->userRepo->update($id, $data);
+    }
+
+    public function deleteUser(int $id): void
+    {
+        $this->userRepo->delete($id);
+    }
 }
-
-
