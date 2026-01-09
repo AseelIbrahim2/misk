@@ -1,18 +1,18 @@
 <?php
 
+
+namespace App\Models;
+
+use App\Core\BaseModel;
+use PDO;
+
 class User extends BaseModel
 {
     protected string $table = 'users';
 
     public function findByEmailOrUsername(string $value): ?array
     {
-        $sql = "
-            SELECT *
-            FROM {$this->table}
-            WHERE email = :v OR username = :v
-            LIMIT 1
-        ";
-
+        $sql = "SELECT * FROM {$this->table} WHERE email = :v OR username = :v LIMIT 1";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['v' => $value]);
 

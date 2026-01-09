@@ -1,10 +1,3 @@
-<?php
-AuthMiddleware::protectPermission('manage_users');
-?>
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +5,6 @@ AuthMiddleware::protectPermission('manage_users');
 </head>
 <body>
 <center>
-
 <h1>Users List</h1>
 
 <a href="/admin/users/create">Add New User</a>
@@ -27,9 +19,9 @@ AuthMiddleware::protectPermission('manage_users');
     </tr>
     <?php foreach ($users as $user): ?>
     <tr>
-        <td><?= $user['id'] ?></td>
-        <td><?= $user['username'] ?></td>
-        <td><?= $user['email'] ?></td>
+        <td><?= htmlspecialchars($user['id']) ?></td>
+        <td><?= htmlspecialchars($user['username']) ?></td>
+        <td><?= htmlspecialchars($user['email']) ?></td>
         <td>
             <?= isset($user['roles']) && is_array($user['roles']) ? implode(', ', $user['roles']) : '—' ?>
         </td>
@@ -40,7 +32,6 @@ AuthMiddleware::protectPermission('manage_users');
     </tr>
     <?php endforeach; ?>
 </table>
-
 </center>
 </body>
 </html>

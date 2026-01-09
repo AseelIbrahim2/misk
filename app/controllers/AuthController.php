@@ -1,6 +1,12 @@
 <?php
 
 
+namespace App\Controllers;
+
+use App\Core\Controller;
+use App\Services\AuthService;
+use App\Middleware\AuthMiddleware;
+use Exception;
 
 class AuthController extends Controller
 {
@@ -15,12 +21,11 @@ class AuthController extends Controller
         }
     }
 
-    /**
-     * Login page
-     */
+
+    // Display login page and handle login POST
     public function login(): void
     {
-        AuthMiddleware::guest();
+        AuthMiddleware::guest(); // Only guests can access
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $usernameOrEmail = $_POST['usernameOrEmail'] ?? '';
@@ -29,6 +34,7 @@ class AuthController extends Controller
             try {
                 $userData = $this->authService->login($usernameOrEmail, $password);
 
+                // Store user data in session
                 $_SESSION['user'] = [
                     'id'          => $userData['id'],
                     'username'    => $userData['username'],
@@ -36,7 +42,7 @@ class AuthController extends Controller
                     'permissions' => $userData['permissions']
                 ];
 
-                // ✅ Role-based redirect
+                // Role-based redirect
                 if (in_array('admin', $_SESSION['user']['roles'])) {
                     header('Location: /admin/dashboard');
                     exit;
@@ -51,15 +57,13 @@ class AuthController extends Controller
             }
         }
 
-        $this->view('auth/login');
+        $this->view('auth/login'); // Show login form
     }
 
-    /**
-     * Register page
-     */
+    // Display registration page and handle POST
     public function register(): void
     {
-        AuthMiddleware::guest();
+        AuthMiddleware::guest(); // Only guests can access
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $username = $_POST['username'] ?? '';
@@ -71,6 +75,7 @@ class AuthController extends Controller
 
                 $userData = $this->authService->login($email, $password);
 
+                // Store user data in session
                 $_SESSION['user'] = [
                     'id'          => $userData['id'],
                     'username'    => $userData['username'],
@@ -78,7 +83,7 @@ class AuthController extends Controller
                     'permissions' => $userData['permissions']
                 ];
 
-                // ✅ Role-based redirect (future-proof)
+                // Role-based redirect
                 if (in_array('admin', $_SESSION['user']['roles'])) {
                     header('Location: /admin/dashboard');
                     exit;
@@ -93,17 +98,15 @@ class AuthController extends Controller
             }
         }
 
-        $this->view('auth/register');
+        $this->view('auth/register'); // Show registration form
     }
 
-    /**
-     * Logout user
-     */
+    // Logout user and destroy session
     public function logout(): void
     {
-        AuthMiddleware::protect();
+        AuthMiddleware::protect(); // Only logged-in users can access
 
-        $_SESSION = [];
+        $_SESSION = []; // Clear session data
 
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
@@ -118,18 +121,16 @@ class AuthController extends Controller
             );
         }
 
-        session_destroy();
+        session_destroy(); // Destroy session
 
-        header('Location: /auth/login');
+        header('Location: /auth/login'); // Redirect to login
         exit;
     }
 
-    /**
-     * User dashboard
-     */
+    // Show user dashboard
     public function dashboard(): void
     {
-        AuthMiddleware::protect();
+        AuthMiddleware::protect(); // Only logged-in users
 
         $this->view('auth/dashboard', [
             'username' => $_SESSION['user']['username']

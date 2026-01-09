@@ -1,0 +1,17 @@
+{
+    "name": "misk/project",
+    "description": "My custom PHP project",
+    "autoload": {
+     
+    "classmap": [
+        "app/core",
+        "app/middleware",
+        "app/models",
+        "app/repositories",
+        "app/services",
+        "app/controllers"
+    ]
+
+    },
+    "require": {}
+}
