@@ -6,29 +6,29 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit3a963f175f0cfe51d5a3b934732df1fd
 {
+    public static $prefixLengthsPsr4 = array (
+        'A' =>
+        array (
+            'App\\' => 4,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'App\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/app',
+        ),
+    );
+
     public static $classMap = array (
-        'App\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/controllers/AdminController.php',
-        'App\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/controllers/AuthController.php',
-        'App\\Core\\App' => __DIR__ . '/../..' . '/app/core/App.php',
-        'App\\Core\\BaseModel' => __DIR__ . '/../..' . '/app/core/Model.php',
-        'App\\Core\\Controller' => __DIR__ . '/../..' . '/app/core/Controller.php',
-        'App\\Core\\Database' => __DIR__ . '/../..' . '/app/core/Database.php',
-        'App\\Core\\Validator' => __DIR__ . '/../..' . '/app/core/Validator.php',
-        'App\\Middleware\\AuthMiddleware' => __DIR__ . '/../..' . '/app/middleware/AuthMiddleware.php',
-        'App\\Models\\Permission' => __DIR__ . '/../..' . '/app/models/Permission.php',
-        'App\\Models\\Role' => __DIR__ . '/../..' . '/app/models/Role.php',
-        'App\\Models\\User' => __DIR__ . '/../..' . '/app/models/User.php',
-        'App\\Repositories\\PermissionRepository' => __DIR__ . '/../..' . '/app/repositories/PermissionRepository.php',
-        'App\\Repositories\\RoleRepository' => __DIR__ . '/../..' . '/app/repositories/RoleRepository.php',
-        'App\\Repositories\\UserRepository' => __DIR__ . '/../..' . '/app/repositories/UserRepository.php',
-        'App\\Services\\AuthService' => __DIR__ . '/../..' . '/app/services/AuthService.php',
-        'App\\Services\\UserService' => __DIR__ . '/../..' . '/app/services/UserService.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3a963f175f0cfe51d5a3b934732df1fd::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3a963f175f0cfe51d5a3b934732df1fd::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit3a963f175f0cfe51d5a3b934732df1fd::$classMap;
 
         }, null, ClassLoader::class);
