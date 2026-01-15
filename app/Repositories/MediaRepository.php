@@ -14,7 +14,7 @@ class MediaRepository
 
     public function all(): array
     {
-        return $this->media->getWhere('is_deleted', 0);
+        return $this->media->getAll();
     }
 
     public function create(array $data): int
@@ -26,9 +26,15 @@ class MediaRepository
     {
         return $this->media->find($id);
     }
+        public function delete(int $id): bool
+    {
+        return $this->media->delete($id);
+    }
+
 
     public function softDelete(int $id): bool
     {
+
         return $this->media->update($id, [
             'is_deleted' => 1,
             'updated' => date('Y-m-d H:i:s')

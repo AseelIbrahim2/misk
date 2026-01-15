@@ -36,13 +36,15 @@
                         <?php if (!empty($media)): ?>
                             <?php foreach ($media as $item): ?>
 
-                                <div class="col-sm-2 mb-3">
+                                <!-- If soft deleted, reduce opacity -->
+                                <div class="col-sm-2 mb-3" style="<?= $item['is_deleted'] ? 'opacity:0.5;' : '' ?>">
 
                                     <!-- Lightbox link -->
                                     <a href="/<?= $item['path'] ?>"
                                        data-toggle="lightbox"
                                        data-title="<?= htmlspecialchars($item['name']) ?>"
-                                       data-gallery="media-gallery">
+                                       data-gallery="media-gallery"
+                                       <?= $item['is_deleted'] ? 'class="disabled-link"' : '' ?>>
 
                                         <img src="/<?= $item['path'] ?>"
                                              class="img-fluid mb-2"
@@ -51,12 +53,30 @@
 
                                     <!-- Actions -->
                                     <div class="d-flex justify-content-between align-items-center mt-1">
+
                                         <small class="text-muted">ID: <?= $item['id'] ?></small>
 
-                                        <a href="/media/delete/<?= $item['id'] ?>"
-                                           class="btn btn-sm btn-danger"
-                                           onclick="return confirm('Delete this file?')">
-                                            <i class="fas fa-trash"></i>
+                                        <?php if (!$item['is_deleted']): ?>
+                                            <!-- Soft Delete -->
+                                            <a href="/media/delete/<?= $item['id'] ?>"
+                                               class="btn btn-sm btn-danger"
+                                               onclick="return confirm('Delete this file?')">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        <?php else: ?>
+                                            <!-- Optionally, Restore button -->
+                                            <a href="/media/restore/<?= $item['id'] ?>"
+                                               class="btn btn-sm btn-success"
+                                               onclick="return confirm('Restore this file?')">
+                                                Restore
+                                            </a>
+                                        <?php endif; ?>
+
+                                        <!-- Hard Delete always available -->
+                                        <a href="/media/forceDelete/<?= $item['id'] ?>" 
+                                           class="btn btn-sm btn-dark"
+                                           onclick="return confirm('This will permanently delete this file!')">
+                                           Hard Delete
                                         </a>
                                     </div>
 
@@ -83,6 +103,6 @@
     </section>
 </div>
 
+
 <?php require_once __DIR__ . '/../layouts/footer.php'; ?>
 <?php require_once __DIR__ . '/../layouts/scripts.php'; ?>
-

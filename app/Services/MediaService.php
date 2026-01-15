@@ -2,7 +2,6 @@
 namespace App\Services;
 
 use App\Repositories\MediaRepository;
-use App\Core\Validator;
 use Exception;
 
 class MediaService
@@ -24,23 +23,25 @@ class MediaService
 
     public function upload(array $file): void
     {
+        if ($file['error'] !== UPLOAD_ERR_OK) {
+            throw new Exception('Upload failed');
+        }
+
+        if (!in_array($file['type'], $this->allowedTypes, true)) {
+            throw new Exception('Invalid file type');
+        }
+
+        if ($file['size'] > $this->maxSize) {
+            throw new Exception('File too large');
+        }
+
         $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
         $uniqueName = uniqid('media_', true) . '.' . $extension;
 
-        /**
-         * Resolve public path safely
-         * If DOCUMENT_ROOT already points to /public, don't add it again
-         */
+    
         $documentRoot = rtrim($_SERVER['DOCUMENT_ROOT'], '/');
-
-        if (str_ends_with($documentRoot, '/public')) {
-            $publicPath = $documentRoot;
-        } else {
-            $publicPath = $documentRoot . '/public';
-        }
-
-        $storagePath = 'uploads/media/';
-        $fullPath = $publicPath . '/' . $storagePath;
+        $storagePath = 'uploads/media/'; 
+        $fullPath = $documentRoot . '/' . $storagePath;
 
         if (!is_dir($fullPath)) {
             mkdir($fullPath, 0777, true);
@@ -50,20 +51,13 @@ class MediaService
             throw new Exception('Failed to save file');
         }
 
-        /* type mapping (ENUM safe) */
+      
         $mime = $file['type'];
-
-        if (str_starts_with($mime, 'image/')) {
-            $type = 'image';
-        } elseif ($mime === 'application/pdf') {
-            $type = 'pdf';
-        } else {
-            $type = 'other';
-        }
+        $type = str_starts_with($mime, 'image/') ? 'image' : ($mime === 'application/pdf' ? 'pdf' : 'other');
 
         $id = $this->repo->create([
             'name' => $uniqueName,
-            'path' => $storagePath . $uniqueName, // DB always relative
+            'path' => $storagePath . $uniqueName,
             'type' => $type,
             'created' => date('Y-m-d H:i:s'),
             'updated' => date('Y-m-d H:i:s'),
@@ -73,8 +67,6 @@ class MediaService
         if (!$id) {
             throw new Exception('Failed to insert media into DB');
         }
-
-
     }
 
     public function delete(int $id): void
@@ -82,11 +74,32 @@ class MediaService
         $media = $this->repo->find($id);
         if (!$media) throw new Exception('Media not found');
 
-        $filePath = $_SERVER['DOCUMENT_ROOT'] . $media['path'];
+       
+        $filePath = rtrim($_SERVER['DOCUMENT_ROOT'], '/') . '/' . ltrim($media['path'], '/');
         if (file_exists($filePath)) {
             unlink($filePath);
         }
 
-        $this->repo->softDelete($id);
+        $deleted = $this->repo->softDelete($id);
+        if (!$deleted) {
+            throw new Exception('Failed to mark media as deleted in DB');
+        }
     }
+            public function forceDelete(int $id): void
+        {
+            $media = $this->repo->find($id);
+            if (!$media) {
+                throw new Exception('Media not found');
+            }
+
+            // delete file if exists
+            $filePath = $_SERVER['DOCUMENT_ROOT'] . '/' . $media['path'];
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+
+            // HARD DELETE
+            $this->repo->delete($id);
+        }
+
 }

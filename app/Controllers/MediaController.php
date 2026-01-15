@@ -5,13 +5,11 @@ use App\Core\Controller;
 use App\Middleware\AuthMiddleware;
 use App\Services\MediaService;
 use App\Config\Permissions;
-
 use Exception;
-
 
 class MediaController extends Controller
 {
-      private MediaService $service;
+    private MediaService $service;
 
     public function __construct()
     {
@@ -56,4 +54,14 @@ class MediaController extends Controller
         header('Location: /media');
         exit;
     }
+            public function forceDelete(int $id): void
+        {
+            AuthMiddleware::protectPermission(Permissions::MEDIA_DELETE);
+
+            $this->service->forceDelete($id);
+
+            header('Location: /media');
+            exit;
+        }
+
 }

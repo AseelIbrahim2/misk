@@ -36,6 +36,11 @@
   <style>
 
 
+/* prevent click on soft deleted items */
+.disabled-link {
+    pointer-events: none;
+}
+
 
 .dataTables_wrapper .dataTables_filter label {
   float: right !important;
