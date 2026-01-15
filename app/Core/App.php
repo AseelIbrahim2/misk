@@ -3,67 +3,69 @@
 namespace App\Core;
 
 // Main application class
-// Responsible for routing the request
+// Handles routing and request dispatching
 class App {
 
-    // Default controller name
+    // Default controller if none provided in URL
     protected $controller = 'HomeController';
 
-    // Default method name
+    // Default method if none provided in URL
     protected $method = 'index';
 
-    // URL parameters array
+    // Parameters extracted from URL
     protected $params = [];
 
-    // App constructor runs on every request
+    // Constructor runs on every request
     public function __construct() {
 
-        // Parse URL and return it as array
+        // Parse URL into array parts
         $url = $this->parseUrl();
+        
 
         // Check if controller name exists in URL
         if (!empty($url[0])) {
 
             // Format controller name
-            // Example: users → UsersController
+            // Example: news → NewsController
             $controllerName = ucfirst(strtolower($url[0])) . 'Controller';
 
             // Check if controller file exists
             if (file_exists('../app/Controllers/' . $controllerName . '.php')) {
 
-                // Set controller name
+                // Set controller
                 $this->controller = $controllerName;
 
-                // Remove controller from URL array
+                // Remove controller part from URL
                 unset($url[0]);
             }
         }
 
-        // Build full controller class name with namespace
+        // Build full controller class with namespace
         $controllerClass = "App\\Controllers\\" . $this->controller;
 
-        // Check if controller class exists
+        // Ensure controller class exists
         if (class_exists($controllerClass)) {
 
-            // Create controller object
+            // Instantiate controller
             $this->controller = new $controllerClass();
         } else {
 
-            // Throw error if controller not found
+            // Stop execution if controller not found
             throw new \Exception("Controller $controllerClass not found");
         }
 
-        // Check if method exists in URL
+        // Check if method exists in URL and controller
         if (!empty($url[1]) && method_exists($this->controller, $url[1])) {
 
             // Set method name
             $this->method = $url[1];
 
-            // Remove method from URL array
+            // Remove method from URL
             unset($url[1]);
         }
 
-        // Remaining URL values are parameters
+
+        // Remaining URL parts are parameters
         $this->params = $url ? array_values($url) : [];
 
         // Call controller method with parameters
@@ -71,25 +73,27 @@ class App {
             [$this->controller, $this->method],
             $this->params
         );
+
+        
     }
 
-    // Parse URL from GET request
+    // Parse URL from query string
     public function parseUrl() {
 
-        // Check if URL exists in query string
+        // Check if URL parameter exists
         if (isset($_GET['url'])) {
 
-            // Remove last slash from URL
+            // Remove trailing slash
             $url = rtrim($_GET['url'], '/');
 
             // Sanitize URL to prevent attacks
             $url = filter_var($url, FILTER_SANITIZE_URL);
 
-            // Split URL into array by /
+            // Split URL into array
             return explode('/', $url);
         }
 
-        // Return empty array if no URL provided
+        // Return empty array if no URL
         return [];
     }
 }

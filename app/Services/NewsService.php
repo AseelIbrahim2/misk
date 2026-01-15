@@ -45,35 +45,37 @@ class NewsService
     public function create(array $data): void
     {
         AuthMiddleware::protectPermission(Permissions::CREATE_NEWS);
+ 
 
         $validator = new Validator();
 
-        $clean = [
-            'title'       => $validator->sanitize($data['title'] ?? ''),
-            'description' => $validator->sanitize($data['description'] ?? ''),
-            'content'     => $validator->sanitize($data['content'] ?? ''),
-            'status'      => (int)($data['status'] ?? 0),
-            'is_deleted'  => (int)($data['is_deleted'] ?? 0),
-            'user_id'     => $_SESSION['user']['id'],
-            'created'     => date('Y-m-d H:i:s'),
-            'updated'     => date('Y-m-d H:i:s'),
-        ];
+          $clean = [
+        'title'       => $validator->sanitize($data['title'] ?? ''),
+        'description' => $validator->sanitize($data['description'] ?? ''),
+        'content'     => $validator->sanitize($data['content'] ?? ''),
+        'status'      => (int)($data['status'] ?? 0),
+        'is_deleted'  => (int)($data['is_deleted'] ?? 0),
+        'user_id'     => $_SESSION['user']['id'],
+        'media_id'    => $data['media_id'] ?? null,
+        'created'     => date('Y-m-d H:i:s'),
+        'updated'     => date('Y-m-d H:i:s'),
+    ];
 
-    
+
+
         // Title rules
-        $validator->required('title', $clean['title']);      
-        $validator->min('title', $clean['title'], 3);       
+        $validator->required('title', $clean['title']);           
         $validator->max('title', $clean['title'], 255);     
 
         // Description rules
+        $validator->required('description', $clean['description']); 
         $validator->max('description', $clean['description'], 500); 
-        $validator->min('description', $clean['description'], 3);  
+
  
 
         // Content rules
         $validator->required('content', $clean['content']);  
-        $validator->min('content', $clean['content'], 100);  
-        $validator->max('content', $clean['content'], 5000);
+
 
         // Status & Deleted rules
         $validator->in('status', $clean['status'], [0, 1, 2]);       
@@ -115,23 +117,23 @@ class NewsService
 
     
         // Title rules
-        $validator->required('title', $clean['title']);      
-        $validator->min('title', $clean['title'], 3);       
+        $validator->required('title', $clean['title']);           
         $validator->max('title', $clean['title'], 255);     
 
         // Description rules
+        $validator->required('description', $clean['description']); 
         $validator->max('description', $clean['description'], 500); 
-        $validator->min('description', $clean['description'], 3);  
+
  
 
         // Content rules
         $validator->required('content', $clean['content']);  
-        $validator->min('content', $clean['content'], 100);  
-        $validator->max('content', $clean['content'], 5000);
+
 
         // Status & Deleted rules
         $validator->in('status', $clean['status'], [0, 1, 2]);       
         $validator->in('is_deleted', $clean['is_deleted'], [0, 1]);  
+
 
 
         if ($validator->fails()) {

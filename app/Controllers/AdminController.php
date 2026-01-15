@@ -7,6 +7,7 @@ use App\Services\UserService;
 use App\Middleware\AuthMiddleware;
 use App\Middleware\CsrfMiddleware;
 
+
 use App\Config\Permissions;
 
 use Exception;
@@ -14,11 +15,13 @@ use Exception;
 class AdminController extends Controller
 {
     protected UserService $users;
-    
+
+
 
     public function __construct()
     {
         $this->users = new UserService();
+
         
     }
 

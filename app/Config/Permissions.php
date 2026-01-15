@@ -11,4 +11,8 @@ class Permissions
     public const CREATE_NEWS    = 'create_news';
     public const EDIT_NEWS      = 'edit_news';
     public const DELETE_NEWS    = 'delete_news';
+
+    public const MEDIA_VIEW = 'media_view';
+    public const MEDIA_CREATE = 'media_create';
+    public const MEDIA_DELETE = 'media_delete';
 }

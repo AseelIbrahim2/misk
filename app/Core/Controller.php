@@ -2,52 +2,46 @@
 
 namespace App\Core;
 
-// Abstract base controller
+// Base abstract controller
+// All controllers must extend this class
 abstract class Controller
 {
-    // Load a model dynamically
+    // Load a model dynamically using Composer autoload
     public function model(string $modelName): ?object
     {
-        // Build full path of the model file
-        $modelFile = __DIR__ . '/../Models/' . $modelName . '.php';
+        // Build full class name with namespace
+        $fullClass = "App\\Models\\" . $modelName;
 
-        // Check if model file exists
-        // Check if class is not already loaded
-        if (file_exists($modelFile) && class_exists($modelName, false) === false) {
+        // Check if the class exists (Composer autoload will handle loading)
+        if (class_exists($fullClass)) {
 
-            // Include the model file
-            require_once $modelFile;
-
-            // Check if model class exists
-            if (class_exists($modelName)) {
-
-                // Create and return model instance
-                return new $modelName();
-            }
+            // Instantiate and return the model
+            return new $fullClass();
         }
 
-        // Return null if model not found
-        return null;
+        // Stop execution if model class not found
+        throw new \Exception("Model '$fullClass' not found.");
     }
 
     // Load a view file and pass data to it
     public function view(string $viewName, array $data = []): void
     {
-        // Build full path of the view file
+        // Build full path to view file
         $viewFile = __DIR__ . '/../Views/' . $viewName . '.php';
 
         // Check if view file exists
         if (file_exists($viewFile)) {
 
-            // Convert array keys to variables
+            // Convert array keys to variables for easy access in the view
             extract($data);
 
-            // Include the view file
-            require_once $viewFile;
+            // Include the view file to render it
+            require $viewFile;
+
         } else {
 
-            // Stop execution if view not found
-            die("View '$viewName' not found.");
+            // Stop execution if view file not found
+            throw new \Exception("View '$viewName' not found.");
         }
     }
 }

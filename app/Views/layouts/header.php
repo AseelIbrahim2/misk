@@ -30,6 +30,8 @@
   <link rel="stylesheet" href="/assets/adminlte/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="/assets/adminlte/plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="/assets/adminlte/plugins/ekko-lightbox/ekko-lightbox.css">
+
 
   <style>
 

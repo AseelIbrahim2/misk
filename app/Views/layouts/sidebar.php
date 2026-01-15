@@ -57,6 +57,13 @@
                   <p>News</p>
               </a>
           </li>
+            <li class="nav-item">
+              <a href="media/index"
+                class="nav-link <?= str_starts_with($currentUri, '/media/index') ? 'active' : '' ?>">
+                 <i class="nav-icon far fa-image"></i>
+                  <p>Media</p>
+              </a>
+          </li>
 
         </ul>
       </nav>

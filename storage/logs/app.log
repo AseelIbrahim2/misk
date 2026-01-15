@@ -100,3 +100,292 @@ Stack trace:
 #7 /var/www/html/public/index.php(18): App\Core\App->__construct()
 #8 {main}
 
+[2026-01-14 12:51:58] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:19
+Stack trace:
+#0 /var/www/html/app/Controllers/NewsController.php(16): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Core/App.php(49): App\Controllers\NewsController->__construct()
+#2 /var/www/html/public/index.php(18): App\Core\App->__construct()
+#3 {main}
+
+[2026-01-14 13:05:42] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:19
+Stack trace:
+#0 /var/www/html/app/Controllers/AuthController.php(128): App\Middleware\AuthMiddleware::protect()
+#1 [internal function]: App\Controllers\AuthController->dashboard()
+#2 /var/www/html/app/Core/App.php(70): call_user_func_array()
+#3 /var/www/html/public/index.php(18): App\Core\App->__construct()
+#4 {main}
+
+[2026-01-14 23:42:00] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_deleted' in 'WHERE' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(121): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(17): App\Core\Model->getWhere()
+#3 /var/www/html/app/Services/MediaService.php(22): App\Repositories\MediaRepository->all()
+#4 /var/www/html/app/Controllers/AdminController.php(32): App\Services\MediaService->list()
+#5 [internal function]: App\Controllers\AdminController->dashboard()
+#6 /var/www/html/app/Core/App.php(70): call_user_func_array()
+#7 /var/www/html/public/index.php(18): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-14 23:42:03] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_deleted' in 'WHERE' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(121): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(17): App\Core\Model->getWhere()
+#3 /var/www/html/app/Services/MediaService.php(22): App\Repositories\MediaRepository->all()
+#4 /var/www/html/app/Controllers/AdminController.php(32): App\Services\MediaService->list()
+#5 [internal function]: App\Controllers\AdminController->dashboard()
+#6 /var/www/html/app/Core/App.php(70): call_user_func_array()
+#7 /var/www/html/public/index.php(18): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-14 23:42:03] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_deleted' in 'WHERE' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(121): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(17): App\Core\Model->getWhere()
+#3 /var/www/html/app/Services/MediaService.php(22): App\Repositories\MediaRepository->all()
+#4 /var/www/html/app/Controllers/AdminController.php(32): App\Services\MediaService->list()
+#5 [internal function]: App\Controllers\AdminController->dashboard()
+#6 /var/www/html/app/Core/App.php(70): call_user_func_array()
+#7 /var/www/html/public/index.php(18): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-14 23:42:04] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_deleted' in 'WHERE' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(121): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(17): App\Core\Model->getWhere()
+#3 /var/www/html/app/Services/MediaService.php(22): App\Repositories\MediaRepository->all()
+#4 /var/www/html/app/Controllers/AdminController.php(32): App\Services\MediaService->list()
+#5 [internal function]: App\Controllers\AdminController->dashboard()
+#6 /var/www/html/app/Core/App.php(70): call_user_func_array()
+#7 /var/www/html/public/index.php(18): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-14 23:42:12] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_deleted' in 'WHERE' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(121): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(17): App\Core\Model->getWhere()
+#3 /var/www/html/app/Services/MediaService.php(22): App\Repositories\MediaRepository->all()
+#4 /var/www/html/app/Controllers/AdminController.php(32): App\Services\MediaService->list()
+#5 [internal function]: App\Controllers\AdminController->dashboard()
+#6 /var/www/html/app/Core/App.php(70): call_user_func_array()
+#7 /var/www/html/public/index.php(18): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-14 23:42:14] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_deleted' in 'WHERE' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(121): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(17): App\Core\Model->getWhere()
+#3 /var/www/html/app/Services/MediaService.php(22): App\Repositories\MediaRepository->all()
+#4 /var/www/html/app/Controllers/AdminController.php(32): App\Services\MediaService->list()
+#5 [internal function]: App\Controllers\AdminController->dashboard()
+#6 /var/www/html/app/Core/App.php(70): call_user_func_array()
+#7 /var/www/html/public/index.php(18): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-14 23:42:18] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_deleted' in 'WHERE' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(121): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(17): App\Core\Model->getWhere()
+#3 /var/www/html/app/Services/MediaService.php(22): App\Repositories\MediaRepository->all()
+#4 /var/www/html/app/Controllers/AdminController.php(32): App\Services\MediaService->list()
+#5 [internal function]: App\Controllers\AdminController->dashboard()
+#6 /var/www/html/app/Core/App.php(70): call_user_func_array()
+#7 /var/www/html/public/index.php(18): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-14 23:42:18] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_deleted' in 'WHERE' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(121): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(17): App\Core\Model->getWhere()
+#3 /var/www/html/app/Services/MediaService.php(22): App\Repositories\MediaRepository->all()
+#4 /var/www/html/app/Controllers/AdminController.php(32): App\Services\MediaService->list()
+#5 [internal function]: App\Controllers\AdminController->dashboard()
+#6 /var/www/html/app/Core/App.php(70): call_user_func_array()
+#7 /var/www/html/public/index.php(18): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-14 23:43:32] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_deleted' in 'WHERE' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(121): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(17): App\Core\Model->getWhere()
+#3 /var/www/html/app/Services/MediaService.php(22): App\Repositories\MediaRepository->all()
+#4 /var/www/html/app/Controllers/AdminController.php(32): App\Services\MediaService->list()
+#5 [internal function]: App\Controllers\AdminController->dashboard()
+#6 /var/www/html/app/Core/App.php(70): call_user_func_array()
+#7 /var/www/html/public/index.php(18): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-14 23:43:35] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_deleted' in 'WHERE' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(121): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(17): App\Core\Model->getWhere()
+#3 /var/www/html/app/Services/MediaService.php(22): App\Repositories\MediaRepository->all()
+#4 /var/www/html/app/Controllers/AdminController.php(32): App\Services\MediaService->list()
+#5 [internal function]: App\Controllers\AdminController->dashboard()
+#6 /var/www/html/app/Core/App.php(70): call_user_func_array()
+#7 /var/www/html/public/index.php(18): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-15 00:20:02] Invalid CSRF token in /var/www/html/app/Middleware/CsrfMiddleware.php:32
+Stack trace:
+#0 /var/www/html/app/Controllers/AuthController.php(32): App\Middleware\CsrfMiddleware::protect()
+#1 [internal function]: App\Controllers\AuthController->login()
+#2 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#3 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#4 {main}
+
+[2026-01-15 00:31:39] SQLSTATE[01000]: Warning: 1265 Data truncated for column 'type' at row 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(22): App\Core\Model->create()
+#3 /var/www/html/app/Services/MediaService.php(53): App\Repositories\MediaRepository->create()
+#4 /var/www/html/app/Controllers/MediaController.php(35): App\Services\MediaService->upload()
+#5 [internal function]: App\Controllers\MediaController->upload()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-15 00:40:05] SQLSTATE[01000]: Warning: 1265 Data truncated for column 'type' at row 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(22): App\Core\Model->create()
+#3 /var/www/html/app/Services/MediaService.php(53): App\Repositories\MediaRepository->create()
+#4 /var/www/html/app/Controllers/MediaController.php(35): App\Services\MediaService->upload()
+#5 [internal function]: App\Controllers\MediaController->upload()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-15 00:48:31] SQLSTATE[01000]: Warning: 1265 Data truncated for column 'type' at row 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(22): App\Core\Model->create()
+#3 /var/www/html/app/Services/MediaService.php(53): App\Repositories\MediaRepository->create()
+#4 /var/www/html/app/Controllers/MediaController.php(35): App\Services\MediaService->upload()
+#5 [internal function]: App\Controllers\MediaController->upload()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-15 00:48:44] SQLSTATE[01000]: Warning: 1265 Data truncated for column 'type' at row 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(22): App\Core\Model->create()
+#3 /var/www/html/app/Services/MediaService.php(53): App\Repositories\MediaRepository->create()
+#4 /var/www/html/app/Controllers/MediaController.php(35): App\Services\MediaService->upload()
+#5 [internal function]: App\Controllers\MediaController->upload()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-15 10:35:59] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:19
+Stack trace:
+#0 /var/www/html/app/Controllers/NewsController.php(16): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Core/App.php(50): App\Controllers\NewsController->__construct()
+#2 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#3 {main}
+
+[2026-01-15 10:36:02] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:19
+Stack trace:
+#0 /var/www/html/app/Controllers/NewsController.php(16): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Core/App.php(50): App\Controllers\NewsController->__construct()
+#2 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#3 {main}
+
+[2026-01-15 10:59:17] SQLSTATE[01000]: Warning: 1265 Data truncated for column 'type' at row 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(22): App\Core\Model->create()
+#3 /var/www/html/app/Services/MediaService.php(53): App\Repositories\MediaRepository->create()
+#4 /var/www/html/app/Controllers/MediaController.php(35): App\Services\MediaService->upload()
+#5 [internal function]: App\Controllers\MediaController->upload()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-15 11:07:02] SQLSTATE[01000]: Warning: 1265 Data truncated for column 'type' at row 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(22): App\Core\Model->create()
+#3 /var/www/html/app/Services/MediaService.php(53): App\Repositories\MediaRepository->create()
+#4 /var/www/html/app/Controllers/MediaController.php(35): App\Services\MediaService->upload()
+#5 [internal function]: App\Controllers\MediaController->upload()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-15 11:07:46] SQLSTATE[01000]: Warning: 1265 Data truncated for column 'type' at row 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(22): App\Core\Model->create()
+#3 /var/www/html/app/Services/MediaService.php(53): App\Repositories\MediaRepository->create()
+#4 /var/www/html/app/Controllers/MediaController.php(35): App\Services\MediaService->upload()
+#5 [internal function]: App\Controllers\MediaController->upload()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-15 11:08:05] SQLSTATE[01000]: Warning: 1265 Data truncated for column 'type' at row 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(22): App\Core\Model->create()
+#3 /var/www/html/app/Services/MediaService.php(53): App\Repositories\MediaRepository->create()
+#4 /var/www/html/app/Controllers/MediaController.php(35): App\Services\MediaService->upload()
+#5 [internal function]: App\Controllers\MediaController->upload()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-15 11:08:14] SQLSTATE[01000]: Warning: 1265 Data truncated for column 'type' at row 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(22): App\Core\Model->create()
+#3 /var/www/html/app/Services/MediaService.php(53): App\Repositories\MediaRepository->create()
+#4 /var/www/html/app/Controllers/MediaController.php(35): App\Services\MediaService->upload()
+#5 [internal function]: App\Controllers\MediaController->upload()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-15 11:08:34] SQLSTATE[01000]: Warning: 1265 Data truncated for column 'type' at row 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(22): App\Core\Model->create()
+#3 /var/www/html/app/Services/MediaService.php(53): App\Repositories\MediaRepository->create()
+#4 /var/www/html/app/Controllers/MediaController.php(35): App\Services\MediaService->upload()
+#5 [internal function]: App\Controllers\MediaController->upload()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-15 11:08:38] SQLSTATE[01000]: Warning: 1265 Data truncated for column 'type' at row 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MediaRepository.php(22): App\Core\Model->create()
+#3 /var/www/html/app/Services/MediaService.php(53): App\Repositories\MediaRepository->create()
+#4 /var/www/html/app/Controllers/MediaController.php(35): App\Services\MediaService->upload()
+#5 [internal function]: App\Controllers\MediaController->upload()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
