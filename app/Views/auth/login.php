@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/../layouts/auth-header.php'; ?>
+<?php require __DIR__ . '/layouts/auth-header.php'; ?>
 
 <div class="login-box">
   <div class="card card-outline card-primary">
@@ -82,5 +82,5 @@
 </div>
 
 
-<?php require __DIR__ . '/../layouts/auth-footer.php'; ?>
-<?php require __DIR__ . '/../layouts/scripts.php'; ?>
+<?php require __DIR__ . '/layouts/auth-footer.php'; ?>
+

@@ -85,7 +85,13 @@
                 <p>Slider</p>
               </a>
             </li>
-
+            <li class="nav-item">
+              <a href="/statistic"
+                class="nav-link <?= str_starts_with($currentUri, '/statistic') ? 'active' : '' ?>">
+                <i class="nav-icon fas fa-chart-bar"></i> 
+                <p>Statistics</p>
+              </a>
+            </li>
 
           </ul>
         </nav>

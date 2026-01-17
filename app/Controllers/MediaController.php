@@ -21,7 +21,7 @@ class MediaController extends Controller
     {
         AuthMiddleware::protectPermission(Permissions::MEDIA_VIEW);
         $media = $this->service->list();
-        $this->view('media/index', compact('media'));
+        $this->view('admin/media/index', compact('media'));
     }
 
     public function upload(): void
@@ -38,7 +38,7 @@ class MediaController extends Controller
             }
         }
 
-        $this->view('media/upload');
+        $this->view('admin/media/upload');
     }
 
     public function delete(int $id): void

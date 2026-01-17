@@ -108,24 +108,25 @@ abstract class Model
        GENERIC HELPERS
     ========================= */
 
-    // Find record by column
-    public function findBy(string $column, mixed $value): ?array
-    {
-        $sql = "SELECT * FROM {$this->table} WHERE {$column} = :value LIMIT 1";
-        return $this->run($sql, ['value' => $value])->fetch(PDO::FETCH_ASSOC) ?: null;
-    }
+        // Find record by column
+        public function findBy(string $column, mixed $value): ?array
+        {
+            $sql = "SELECT * FROM {$this->table} WHERE `{$column}` = :value LIMIT 1";
+            return $this->run($sql, ['value' => $value])->fetch(PDO::FETCH_ASSOC) ?: null;
+        }
 
-    // Get multiple records by column
-    public function getWhere(string $column, mixed $value): array
-    {
-        $sql = "SELECT * FROM {$this->table} WHERE {$column} = :value";
-        return $this->run($sql, ['value' => $value])->fetchAll(PDO::FETCH_ASSOC);
-    }
+        // Get multiple records by column
+        public function getWhere(string $column, mixed $value): array
+        {
+            $sql = "SELECT * FROM {$this->table} WHERE `{$column}` = :value";
+            return $this->run($sql, ['value' => $value])->fetchAll(PDO::FETCH_ASSOC);
+        }
 
-    // Check if record exists
-    public function exists(string $column, mixed $value): bool
-    {
-        $sql = "SELECT 1 FROM {$this->table} WHERE {$column} = :value LIMIT 1";
-        return (bool)$this->run($sql, ['value' => $value])->fetchColumn();
-    }
+        // Check if record exists
+        public function exists(string $column, mixed $value): bool
+        {
+            $sql = "SELECT 1 FROM {$this->table} WHERE `{$column}` = :value LIMIT 1";
+            return (bool)$this->run($sql, ['value' => $value])->fetchColumn();
+        }
+
 }

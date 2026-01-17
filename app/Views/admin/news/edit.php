@@ -2,6 +2,8 @@
 <?php require_once __DIR__ . '/../layouts/navbar.php'; ?>
 <?php require_once __DIR__ . '/../layouts/sidebar.php'; ?>
 
+
+
 <div class="content-wrapper">
     <section class="content-header">
         <h1>Edit News</h1>

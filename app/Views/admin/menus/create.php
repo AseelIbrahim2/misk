@@ -1,6 +1,6 @@
-<?php require __DIR__ . '/../../layouts/header.php'; ?>
-<?php require __DIR__ . '/../../layouts/navbar.php'; ?>
-<?php require __DIR__ . '/../../layouts/sidebar.php'; ?>
+<?php require __DIR__ . '/../layouts/header.php'; ?>
+<?php require __DIR__ . '/../layouts/navbar.php'; ?>
+<?php require __DIR__ . '/../layouts/sidebar.php'; ?>
 
 <div class="content-wrapper">
     <section class="content-header"><h1>Create Menu</h1></section>
@@ -39,5 +39,6 @@
 </div>
 
 <?php unset($_SESSION['old']); ?>
-<?php require __DIR__ . '/../../layouts/footer.php'; ?>
-<?php require __DIR__ . '/../../layouts/scripts.php'; ?>
+
+<?php require __DIR__ . '/../layouts/footer.php'; ?>
+<?php require __DIR__ . '/../layouts/scripts.php'; ?>

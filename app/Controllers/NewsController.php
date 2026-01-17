@@ -19,13 +19,13 @@ class NewsController extends Controller
     public function index(): void
     {
         $news = $this->service->list();
-        $this->view('news/index', compact('news'));
+        $this->view('admin/news/index', compact('news'));
     }
 
     public function create(): void
     {
         AuthMiddleware::protectPermission(Permissions::CREATE_NEWS);
-        $this->view('news/create');
+        $this->view('admin/news/create');
     }
 
     public function store(): void
@@ -53,11 +53,11 @@ class NewsController extends Controller
 
         if (!$news) {
             $_SESSION['error'] = "News not found!";
-            header('Location: /news/index');
+            header('Location: admin/news/edit');
             exit;
         }
 
-        $this->view('news/edit', compact('news'));
+        $this->view('admin/news/edit', compact('news'));
     }
 
     public function update(int $id): void

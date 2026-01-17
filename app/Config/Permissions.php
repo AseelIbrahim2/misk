@@ -19,4 +19,7 @@ class Permissions
 
     public const MANAGE_SLIDERS = 'manage_sliders';
 
+    public const MANAGE_STATISTICS = 'manage_statistics';
+
+
 }

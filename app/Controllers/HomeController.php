@@ -3,7 +3,7 @@ namespace App\Controllers;
 use App\Core\Controller;
 
 class HomeController extends Controller {
-    public function index($slug) {
+    public function index() {
         echo "Home page";
        
     }
