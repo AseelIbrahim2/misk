@@ -62,6 +62,7 @@
             </div>
 
             <button class="btn btn-success">Create User</button>
+            <a href="/admin/users" class="btn btn-secondary">Cancel</a>
         </form>
 
       </div>

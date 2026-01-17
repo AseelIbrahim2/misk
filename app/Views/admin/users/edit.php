@@ -63,6 +63,8 @@
                 </div>
 
                 <button class="btn btn-primary">Update</button>
+                 <a href="/admin/users" class="btn btn-secondary">Cancel</a>
+                
             </form>
 
       </div>

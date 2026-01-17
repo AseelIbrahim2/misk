@@ -389,3 +389,225 @@ Stack trace:
 #7 /var/www/html/public/index.php(20): App\Core\App->__construct()
 #8 {main}
 
+[2026-01-16 20:29:49] Access denied: Permission required -> manage_menus in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Controllers/MenusController.php(15): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Core/App.php(50): App\Controllers\MenusController->__construct()
+#2 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#3 {main}
+
+[2026-01-16 20:32:32] Access denied: Permission required -> manage_menus in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Controllers/MenusController.php(15): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Core/App.php(50): App\Controllers\MenusController->__construct()
+#2 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#3 {main}
+
+[2026-01-16 20:32:34] Access denied: Permission required -> manage_menus in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Controllers/MenusController.php(15): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Core/App.php(50): App\Controllers\MenusController->__construct()
+#2 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#3 {main}
+
+[2026-01-16 20:32:36] Access denied: Permission required -> manage_menus in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Controllers/MenusController.php(15): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Core/App.php(50): App\Controllers\MenusController->__construct()
+#2 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#3 {main}
+
+[2026-01-16 20:38:53] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'INSERT INTO' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MenuRepository.php(31): App\Core\Model->create()
+#3 /var/www/html/app/Services/MenuService.php(31): App\Repositories\MenuRepository->create()
+#4 /var/www/html/app/Controllers/MenusController.php(33): App\Services\MenuService->create()
+#5 [internal function]: App\Controllers\MenusController->store()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-16 20:44:54] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'INSERT INTO' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MenuRepository.php(31): App\Core\Model->create()
+#3 /var/www/html/app/Services/MenuService.php(31): App\Repositories\MenuRepository->create()
+#4 /var/www/html/app/Controllers/MenusController.php(33): App\Services\MenuService->create()
+#5 [internal function]: App\Controllers\MenusController->store()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-16 20:46:09] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'INSERT INTO' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MenuRepository.php(31): App\Core\Model->create()
+#3 /var/www/html/app/Services/MenuService.php(31): App\Repositories\MenuRepository->create()
+#4 /var/www/html/app/Controllers/MenusController.php(33): App\Services\MenuService->create()
+#5 [internal function]: App\Controllers\MenusController->store()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-16 20:47:37] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'INSERT INTO' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MenuRepository.php(31): App\Core\Model->create()
+#3 /var/www/html/app/Services/MenuService.php(31): App\Repositories\MenuRepository->create()
+#4 /var/www/html/app/Controllers/MenusController.php(33): App\Services\MenuService->create()
+#5 [internal function]: App\Controllers\MenusController->store()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-16 21:03:26] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'SET' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(93): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MenuRepository.php(36): App\Core\Model->update()
+#3 /var/www/html/app/Services/MenuService.php(41): App\Repositories\MenuRepository->update()
+#4 /var/www/html/app/Controllers/MenusController.php(62): App\Services\MenuService->update()
+#5 [internal function]: App\Controllers\MenusController->update()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-16 21:04:06] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'INSERT INTO' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MenuRepository.php(31): App\Core\Model->create()
+#3 /var/www/html/app/Services/MenuService.php(31): App\Repositories\MenuRepository->create()
+#4 /var/www/html/app/Controllers/MenusController.php(38): App\Services\MenuService->create()
+#5 [internal function]: App\Controllers\MenusController->store()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-16 21:05:15] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'SET' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(93): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MenuRepository.php(36): App\Core\Model->update()
+#3 /var/www/html/app/Services/MenuService.php(41): App\Repositories\MenuRepository->update()
+#4 /var/www/html/app/Controllers/MenusController.php(62): App\Services\MenuService->update()
+#5 [internal function]: App\Controllers\MenusController->update()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-16 21:05:33] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'INSERT INTO' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MenuRepository.php(31): App\Core\Model->create()
+#3 /var/www/html/app/Services/MenuService.php(31): App\Repositories\MenuRepository->create()
+#4 /var/www/html/app/Controllers/MenusController.php(38): App\Services\MenuService->create()
+#5 [internal function]: App\Controllers\MenusController->store()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-16 21:08:38] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'SET' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(93): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MenuRepository.php(42): App\Core\Model->update()
+#3 /var/www/html/app/Services/MenuService.php(67): App\Repositories\MenuRepository->update()
+#4 /var/www/html/app/Controllers/MenusController.php(62): App\Services\MenuService->update()
+#5 [internal function]: App\Controllers\MenusController->update()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-16 21:09:21] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'INSERT INTO' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(73): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MenuRepository.php(33): App\Core\Model->create()
+#3 /var/www/html/app/Services/MenuService.php(50): App\Repositories\MenuRepository->create()
+#4 /var/www/html/app/Controllers/MenusController.php(35): App\Services\MenuService->create()
+#5 [internal function]: App\Controllers\MenusController->store()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-16 21:14:48] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'INSERT INTO' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(70): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/MenuRepository.php(33): App\Core\Model->create()
+#3 /var/www/html/app/Services/MenuService.php(50): App\Repositories\MenuRepository->create()
+#4 /var/www/html/app/Controllers/MenusController.php(35): App\Services\MenuService->create()
+#5 [internal function]: App\Controllers\MenusController->store()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-16 23:08:34] Access denied: Permission required -> manage_sliders in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Controllers/SliderController.php(18): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Core/App.php(50): App\Controllers\SliderController->__construct()
+#2 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#3 {main}
+
+[2026-01-16 23:08:39] Access denied: Permission required -> manage_sliders in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Controllers/SliderController.php(18): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Core/App.php(50): App\Controllers\SliderController->__construct()
+#2 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#3 {main}
+
+[2026-01-17 15:09:48] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order,created,updated) VALUES ('test','test','13','0','2026-01-17 15:09:48','...' at line 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(70): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/SliderRepository.php(28): App\Core\Model->create()
+#3 /var/www/html/app/Services/SliderService.php(43): App\Repositories\SliderRepository->create()
+#4 /var/www/html/app/Controllers/SliderController.php(38): App\Services\SliderService->create()
+#5 [internal function]: App\Controllers\SliderController->store()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-17 16:13:23] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order,created,updated) VALUES ('test2','test','15','1','2026-01-17 16:13:23',...' at line 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(70): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/SliderRepository.php(29): App\Core\Model->create()
+#3 /var/www/html/app/Services/SliderService.php(43): App\Repositories\SliderRepository->create()
+#4 /var/www/html/app/Controllers/SliderController.php(52): App\Services\SliderService->create()
+#5 [internal function]: App\Controllers\SliderController->store()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-17 16:13:38] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order = '0',updated = '2026-01-17 16:13:38' WHERE id = '1'' at line 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(90): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/SliderRepository.php(34): App\Core\Model->update()
+#3 /var/www/html/app/Services/SliderService.php(80): App\Repositories\SliderRepository->update()
+#4 /var/www/html/app/Controllers/SliderController.php(70): App\Services\SliderService->update()
+#5 [internal function]: App\Controllers\SliderController->update()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-17 16:13:43] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order = '1',updated = '2026-01-17 16:13:43' WHERE id = '1'' at line 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(90): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/SliderRepository.php(34): App\Core\Model->update()
+#3 /var/www/html/app/Services/SliderService.php(80): App\Repositories\SliderRepository->update()
+#4 /var/www/html/app/Controllers/SliderController.php(70): App\Services\SliderService->update()
+#5 [internal function]: App\Controllers\SliderController->update()
+#6 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+

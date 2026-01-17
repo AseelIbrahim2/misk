@@ -11,8 +11,7 @@
       <p>Welcome <?= htmlspecialchars($username ?? 'Admin') ?></p>
     </div>
   </section>
-<?php var_dump($_SESSION['user']['permissions']);
-?>
+
 
 
 

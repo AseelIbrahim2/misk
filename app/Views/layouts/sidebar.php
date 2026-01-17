@@ -1,6 +1,6 @@
 
 
-
+      <?php $currentUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -17,7 +17,9 @@
           <img src="/assets/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"><?= htmlspecialchars($username ?? 'Admin') ?></a>
+          <a href="#" class="d-block">
+            <?= htmlspecialchars($_SESSION['user']['username'] ?? 'Admin') ?>
+          </a>
         </div>
       </div>
 
@@ -34,39 +36,60 @@
       </div>
 
       <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-                    <a href="/admin/dashboard" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/admin/dashboard') ? 'active' : '' ?>">
-                        <i class="nav-icon fas fa-home"></i>
-                        <p>Dashboard</p>
-                    </a>
-          </li>
-          <li class="nav-item">
-           <a href="/admin/users" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/admin/users') ? 'active' : '' ?>">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>Users</p>
-                    </a>
-          </li>
-          <li class="nav-item">
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+            <li class="nav-item">
+              <a href="/admin/dashboard"
+                class="nav-link <?= str_starts_with($currentUri, '/admin/dashboard') ? 'active' : '' ?>">
+                <i class="nav-icon fas fa-home"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/admin/users"
+                class="nav-link <?= str_starts_with($currentUri, '/admin/users') ? 'active' : '' ?>">
+                <i class="nav-icon fas fa-users"></i>
+                <p>Users</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
               <a href="/news"
                 class="nav-link <?= str_starts_with($currentUri, '/news') ? 'active' : '' ?>">
-                  <i class="nav-icon fas fa-newspaper"></i>
-                  <p>News</p>
+                <i class="nav-icon fas fa-newspaper"></i>
+                <p>News</p>
               </a>
-          </li>
-            <li class="nav-item">
-              <a href="media/index"
-                class="nav-link <?= str_starts_with($currentUri, '/media/index') ? 'active' : '' ?>">
-                 <i class="nav-icon far fa-image"></i>
-                  <p>Media</p>
-              </a>
-          </li>
+            </li>
 
-        </ul>
-      </nav>
+            <li class="nav-item">
+              <a href="/media"
+                class="nav-link <?= str_starts_with($currentUri, '/media') ? 'active' : '' ?>">
+                <i class="nav-icon far fa-image"></i>
+                <p>Media</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/menus"
+                class="nav-link <?= str_starts_with($currentUri, '/menus') ? 'active' : '' ?>">
+                <i class="nav-icon fas fa-list"></i> 
+                <p>Menus</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/slider"
+                class="nav-link <?= str_starts_with($currentUri, '/slider') ? 'active' : '' ?>">
+                <i class="nav-icon fas fa-images"></i> 
+                <p>Slider</p>
+              </a>
+            </li>
+
+
+          </ul>
+        </nav>
+
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

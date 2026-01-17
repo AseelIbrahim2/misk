@@ -30,6 +30,14 @@ class MediaRepository
     {
         return $this->media->delete($id);
     }
+    public function restore(int $id): bool
+{
+    return $this->media->update($id, [
+        'is_deleted' => 0,
+        'updated' => date('Y-m-d H:i:s')
+    ]);
+}
+
 
 
     public function softDelete(int $id): bool

@@ -35,14 +35,11 @@ abstract class Model
 
             // Return executed statement
             return $stmt;
-        } catch (PDOException $e) {
-
-            // Log database error
+        }catch (PDOException $e) {
             Logger::error($e);
-
-            // Throw generic exception
-            throw new Exception('Database operation failed');
+            die('DB ERROR: ' . $e->getMessage()); // Temporary debug
         }
+
     }
 
     /* =========================
@@ -66,10 +63,14 @@ abstract class Model
     // Insert new record
     public function create(array $data): int
     {
-        $columns = implode(',', array_keys($data));
+        $columns = array_keys($data);
+        $columns = array_map(fn($col) => "`$col`", $columns);
+
         $placeholders = ':' . implode(',:', array_keys($data));
 
-        $sql = "INSERT INTO {$this->table} ({$columns}) VALUES ({$placeholders})";
+        $sql = "INSERT INTO {$this->table} (" . implode(',', $columns) . ")
+                VALUES ({$placeholders})";
+
         $this->run($sql, $data);
 
         // Return inserted ID
@@ -83,7 +84,7 @@ abstract class Model
 
         // Build update fields
         foreach ($data as $key => $value) {
-            $fields[] = "{$key} = :{$key}";
+            $fields[] = "`{$key}` = :{$key}";
         }
 
         // Add ID to parameters

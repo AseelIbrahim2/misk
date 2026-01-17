@@ -1,3 +1,22 @@
+<?php
+function renderMenu(array $links, int $parent = 0)
+{
+    echo '<ul class="navbar-nav">';
+    foreach ($links as $link) {
+        if ($link['parent_id'] == $parent && $link['is_active']) {
+            $children = array_filter($links, fn($l) => $l['parent_id'] == $link['id']);
+            echo '<li class="nav-item">';
+            echo '<a href="'.$link['url'].'" target="'.$link['target'].'" class="nav-link">'.$link['title'].'</a>';
+            if ($children) {
+                renderMenu($links, $link['id']); // Recursive call
+            }
+            echo '</li>';
+        }
+    }
+    echo '</ul>';
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -30,6 +49,8 @@
   <link rel="stylesheet" href="/assets/adminlte/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="/assets/adminlte/plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="/assets/adminlte/plugins/ekko-lightbox/ekko-lightbox.css">
+
   <link rel="stylesheet" href="/assets/adminlte/plugins/ekko-lightbox/ekko-lightbox.css">
 
 
@@ -66,6 +87,85 @@
     margin-top: 10px;
 }
 
+
+
+/* Center preview container 22 ميديا  */
+
+.dz-success-mark,
+.dz-error-mark {
+    display: none !important;
+}
+
+
+/* Center preview container */
+.dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Center each preview */
+.dropzone .dz-preview {
+    margin: 15px auto;
+    text-align: center;
+}
+
+/* Make image bigger */
+.dropzone .dz-preview img {
+    width: 220px;       /* حجم الصورة */
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Remove default small thumbnail sizing */
+.dropzone .dz-image {
+    width: auto;
+    height: auto;
+}
+
+/* Hide success/error icons */
+.dz-success-mark,
+.dz-error-mark {
+    display: none !important;
+}
+
+
+----------------------------------------
+/* Soft deleted items */
+.deleted {
+    opacity: 0.5;
+}
+
+/* Disable clicking for soft deleted */
+.disabled-link {
+    pointer-events: none;
+}
+
+/* Media card styling */
+.media-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.media-card:hover {
+    transform: scale(1.05);
+}
+
+.media-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Media actions buttons */
+.media-actions a {
+    margin: 2px 4px;
+}
   </style>
 </head>
 

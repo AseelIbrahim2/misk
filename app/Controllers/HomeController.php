@@ -1,8 +1,11 @@
 <?php
 namespace App\Controllers;
+use App\Core\Controller;
 
-class HomeController {
-    public function index() {
+class HomeController extends Controller {
+    public function index($slug) {
         echo "Home page";
+       
     }
 }
+

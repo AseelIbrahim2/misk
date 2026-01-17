@@ -63,5 +63,19 @@ class MediaController extends Controller
             header('Location: /media');
             exit;
         }
+        public function restore(int $id): void
+{
+    AuthMiddleware::protectPermission(Permissions::MEDIA_DELETE);
+
+    try {
+        $this->service->restore($id);
+    } catch (Exception $e) {
+        $_SESSION['error'] = $e->getMessage();
+    }
+
+    header('Location: /media');
+    exit;
+}
+
 
 }

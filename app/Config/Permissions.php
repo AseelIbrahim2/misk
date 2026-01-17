@@ -15,4 +15,8 @@ class Permissions
     public const MEDIA_VIEW = 'media_view';
     public const MEDIA_CREATE = 'media_create';
     public const MEDIA_DELETE = 'media_delete';
+
+
+    public const MANAGE_SLIDERS = 'manage_sliders';
+
 }

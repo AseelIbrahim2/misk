@@ -159,4 +159,6 @@ class NewsService
 
         $this->repo->delete($id);
     }
+
+
 }

@@ -101,5 +101,21 @@ class MediaService
             // HARD DELETE
             $this->repo->delete($id);
         }
+            public function restore(int $id): void
+            {
+                $media = $this->repo->find($id);
+                if (!$media) {
+                    throw new Exception('Media not found');
+                }
+
+                if ($media['is_deleted'] == 0) {
+                    throw new Exception('Media is not deleted');
+                }
+
+                $restored = $this->repo->restore($id);
+                if (!$restored) {
+                    throw new Exception('Failed to restore media');
+                }
+            }
 
 }
