@@ -114,8 +114,11 @@
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.umd.js"></script>
 
+
+ 
     <!-- Custom JS -->
     <script src="/assets/js/main.js"></script>
+
 
 
 

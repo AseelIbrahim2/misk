@@ -96,22 +96,18 @@ $(document).ready(function(){
 
 /* ================= COUNTERS ================= */
 document.addEventListener("DOMContentLoaded", function() {
-  if (!window.countUp) return; 
+  if (!window.countUp) return;
 
-  const counters = [
-    { id: "counter-buildings", endVal: 9 },
-    { id: "counter-students", endVal: 15 },
-    { id: "counter-activities", endVal: 100, suffix: "+" }
-  ];
+  const elements = document.querySelectorAll('[id^="counter-"]');
+  
+  elements.forEach(el => {
+    const endVal = parseInt(el.dataset.value) || 0;
+    const suffix = el.dataset.suffix || "";
 
-  counters.forEach(counter => {
-    const el = document.getElementById(counter.id);
-    if (!el) return; 
-
-    const countUp = new window.countUp.CountUp(el.id, counter.endVal, {
+    const countUp = new window.countUp.CountUp(el.id, endVal, {
       duration: 2,
       separator: ",",
-      suffix: counter.suffix || ""
+      suffix: suffix
     });
 
     const observer = new IntersectionObserver(entries => {

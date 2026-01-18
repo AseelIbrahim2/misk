@@ -22,6 +22,7 @@ class SiteHomeController extends Controller
         $sliders = $this->sliderService->list();
         $statistics = $this->statService->list(); 
 
+       
         $this->view('site/pages/index', [
             'sliders'    => $sliders,
             'statistics' => $statistics

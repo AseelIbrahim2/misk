@@ -675,3 +675,19 @@ Stack trace:
 #2 /var/www/html/public/index.php(20): App\Core\App->__construct()
 #3 {main}
 
+[2026-01-18 16:54:22] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Controllers/SliderController.php(21): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Core/App.php(55): App\Controllers\SliderController->__construct()
+#3 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#4 {main}
+
+[2026-01-18 17:19:04] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Controllers/StatisticController.php(18): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Core/App.php(55): App\Controllers\StatisticController->__construct()
+#3 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#4 {main}
+
