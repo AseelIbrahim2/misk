@@ -21,5 +21,7 @@ class Permissions
 
     public const MANAGE_STATISTICS = 'manage_statistics';
 
+    const MANAGE_PARTNERS = 'manage_partners';
+
 
 }

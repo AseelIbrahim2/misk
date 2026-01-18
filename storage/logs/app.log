@@ -691,3 +691,59 @@ Stack trace:
 #3 /var/www/html/public/index.php(20): App\Core\App->__construct()
 #4 {main}
 
+[2026-01-18 18:58:24] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Controllers/StatisticController.php(18): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Core/App.php(55): App\Controllers\StatisticController->__construct()
+#3 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#4 {main}
+
+[2026-01-18 19:41:55] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'SET' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(94): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/PartnerRepository.php(40): App\Core\Model->update()
+#3 /var/www/html/app/Services/PartnerService.php(65): App\Repositories\PartnerRepository->update()
+#4 /var/www/html/app/Controllers/PartnersController.php(68): App\Services\PartnerService->update()
+#5 [internal function]: App\Controllers\PartnersController->update()
+#6 /var/www/html/app/Core/App.php(71): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-18 20:55:03] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'SET' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(94): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/PartnerRepository.php(33): App\Core\Model->update()
+#3 /var/www/html/app/Services/PartnerService.php(64): App\Repositories\PartnerRepository->update()
+#4 /var/www/html/app/Controllers/PartnersController.php(72): App\Services\PartnerService->update()
+#5 [internal function]: App\Controllers\PartnersController->update()
+#6 /var/www/html/app/Core/App.php(71): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-18 20:55:32] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'INSERT INTO' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(74): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/PartnerRepository.php(28): App\Core\Model->create()
+#3 /var/www/html/app/Services/PartnerService.php(43): App\Repositories\PartnerRepository->create()
+#4 /var/www/html/app/Controllers/PartnersController.php(41): App\Services\PartnerService->create()
+#5 [internal function]: App\Controllers\PartnersController->store()
+#6 /var/www/html/app/Core/App.php(71): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
+[2026-01-18 20:56:23] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'csrf_token' in 'SET' in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(94): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/PartnerRepository.php(33): App\Core\Model->update()
+#3 /var/www/html/app/Services/PartnerService.php(64): App\Repositories\PartnerRepository->update()
+#4 /var/www/html/app/Controllers/PartnersController.php(72): App\Services\PartnerService->update()
+#5 [internal function]: App\Controllers\PartnersController->update()
+#6 /var/www/html/app/Core/App.php(71): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+

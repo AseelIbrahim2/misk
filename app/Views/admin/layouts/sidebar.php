@@ -92,6 +92,14 @@
                 <p>Statistics</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="/partners"
+                class="nav-link <?= str_starts_with($currentUri, '/partners') ? 'active' : '' ?>">
+                <i class="nav-icon fas fa-user-friends "></i> 
+                <p>Partners</p>
+              </a>
+            </li>
+
 
           </ul>
         </nav>

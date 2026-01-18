@@ -40,6 +40,7 @@
                                     <th>Status</th>
                                     <th>Created</th>
                                     <th>Description</th>
+                                    <th>Media</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
@@ -78,6 +79,14 @@
                                         <td>
                                             <?= htmlspecialchars(mb_strimwidth($item['description'], 0, 50, '...')) ?>
                                         </td>
+                                        <td>
+                                            <?php if (!empty($item['media_path'])): ?>
+                                                <img src="/<?= htmlspecialchars($item['media_path']) ?>" width="50" style="border-radius:6px">
+                                            <?php else: ?>
+                                                N/A
+                                            <?php endif; ?>
+                                        </td>
+
 
                                         <td>
                                             <?php if (!$item['is_deleted']): ?>

@@ -50,6 +50,20 @@
                     <option value="2" <?= (($_SESSION['old']['status'] ?? 0) == 2) ? 'selected' : '' ?>>Archived</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label>Media</label>
+                <select name="media_id" class="form-control">
+                    <option value="">-- Select Media --</option>
+                    <?php foreach ($media as $m): ?>
+                        <?php if($m['type'] === 'image' && $m['is_deleted'] == 0): ?>
+                            <option value="<?= $m['id'] ?>" <?= (($_SESSION['old']['media_id'] ?? '') == $m['id']) ? 'selected' : '' ?>>
+                                <?= htmlspecialchars($m['name']) ?>
+                            </option>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
 
             <div class="form-group">
                 <label>Deleted</label>

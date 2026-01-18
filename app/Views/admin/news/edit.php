@@ -51,6 +51,27 @@
                     <option value="2" <?= (($_SESSION['old']['status'] ?? $news['status']) == 2) ? 'selected' : '' ?>>Archived</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label>Current Media</label><br>
+                <?php if(!empty($news['media_path'])): ?>
+                    <img src="/<?= htmlspecialchars($news['media_path']) ?>" width="120" style="border-radius:6px">
+                <?php endif; ?>
+            </div>
+
+            <div class="form-group">
+                <label>Change Media</label>
+                <select name="media_id" class="form-control">
+                    <option value="">-- Select Media --</option>
+                    <?php foreach ($media as $m): ?>
+                        <?php if($m['type'] === 'image' && $m['is_deleted'] == 0): ?>
+                            <option value="<?= $m['id'] ?>" <?= ($news['media_id'] == $m['id']) ? 'selected' : '' ?>>
+                                <?= htmlspecialchars($m['name']) ?>
+                            </option>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
 
             <div class="form-group">
                 <label>Deleted</label>

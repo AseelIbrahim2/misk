@@ -61,9 +61,11 @@ $(function () {
         info: true,
         lengthChange: true,
         pageLength: 10,
-        responsive: true
+        responsive: true,
+        order: [[4, 'desc']] 
     });
 });
+
 </script>
 
 

@@ -5,27 +5,39 @@ namespace App\Controllers;
 use App\Core\Controller;
 use App\Services\SliderService;
 use App\Services\StatisticService;
+use App\Services\NewsService;
+use App\Services\PartnerService;
 
 class SiteHomeController extends Controller
 {
     private SliderService $sliderService;
     private StatisticService $statService;
+     private PartnerService $partnerService;
 
-    public function __construct()
-    {
-        $this->sliderService = new SliderService();
-        $this->statService   = new StatisticService();
-    }
 
-    public function index(): void
-    {
-        $sliders = $this->sliderService->list();
-        $statistics = $this->statService->list(); 
+private NewsService $newsService;
 
-       
-        $this->view('site/pages/index', [
-            'sliders'    => $sliders,
-            'statistics' => $statistics
-        ]);
-    }
+public function __construct()
+{
+    $this->sliderService  = new SliderService();
+    $this->statService    = new StatisticService();
+    $this->partnerService = new PartnerService();
+    $this->newsService    = new NewsService();
+}
+
+public function index(): void
+{
+    $sliders    = $this->sliderService->list();
+    $statistics = $this->statService->list();
+    $partners   = $this->partnerService->list();
+    $news       = $this->newsService->list(); 
+
+    $this->view('site/pages/index', [
+        'sliders'    => $sliders,
+        'statistics' => $statistics,
+        'partners'   => $partners,
+        'news'       => $news, 
+    ]);
+}
+
 }
