@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, noarchive">
+    <meta name="format-detection" content="telephone=no">
+    <title>Admissions</title>
+
+   
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+ 
+</head>
+<body>
+
+     <!-- header -->
+
+        <header>
+                <!-- Hero Section -->
+            <div class="position-relative w-100 hero-section bg-tertiary-hover">
+
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg navbar-light bg-tertiary-hover m-0 p-0">
+                    <div class="container-fluid px-3 px-md-5 d-flex justify-content-between align-items-center">
+
+                        <!-- Logo -->
+                        <a href="/pages/index.html" class="d-flex align-items-center text-decoration-none">
+                            <img src="/assets/images/logo-colored.svg" alt="Logo" class="logo-img">
+                        </a>
+
+                        <!-- Hamburger Button -->
+                      <div class="burger-container d-flex align-items-center justify-content-center">
+                          <div class="menu-btn-bg"></div>
+                          <button class="btn btn-menu2  text-primary-hover " id="sidebarToggle">
+                            <svg width="48" height="32" viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                                stroke-linecap="butt"> 
+                                <line x1="0.5" y1="6"  x2="23.5" y2="6"></line>
+                                <line x1="0.5" y1="12" x2="23.5" y2="12"></line>
+                                <line x1="0.5" y1="18" x2="23.5" y2="18"></line>
+                            </svg>
+                          </button>
+                      </div>
+
+                    </div>
+                </nav>
+                    <!-- Sidebar -->
+             <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar bg-primary d-flex flex-column" id="mainSidebar">
+
+    <!-- Sidebar Header -->
+    <div class="d-flex justify-content-between align-items-center px-5 py-4">
+      <div class="logo-img1">
+        <img src="/assets/images/logo-colored.svg" class="img-fluid" alt="Logo">
+      </div>
+
+      <button class="btn-close-custom" id="sidebarClose" aria-label="Close menu">
+        <svg width="50" height="50" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-content px-5">
+      <ul class="list-unstyled menu-list">
+
+        <!-- About -->
+        <li class="menu-item">
+          <a href="#"
+             class="menu-link d-flex align-items-center collapsed"
+             data-bs-toggle="collapse"
+             data-bs-target="#about-us">
+            About Us
+          </a>
+
+          <div class="collapse" id="about-us">
+            <ul class="list-unstyled submenu-list ps-3">
+              <li><a href="#" class="submenu-link">Director General Welcome</a></li>
+              <li><a href="#" class="submenu-link">Mission, Vision & Values</a></li>
+              <li><a href="#" class="submenu-link">Vision 2023</a></li>
+              <li><a href="#" class="submenu-link">Student Leaders</a></li>
+              <li><a href="#" class="submenu-link">Campus</a></li>
+              <li><a href="#" class="submenu-link">School Leaders & Governance</a></li>
+              <li><a href="#" class="submenu-link">Our Policies</a></li>
+              <li><a href="#" class="submenu-link">MMISK Schools Academy</a></li>
+              <li><a href="#" class="submenu-link">MISK Foundation</a></li>
+              <li><a href="#" class="submenu-link">News & Gallery</a></li>
+              <li><a href="#" class="submenu-link">Media Center</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Admissions -->
+        <li class="menu-item">
+          <a href="#"
+             class="menu-link d-flex align-items-center collapsed"
+             data-bs-toggle="collapse"
+             data-bs-target="#submenu-admissions">
+            Admissions
+            <span class="arrow-icon ms-2">▼</span>
+          </a>
+
+          <div class="collapse" id="submenu-admissions">
+            <ul class="list-unstyled submenu-list ps-3">
+              <li><a href="#" class="submenu-link">Admissions Process</a></li>
+              <li><a href="#" class="submenu-link">Admission Fees</a></li>
+              <li><a href="#" class="submenu-link">Term Dates & FAQ's</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Learning Journey -->
+        <li class="menu-item">
+          <a href="#"
+             class="menu-link d-flex align-items-center collapsed"
+             data-bs-toggle="collapse"
+             data-bs-target="#submenu-learning">
+            Learning Journey
+            <span class="arrow-icon ms-2">▼</span>
+          </a>
+
+          <div class="collapse" id="submenu-learning">
+            <ul class="list-unstyled submenu-list ps-3">
+
+              <li>
+                <a href="#"
+                   class="submenu-link d-flex align-items-center collapsed"
+                   data-bs-toggle="collapse"
+                   data-bs-target="#nested-curriculum">
+                  Academic Curriculum
+                  <span class="arrow-icon ms-2">▼</span>
+                </a>
+
+                <div class="collapse" id="nested-curriculum">
+                  <ul class="list-unstyled nested-submenu-list ps-3">
+                    <li><a href="#" class="nested-link">Kindergarten</a></li>
+                    <li><a href="#" class="nested-link">Lower Primary</a></li>
+                    <li><a href="#" class="nested-link">Upper Primary</a></li>
+                    <li><a href="#" class="nested-link">Senior Schools</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li><a href="#" class="submenu-link">MISK Schools Diploma</a></li>
+              <li><a href="#" class="submenu-link">High Performance Learning</a></li>
+              <li><a href="#" class="submenu-link">Leadership & Critical Thinking</a></li>
+              <li><a href="#" class="submenu-link">Internship & Service Ethics</a></li>
+              <li><a href="#" class="submenu-link">Project 10: Becoming one of the World's Top 10 Schools</a></li>
+              <li>
+              <a href="#" class="submenu-link d-flex align-items-center ">
+                Co-Curricular Activities
+                <span class="arrow-icon ms-2">▼</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="submenu-link d-flex align-items-center">
+                Safeguarding & Wellbeing
+                <span class="arrow-icon ms-2">▼</span>
+              </a>
+            </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Work With Us -->
+        <li class="menu-item">
+          <a href="#"
+             class="menu-link d-flex align-items-center collapsed"
+             data-bs-toggle="collapse"
+             data-bs-target="#submenu-work">
+            Work With Us
+            <span class="arrow-icon ms-2">▼</span>
+          </a>
+
+          <div class="collapse" id="submenu-work">
+            <ul class="list-unstyled submenu-list ps-3">
+              <li><a href="#" class="submenu-link">Why Join Us?</a></li>
+              <li><a href="#" class="submenu-link">Meet The Teachers</a></li>
+              <li><a href="#" class="submenu-link">Current Vacancies</a></li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Sidebar Footer -->
+    <div class="mt-auto px-5 py-4">
+      <hr class="custom-hr">
+      <div class="input-group bg-white rounded-0 p-2">
+        <span class="input-group-text bg-transparent border-0 text-muted">Search</span>
+        <input type="text" class="form-control border-0 shadow-none">
+        <span class="input-group-text bg-transparent border-0">
+          <svg width="18" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
+      </div>
+    </div>
+
+  </aside>
+                <!-- Page Title -->
+                <div class="container pt-5 pt-md-6">
+                <div class="row">
+                    <div class="col-12">
+                    <h1 class="h1 fw-bold ls-tight page-title mb-4">
+                        Admissions
+                    </h1>
+                    
+                    
+                </div>
+            </div>
+            </div>
+
+            </div>
+
+            <!-- Floating Image Section -->
+            <div class="w-100  position-relative floating-section ">
+
+                <div class="news-card-wrapper   ">
+
+                    <!-- Data Bar -->
+                    <div class="data-bar bg-primary-hover">
+                        <div class="d-flex justify-content-between align-items-center w-100 pe-3">
+                            <div class="small fw-bold text-uppercase text-dark" style="letter-spacing: 0.05em;">
+                                16 March 2022
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <img src="/assets/images/social-links.svg">
+                                <img src="/assets/images/social-links (1).svg">
+                                <img src="/assets/images/social-links (2).svg">
+                                <img src="/assets/images/social-links (3).svg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="image-container ">
+                        <div class="image-overlay  "></div>
+                        <img  src="/assets/images/header2.png" alt="Signing Ceremony">
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+
+    <!-- section 2 -->
+    <section class="container py-5 my-5 h-100 ">
+    <!-- Apply Now Section -->
+    <div class="row justify-content-center">
+    <!-- Left Column (Title) -->
+    <div class="col-12 col-md-4 mb-4 mb-md-0">
+      <h2 class="h2 fw-bold">Apply Now</h2>
+    </div>
+    
+    <!-- Right Column (Form) -->
+    <div class="col-12 col-md-8">
+      <form>
+        <div class="mb-3">
+          <label class=" form-label">Full Name</label>
+          <input type="text" class="form-control " placeholder="Full Name" />
+        </div>
+        <div class="mb-3">
+          <label class=" form-label">Email Address</label>
+          <input type="email" class="form-control " placeholder="Email Address" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Age</label>
+          <select class="form-select ">
+            <option selected disabled>Age</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class=" form-label">Message</label>
+          <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+        </div>
+          <div  class="d-flex justify-content-center  mt-5 mb-5 " >
+      <!-- BUTTON -->
+          <button class="btn btn-primary btn-lg my-2" type="submit">
+            Submit
+          </button>
+          </div>
+      </form>
+    </div>
+    </div>
+    </section>
+
+
+    <!-- section 3  -->
+     <section class="container py-5 my-5 h-100 ">
+        <!-- title -->
+        <h2 class="h2 fw-bold ">
+            Admissions Fees
+        </h2>
+        <!-- text  -->
+        <div class="w-50 p-3 my-3">Fees at Misk Schools cover tuition and are fully inclusive of all student materials and services.</div>
+
+
+        <!-- table  -->
+        <div class="table-responsive" >
+          <table class="table table-hover  my-4 ">
+        <thead class="table-light">
+            <tr>
+            <td class="fw-bold">Header</td>
+            <td class="fw-bold" >Header</td>
+            <td class="fw-bold">Header</td>
+            <td class="fw-bold" >Header</td>
+            <td class="fw-bold" >Header</td>
+            </tr>
+        </thead>
+        <tbody  class="table-group-divider">
+            <tr>
+            <td>Text</td>
+            <td>Text</td>
+            <td>Text</td>
+            <td>Text</td>
+            <td>Text</td>
+            </tr>
+            <tr>
+            <td class="table-active">Text</td>
+            <td class="table-active">Text</td>
+            <td class="table-active">Text</td>
+            <td>Text</td>
+            <td>Text</td>
+            </tr>
+            <tr>
+            <td>Text</td>
+            <td>Text</td>
+            <td>Text</td>
+            <td>Text</td>
+            <td>Text</td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+
+        <!-- title2 -->
+         <h4 class="h4 fw-bold " >What Fees Include (All Grades):</h4>
+
+         <!-- list -->
+          <div class="row g-5 ">
+          <div class="col-12 col-sm-6 col-md-4">
+             <ul class="custom-disc ">
+            <li  >Tuition</li>
+            <li >Books and stationery</li>
+            <li   >Laptop computer*</li>
+            <li >Uniform</li>
+            </ul>
+          </div>
+           <div class="col-12 col-sm-6 col-md-4">
+             <ul class="custom-disc">
+            <li  >Daily lunch and healthy snacks/li>
+            <li  >Regular co-curricular and after school activities – on and off campus</li>
+            <li >Sports uniform and equipment</li>
+            <li  >Instruments for musicians*</li>
+            <li >Field trips and excursions within KSA</li>
+            </ul>
+          </div>
+
+          </div>
+          <!-- text -->
+           <p >* Personal use while a Misk Schools’ student</p>
+
+     </section>
+
+
+
+      <!-- footer -->
+<footer class="bg-primary text-white text-lg-start mt-5">
+
+  <!-- Grid container -->
+  <div class="container-fluid px-0  ">
+    <div class="row g-0 align-items-stretch ">
+
+      <!-- LEFT COLUMN -->
+      <div class="col-lg-7 col-md-7 col-12 p-5 py-5">
+        <div class="d-flex flex-column justify-content-center">
+
+          <!-- lists -->
+          <div class="row justify-content-evenly">
+
+            <!-- list 1 + logos -->
+            <div class="col-md-5 col-6">
+              <ul class="list-unstyled mb-4 text-start">
+                <li class="mb-3">
+                  <a href="#" class="text-white text-decoration-none fw-bold">About Us</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#" class="text-white text-decoration-none fw-bold">Admissions</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#" class="text-white text-decoration-none fw-bold">Learning Journey</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#" class="text-white text-decoration-none fw-bold">Work With Us</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#" class="text-white text-decoration-none fw-bold">News & Media</a>
+                </li>
+              </ul>
+
+              <!-- logos -->
+              <div class="d-flex my-4 justify-content-start">
+                <img src="/assets/images/footer2.svg" style="max-height:50px;">
+                <img src="/assets/images/footer1.svg" style="max-height:55px;">
+              </div>
+            </div>
+
+            <!-- list 2 -->
+            <div class="col-md-5 col-6">
+              <ul class="list-unstyled text-start">
+                <li class="mb-3">
+                  <a href="#" class="text-white text-decoration-none fw-bold">Apply</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#" class="text-white text-decoration-none fw-bold">Schedule a Visit</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#" class="text-white text-decoration-none fw-bold">Contact Us</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#" class="text-white text-decoration-none fw-bold">LINK</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#" class="text-white text-decoration-none fw-bold">LINK</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    
+
+      <!-- RIGHT IMAGE -->
+      <div class="col-lg-5 col-md-5 d-none d-md-block p-0 position-relative">
+        <img src="/assets/images/footer3.jpg"
+             class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+             alt="Footer Image">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- bottom bar -->
+  <div class="bg-primary-hover text-dark py-3">
+    <div class="container-fluid">
+      <div class="d-flex flex-column flex-md-row justify-content-around align-items-center py-2">
+
+        <!-- social -->
+        <div class="d-flex align-items-center gap-3 mb-3 mb-md-0">
+          <img src="/assets/images/social-links (1).svg" class="social-icon">
+          <img src="/assets/images/social-links (2).svg" class="social-icon">
+          <img src="/assets/images/social-links (3).svg" class="social-icon">
+          <img src="/assets/images/social-links.svg" class="social-icon">
+        </div>
+
+        <!-- privacy & terms -->
+        <div class="d-flex flex-wrap align-items-center gap-3 justify-content-center mt-2 mt-md-0">
+          <span class="small">Privacy Policy</span>
+          <span class="small">Terms & Conditions</span>
+          <span class="small">© Copyright MISK 2023-2024. All Rights Reserved</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+
+    <!-- Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- CountUp.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.umd.js"></script>
+
+  
+
+    <!-- Custom JS -->
+    <script src="/assets/js/main.js"></script>
+
+
+
+</body>
+</html>

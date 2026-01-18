@@ -2,98 +2,100 @@
 
 namespace App\Core;
 
-// Main application class
-// Handles routing and request dispatching
 class App {
 
-    // Default controller if none provided in URL
-    protected $controller = 'HomeController';
-
-    // Default method if none provided in URL
+    protected $controller = 'SiteHomeController'; // Default Site controller
     protected $method = 'index';
-
-    // Parameters extracted from URL
     protected $params = [];
 
-    // Constructor runs on every request
     public function __construct() {
 
-        // Parse URL into array parts
         $url = $this->parseUrl();
-        
 
-        // Check if controller name exists in URL
+        // -----------------------------
+        // 1. Handle AuthController
+        // -----------------------------
+        if (!empty($url[0]) && strtolower($url[0]) === 'auth') {
+            $this->loadRootController($url);
+            return;
+        }
+
+        // -----------------------------
+        // 2. Detect Controller
+        // -----------------------------
         if (!empty($url[0])) {
+            $name = ucfirst(strtolower($url[0]));
 
-            // Format controller name
-            // Example: news → NewsController
-            $controllerName = ucfirst(strtolower($url[0])) . 'Controller';
+            // Site pages controllers start with Site prefix
+            $siteController = "Site{$name}Controller";
+            $adminController = "{$name}Controller";
 
-            // Check if controller file exists
-            if (file_exists('../app/Controllers/' . $controllerName . '.php')) {
-
-                // Set controller
-                $this->controller = $controllerName;
-
-                // Remove controller part from URL
+            if (file_exists("../app/Controllers/{$siteController}.php")) {
+                $this->controller = $siteController;
+                unset($url[0]);
+            } elseif (file_exists("../app/Controllers/{$adminController}.php")) {
+                $this->controller = $adminController;
                 unset($url[0]);
             }
         }
 
-        // Build full controller class with namespace
-        $controllerClass = "App\\Controllers\\" . $this->controller;
+        // -----------------------------
+        // 3. Build Controller Class
+        // -----------------------------
+        $controllerClass = "App\\Controllers\\{$this->controller}";
+        $controllerPath = "../app/Controllers/{$this->controller}.php";
 
-        // Ensure controller class exists
-        if (class_exists($controllerClass)) {
-
-            // Instantiate controller
-            $this->controller = new $controllerClass();
-        } else {
-
-            // Stop execution if controller not found
-            throw new \Exception("Controller $controllerClass not found");
+        if (!class_exists($controllerClass)) {
+            if (!file_exists($controllerPath)) {
+                throw new \Exception("Controller {$controllerClass} not found");
+            }
+            require_once $controllerPath;
         }
 
-        // Check if method exists in URL and controller
-        if (!empty($url[1]) && method_exists($this->controller, $url[1])) {
+        $controllerInstance = new $controllerClass();
 
-            // Set method name
+        // -----------------------------
+        // 4. Detect Method
+        // -----------------------------
+        if (!empty($url[1]) && method_exists($controllerInstance, $url[1])) {
             $this->method = $url[1];
-
-            // Remove method from URL
             unset($url[1]);
         }
 
-
-        // Remaining URL parts are parameters
+        // -----------------------------
+        // 5. Remaining Params
+        // -----------------------------
         $this->params = $url ? array_values($url) : [];
 
-        // Call controller method with parameters
-        call_user_func_array(
-            [$this->controller, $this->method],
-            $this->params
-        );
-
-        
+        // Call controller method
+        call_user_func_array([$controllerInstance, $this->method], $this->params);
     }
 
-    // Parse URL from query string
-    public function parseUrl() {
+    private function loadRootController(array $url): void
+    {
+        $controller = 'AuthController';
+        $method = $url[1] ?? 'index';
+        $controllerPath = "../app/Controllers/{$controller}.php";
 
-        // Check if URL parameter exists
-        if (isset($_GET['url'])) {
-
-            // Remove trailing slash
-            $url = rtrim($_GET['url'], '/');
-
-            // Sanitize URL to prevent attacks
-            $url = filter_var($url, FILTER_SANITIZE_URL);
-
-            // Split URL into array
-            return explode('/', $url);
+        if (!file_exists($controllerPath)) {
+            throw new \Exception("Controller {$controller} not found");
         }
 
-        // Return empty array if no URL
+        require_once $controllerPath;
+
+        $controllerClass = "App\\Controllers\\{$controller}";
+        $instance = new $controllerClass();
+
+        call_user_func([$instance, $method]);
+    }
+
+    public function parseUrl(): array
+    {
+        if (isset($_GET['url'])) {
+            $url = rtrim($_GET['url'], '/');
+            $url = filter_var($url, FILTER_SANITIZE_URL);
+            return explode('/', $url);
+        }
         return [];
     }
 }

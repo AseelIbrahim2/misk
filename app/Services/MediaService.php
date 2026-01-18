@@ -9,7 +9,8 @@ class MediaService
     private MediaRepository $repo;
 
     private array $allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
-    private int $maxSize = 2 * 1024 * 1024; // 2MB
+    private int $maxSize = 10 * 1024 * 1024;
+
 
     public function __construct()
     {
@@ -23,9 +24,21 @@ class MediaService
 
     public function upload(array $file): void
     {
-        if ($file['error'] !== UPLOAD_ERR_OK) {
-            throw new Exception('Upload failed');
+            if ($file['error'] !== UPLOAD_ERR_OK) {
+            switch ($file['error']) {
+                case UPLOAD_ERR_INI_SIZE:
+                    throw new Exception('File exceeds server upload limit');
+                case UPLOAD_ERR_FORM_SIZE:
+                    throw new Exception('File exceeds form size limit');
+                case UPLOAD_ERR_PARTIAL:
+                    throw new Exception('File uploaded partially');
+                case UPLOAD_ERR_NO_FILE:
+                    throw new Exception('No file uploaded');
+                default:
+                    throw new Exception('Unknown upload error');
+            }
         }
+
 
         if (!in_array($file['type'], $this->allowedTypes, true)) {
             throw new Exception('Invalid file type');

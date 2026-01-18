@@ -1,21 +1,4 @@
-<?php
-function renderMenu(array $links, int $parent = 0)
-{
-    echo '<ul class="navbar-nav">';
-    foreach ($links as $link) {
-        if ($link['parent_id'] == $parent && $link['is_active']) {
-            $children = array_filter($links, fn($l) => $l['parent_id'] == $link['id']);
-            echo '<li class="nav-item">';
-            echo '<a href="'.$link['url'].'" target="'.$link['target'].'" class="nav-link">'.$link['title'].'</a>';
-            if ($children) {
-                renderMenu($links, $link['id']); // Recursive call
-            }
-            echo '</li>';
-        }
-    }
-    echo '</ul>';
-}
-?>
+
 
 <!doctype html>
 <html lang="en">

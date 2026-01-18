@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const myDropzone = new Dropzone("#mediaDropzone", {
         url: "/media/upload",
         paramName: "file",
-        maxFilesize: 2,
+        maxFilesize: 15,
         acceptedFiles: "image/jpeg,image/png,image/webp",
 
         autoProcessQueue: false, 
