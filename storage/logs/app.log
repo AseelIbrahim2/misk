@@ -747,3 +747,42 @@ Stack trace:
 #7 /var/www/html/public/index.php(20): App\Core\App->__construct()
 #8 {main}
 
+[2026-01-19 17:32:12] Access denied: Permission required -> view_applications in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/ApplicationService.php(22): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/ApplicationController.php(26): App\Services\ApplicationService->list()
+#2 [internal function]: App\Controllers\ApplicationController->index()
+#3 /var/www/html/app/Core/App.php(71): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-19 17:32:54] Access denied: Permission required -> view_applications in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/ApplicationService.php(22): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/ApplicationController.php(26): App\Services\ApplicationService->list()
+#2 [internal function]: App\Controllers\ApplicationController->index()
+#3 /var/www/html/app/Core/App.php(71): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-19 17:33:05] Access denied: Permission required -> view_applications in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/ApplicationService.php(22): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/ApplicationController.php(26): App\Services\ApplicationService->list()
+#2 [internal function]: App\Controllers\ApplicationController->index()
+#3 /var/www/html/app/Core/App.php(71): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-19 20:31:31] SQLSTATE[22007]: Invalid datetime format: 1366 Incorrect integer value: '' for column `db`.`site_settings`.`logo_m_id` at row 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Models/SiteSetting.php(33): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/SiteSettingRepository.php(23): App\Models\SiteSetting->updateSettings()
+#3 /var/www/html/app/Services/SiteSettingService.php(46): App\Repositories\SiteSettingRepository->update()
+#4 /var/www/html/app/Controllers/SitesettingController.php(37): App\Services\SiteSettingService->update()
+#5 [internal function]: App\Controllers\SiteSettingController->update()
+#6 /var/www/html/app/Core/App.php(71): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+

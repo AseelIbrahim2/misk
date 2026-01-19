@@ -54,8 +54,9 @@
                 </div>
 
                 <div class="card-footer text-muted ">
-                    Allowed types: JPG, PNG, WEBP • Max size: 2MB
+                    Allowed types: JPG, PNG, WEBP, SVG • Max size: 15MB
                 </div>
+
             </div>
             
 

@@ -8,7 +8,7 @@ class MediaService
 {
     private MediaRepository $repo;
 
-    private array $allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+    private array $allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml'];
     private int $maxSize = 10 * 1024 * 1024;
 
 

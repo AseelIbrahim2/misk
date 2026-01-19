@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
         url: "/media/upload",
         paramName: "file",
         maxFilesize: 15,
-        acceptedFiles: "image/jpeg,image/png,image/webp",
+        acceptedFiles: "image/jpeg,image/png,image/webp,image/svg+xml",
+
 
         autoProcessQueue: false, 
         addRemoveLinks: true,
@@ -106,6 +107,20 @@ $(document).on('click', '[data-toggle="lightbox"]', function(event) {
 </script>
 
 
+<script>
+$(function () {
+    $('#applicationsTable').DataTable({
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true,
+        lengthChange: true,
+        pageLength: 10,
+        responsive: true,
+        order: [[4, 'desc']] 
+    });
+});
+</script>
 
 
 

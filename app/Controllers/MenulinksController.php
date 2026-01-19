@@ -15,12 +15,12 @@ class MenuLinksController extends Controller
 
     public function __construct()
     {
-        AuthMiddleware::protectPermission('manage_menus'); // حماية
+        AuthMiddleware::protectPermission('manage_menus'); 
         $this->service = new MenuLinkService();
         $this->menuService = new MenuService();
     }
 
-    // عرض جميع الروابط الخاصة بمنيو معين
+
     public function index(int $menuId): void
     {
         $menu = $this->menuService->getById($menuId);
@@ -34,15 +34,15 @@ class MenuLinksController extends Controller
         $this->view('admin/menu_links/index', compact('menu', 'links'));
     }
 
-    // صفحة إنشاء رابط جديد
+  
     public function create(int $menuId): void
     {
         $menu = $this->menuService->getById($menuId);
-        $parents = $this->service->getByMenu($menuId); // للـ parent dropdown
+        $parents = $this->service->getByMenu($menuId); 
         $this->view('admin/menu_links/create', compact('menu', 'parents'));
     }
 
-    // تخزين رابط جديد
+ 
     public function store(int $menuId): void
     {
         CsrfMiddleware::protect();
@@ -60,7 +60,6 @@ class MenuLinksController extends Controller
         }
     }
 
-    // صفحة تعديل الرابط
     public function edit(int $id): void
     {
         $link = $this->service->getById($id);
@@ -74,7 +73,6 @@ class MenuLinksController extends Controller
         $this->view('admin/menu_links/edit', compact('menu', 'link', 'parents'));
     }
 
-    // تحديث الرابط
     public function update(int $id): void
     {
         CsrfMiddleware::protect();
@@ -93,7 +91,6 @@ class MenuLinksController extends Controller
         }
     }
 
-    // حذف الرابط
     public function delete(int $id): void
     {
         CsrfMiddleware::protect();

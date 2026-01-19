@@ -99,6 +99,22 @@
                 <p>Partners</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="/application/index"
+                class="nav-link <?= str_starts_with($currentUri, '/application') ? 'active' : '' ?>">
+               <i class="nav-icon fas fa-clipboard-list"></i>
+                <p>Applications</p>
+              </a>
+            </li>
+            <li class="nav-item">
+            <a href="/sitesetting"
+              class="nav-link <?= str_starts_with($currentUri, '/sitesetting') ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-cogs"></i> <!-- أيقونة إعدادات الموقع -->
+              <p>Site Settings</p>
+            </a>
+          </li>
+
+
 
 
           </ul>

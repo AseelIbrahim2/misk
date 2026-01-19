@@ -23,5 +23,14 @@ class Permissions
 
     const MANAGE_PARTNERS = 'manage_partners';
 
+    const VIEW_APPLICATIONS   = 'view_applications';
+    const EDIT_APPLICATIONS   = 'edit_applications';
+    const DELETE_APPLICATIONS = 'delete_applications';
+
+
+    // Site Settings
+    public const MANAGE_SITE_SETTINGS = 'manage_site_settings';
+
+
 
 }
