@@ -7,18 +7,20 @@ use App\Services\SliderService;
 use App\Services\StatisticService;
 use App\Services\NewsService;
 use App\Services\PartnerService;
+use App\Services\MenuService;
 
 class SiteHomeController extends Controller
 {
+    
     private SliderService $sliderService;
     private StatisticService $statService;
-     private PartnerService $partnerService;
-
-
-private NewsService $newsService;
+    private PartnerService $partnerService;
+    private NewsService $newsService;
+    private MenuService $menuService;
 
 public function __construct()
 {
+    $this->menuService = new MenuService();
     $this->sliderService  = new SliderService();
     $this->statService    = new StatisticService();
     $this->partnerService = new PartnerService();
@@ -31,12 +33,14 @@ public function index(): void
     $statistics = $this->statService->list();
     $partners   = $this->partnerService->list();
     $news       = $this->newsService->list(); 
+    $menus = $this->menuService->getMenuWithLinks(); 
 
     $this->view('site/pages/index', [
         'sliders'    => $sliders,
         'statistics' => $statistics,
         'partners'   => $partners,
         'news'       => $news, 
+        'menus' => $menus,
     ]);
 }
 

@@ -2,52 +2,38 @@
 namespace App\Repositories;
 
 use App\Models\MenuLink;
-use PDOException;
 
 class MenuLinkRepository
 {
-    private MenuLink $link;
+    private MenuLink $model;
 
     public function __construct()
     {
-        $this->link = new MenuLink();
-    }
-
-    public function all(): array
-    {
-        return $this->link->getAll();
+        $this->model = new MenuLink();
     }
 
     public function getByMenu(int $menuId): array
     {
-        return $this->link->getWhere('menu_id', $menuId);
+        return $this->model->getWhere('menu_id', $menuId, 'ORDER BY `order` ASC');
     }
 
     public function find(int $id): ?array
     {
-        return $this->link->find($id);
+        return $this->model->find($id);
     }
 
     public function create(array $data): int
     {
-        try {
-            return $this->link->create($data);
-        } catch (PDOException $e) {
-            throw new PDOException("MenuLinkRepository create error: " . $e->getMessage());
-        }
+        return $this->model->create($data);
     }
 
     public function update(int $id, array $data): bool
     {
-        try {
-            return $this->link->update($id, $data);
-        } catch (PDOException $e) {
-            throw new PDOException("MenuLinkRepository update error: " . $e->getMessage());
-        }
+        return $this->model->update($id, $data);
     }
 
     public function delete(int $id): bool
     {
-        return $this->link->delete($id);
+        return $this->model->delete($id);
     }
 }

@@ -31,6 +31,13 @@ class Permissions
     // Site Settings
     public const MANAGE_SITE_SETTINGS = 'manage_site_settings';
 
+    // Menus
+    public const MANAGE_MENUS = 'manage_menus';
+    public const MANAGE_MENU_LINKS = 'manage_menu_links';
+
+
+    
+
 
 
 }

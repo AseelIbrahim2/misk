@@ -5,6 +5,7 @@ use App\Core\Controller;
 use App\Services\MenuService;
 use App\Middleware\AuthMiddleware;
 use App\Middleware\CsrfMiddleware;
+use App\Config\Permissions;
 use Exception;
 
 class MenusController extends Controller
@@ -13,7 +14,7 @@ class MenusController extends Controller
 
     public function __construct()
     {
-        AuthMiddleware::protectPermission('manage_menus');
+         AuthMiddleware::protectPermission(Permissions::MANAGE_MENUS);
         $this->service = new MenuService();
     }
 

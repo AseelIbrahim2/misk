@@ -6,6 +6,7 @@ use App\Services\MenuLinkService;
 use App\Services\MenuService;
 use App\Middleware\CsrfMiddleware;
 use App\Middleware\AuthMiddleware;
+use App\Config\Permissions;
 use Exception;
 
 class MenuLinksController extends Controller
@@ -15,11 +16,10 @@ class MenuLinksController extends Controller
 
     public function __construct()
     {
-        AuthMiddleware::protectPermission('manage_menus'); 
+        AuthMiddleware::protectPermission(Permissions::MANAGE_MENU_LINKS);
         $this->service = new MenuLinkService();
         $this->menuService = new MenuService();
     }
-
 
     public function index(int $menuId): void
     {
@@ -34,59 +34,67 @@ class MenuLinksController extends Controller
         $this->view('admin/menu_links/index', compact('menu', 'links'));
     }
 
-  
-    public function create(int $menuId): void
-    {
-        $menu = $this->menuService->getById($menuId);
-        $parents = $this->service->getByMenu($menuId); 
-        $this->view('admin/menu_links/create', compact('menu', 'parents'));
-    }
+        public function create(int $menuId): void
+        {
+            $menu = $this->menuService->getById($menuId);
+            if (!$menu) {
+                $_SESSION['errors'][] = ['Menu not found'];
+                header('Location: /menus');
+                exit;
+            }
 
- 
+            $links = $this->service->getByMenu($menuId);
+
+            $this->view('admin/menu_links/create', compact('menu', 'links'));
+        }
+
+
     public function store(int $menuId): void
     {
         CsrfMiddleware::protect();
+
         try {
-            $_POST['menu_id'] = $menuId;
-            $this->service->create($_POST);
+            $this->service->create($menuId, $_POST);
             $_SESSION['success'] = "Link created successfully";
-            header("Location: /menu-links/index/$menuId");
+            header("Location: /MenuLinks/index/$menuId");
             exit;
         } catch (Exception $e) {
             $_SESSION['errors'][] = [$e->getMessage()];
             $_SESSION['old'] = $_POST;
-            header("Location: /menu-links/create/$menuId");
+            header("Location: /MenuLinks/create/$menuId");
             exit;
         }
     }
 
-    public function edit(int $id): void
-    {
-        $link = $this->service->getById($id);
-        if (!$link) {
-            $_SESSION['errors'][] = ['Link not found'];
-            header('Location: /menus');
-            exit;
-        }
-        $menu = $this->menuService->getById($link['menu_id']);
-        $parents = $this->service->getByMenu($link['menu_id']); // للـ parent dropdown
-        $this->view('admin/menu_links/edit', compact('menu', 'link', 'parents'));
-    }
+  
+        public function edit(int $id): void
+        {
+            $link = $this->service->getById($id);
+            if (!$link) {
+                $_SESSION['errors'][] = ['Link not found'];
+                header('Location: /menus');
+                exit;
+            }
 
+          
+            $links = $this->service->getByMenu($link['menu_id']);
+
+            $this->view('admin/menu_links/edit', compact('link', 'links'));
+        }
+        
     public function update(int $id): void
     {
         CsrfMiddleware::protect();
+
         try {
-            $link = $this->service->getById($id);
-            $_POST['menu_id'] = $link['menu_id'];
             $this->service->update($id, $_POST);
             $_SESSION['success'] = "Link updated successfully";
-            header("Location: /menu-links/index/{$link['menu_id']}");
+            header("Location: /MenuLinks/index/" . $_POST['menu_id']);
             exit;
         } catch (Exception $e) {
             $_SESSION['errors'][] = [$e->getMessage()];
             $_SESSION['old'] = $_POST;
-            header("Location: /menu-links/edit/$id");
+            header("Location: /MenuLinks/edit/$id");
             exit;
         }
     }
@@ -94,15 +102,16 @@ class MenuLinksController extends Controller
     public function delete(int $id): void
     {
         CsrfMiddleware::protect();
-        $link = $this->service->getById($id);
-        if ($link) {
-            $this->service->delete($id);
+
+        try {
+            $menuId = $this->service->delete($id);
             $_SESSION['success'] = "Link deleted successfully";
-            header("Location: /menu-links/index/{$link['menu_id']}");
-            exit;
+        } catch (Exception $e) {
+            $_SESSION['errors'][] = [$e->getMessage()];
+            $menuId = $_POST['menu_id'] ?? 0;
         }
-        $_SESSION['errors'][] = ['Link not found'];
-        header('Location: /menus');
+
+        header("Location: /MenuLinks/index/$menuId");
         exit;
     }
 }
