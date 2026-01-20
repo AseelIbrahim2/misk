@@ -31,6 +31,18 @@
                 <input type="text" name="title" class="form-control"
                        value="<?= $_SESSION['old']['title'] ?? '' ?>" required>
             </div>
+            <div class="form-group">
+            <label for="location">Menu Location</label>
+            <select name="location" class="form-control" required>
+                <?php
+                $locations = ['header' => 'Header', 'sidebar' => 'Sidebar', 'footer' => 'Footer'];
+                $oldLocation = $_SESSION['old']['location'] ?? 'header';
+                foreach ($locations as $key => $label): ?>
+                    <option value="<?= $key ?>" <?= $oldLocation === $key ? 'selected' : ''; ?>><?= $label ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+
 
             <button type="submit" class="btn btn-success mt-2">Create Menu</button>
             <a href="/menus" class="btn btn-secondary mt-2">Cancel</a>

@@ -18,38 +18,40 @@
     <ul class="list-unstyled menu-list">
 
       <?php foreach ($menus as $menu): ?>
-        <li class="menu-item">
-          <a href="#menu-<?= $menu['id'] ?>" class="menu-link d-flex align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#menu-<?= $menu['id'] ?>">
-            <?= htmlspecialchars($menu['title']) ?>
-            <span class="arrow-icon ms-2">▼</span>
-          </a>
+        <?php if ($menu['location'] === 'sidebar'): ?>
+          <li class="menu-item">
+            <a href="#menu-<?= $menu['id'] ?>" class="menu-link d-flex align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#menu-<?= $menu['id'] ?>">
+              <?= htmlspecialchars($menu['title']) ?>
+              <span class="arrow-icon ms-2">▼</span>
+            </a>
 
-          <?php if (!empty($menu['links'])): ?>
-            <div class="collapse" id="menu-<?= $menu['id'] ?>">
-              <ul class="list-unstyled submenu-list ps-3">
-                <?php foreach ($menu['links'] as $link): ?>
-                  <li>
-                    <a href="<?= htmlspecialchars($link['url']) ?>" class="submenu-link d-flex align-items-center collapsed" <?php if(!empty($link['children'])): ?>data-bs-toggle="collapse" data-bs-target="#link-<?= $link['id'] ?>"<?php endif; ?>>
-                      <?= htmlspecialchars($link['title']) ?>
-                      <?php if(!empty($link['children'])): ?><span class="arrow-icon ms-2">▼</span><?php endif; ?>
-                    </a>
+            <?php if (!empty($menu['links'])): ?>
+              <div class="collapse" id="menu-<?= $menu['id'] ?>">
+                <ul class="list-unstyled submenu-list ps-3">
+                  <?php foreach ($menu['links'] as $link): ?>
+                    <li>
+                      <a href="<?= htmlspecialchars($link['url']) ?>" class="submenu-link d-flex align-items-center collapsed" <?php if(!empty($link['children'])): ?>data-bs-toggle="collapse" data-bs-target="#link-<?= $link['id'] ?>"<?php endif; ?>>
+                        <?= htmlspecialchars($link['title']) ?>
+                        <?php if(!empty($link['children'])): ?><span class="arrow-icon ms-2">▼</span><?php endif; ?>
+                      </a>
 
-                    <?php if (!empty($link['children'])): ?>
-                      <div class="collapse" id="link-<?= $link['id'] ?>">
-                        <ul class="list-unstyled nested-submenu-list ps-3">
-                          <?php foreach ($link['children'] as $child): ?>
-                            <li><a href="<?= htmlspecialchars($child['url']) ?>" class="nested-link"><?= htmlspecialchars($child['title']) ?></a></li>
-                          <?php endforeach; ?>
-                        </ul>
-                      </div>
-                    <?php endif; ?>
+                      <?php if (!empty($link['children'])): ?>
+                        <div class="collapse" id="link-<?= $link['id'] ?>">
+                          <ul class="list-unstyled nested-submenu-list ps-3">
+                            <?php foreach ($link['children'] as $child): ?>
+                              <li><a href="<?= htmlspecialchars($child['url']) ?>" class="nested-link"><?= htmlspecialchars($child['title']) ?></a></li>
+                            <?php endforeach; ?>
+                          </ul>
+                        </div>
+                      <?php endif; ?>
 
-                  </li>
-                <?php endforeach; ?>
-              </ul>
-            </div>
-          <?php endif; ?>
-        </li>
+                    </li>
+                  <?php endforeach; ?>
+                </ul>
+              </div>
+            <?php endif; ?>
+          </li>
+        <?php endif; ?>
       <?php endforeach; ?>
 
     </ul>

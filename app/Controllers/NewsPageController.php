@@ -31,7 +31,7 @@ class NewsPageController extends Controller
             return;
         }
 
-        $this->view('site/pages/show', compact(
+        $this->view('site/pages/NodePage', compact(
             'newsById',
             'news',
             'menus'

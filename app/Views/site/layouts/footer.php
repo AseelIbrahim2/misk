@@ -1,79 +1,54 @@
-
-
-<!-- footer -->
- <!-- footer -->
 <footer class="bg-primary text-white text-lg-start mt-5">
-
-  <!-- Grid container -->
-  <div class="container-fluid px-0  ">
-    <div class="row g-0 align-items-stretch ">
+  <div class="container-fluid px-0">
+    <div class="row g-0 align-items-stretch">
 
       <!-- LEFT COLUMN -->
       <div class="col-lg-7 col-md-7 col-12 p-5 py-5">
         <div class="d-flex flex-column justify-content-center">
 
-          <!-- lists -->
           <div class="row justify-content-evenly">
 
-            <!-- list 1 + logos -->
-            <div class="col-md-5 col-6">
-              <ul class="list-unstyled mb-4 text-start">
-                <li class="mb-3">
-                  <a href="#" class="text-white text-decoration-none fw-bold">About Us</a>
-                </li>
-                <li class="mb-3">
-                  <a href="#" class="text-white text-decoration-none fw-bold">Admissions</a>
-                </li>
-                <li class="mb-3">
-                  <a href="#" class="text-white text-decoration-none fw-bold">Learning Journey</a>
-                </li>
-                <li class="mb-3">
-                  <a href="#" class="text-white text-decoration-none fw-bold">Work With Us</a>
-                </li>
-                <li class="mb-3">
-                  <a href="#" class="text-white text-decoration-none fw-bold">News & Media</a>
-                </li>
-              </ul>
+            <?php
+        
+            $footerMenus = array_filter($menus, fn($menu) => $menu['location'] === 'footer');
 
-              <!-- logos -->
-              <div class="d-flex my-4 justify-content-start">
-                <img src="/assets/images/footer2.svg" style="max-height:50px;">
-                <img src="/assets/images/footer1.svg" style="max-height:55px;">
-              </div>
-            </div>
+            foreach ($footerMenus as $menu):
+              $links = $menu['links'];
+              $chunks = array_chunk($links, 5); 
+            ?>
 
-            <!-- list 2 -->
-            <div class="col-md-5 col-6">
-              <ul class="list-unstyled text-start">
-                <li class="mb-3">
-                  <a href="#" class="text-white text-decoration-none fw-bold">Apply</a>
-                </li>
-                <li class="mb-3">
-                  <a href="#" class="text-white text-decoration-none fw-bold">Schedule a Visit</a>
-                </li>
-                <li class="mb-3">
-                  <a href="#" class="text-white text-decoration-none fw-bold">Contact Us</a>
-                </li>
-                <li class="mb-3">
-                  <a href="#" class="text-white text-decoration-none fw-bold">LINK</a>
-                </li>
-                <li class="mb-3">
-                  <a href="#" class="text-white text-decoration-none fw-bold">LINK</a>
-                </li>
-              </ul>
-            </div>
+              <?php foreach ($chunks as $index => $chunk): ?>
+                <div class="col-md-5 col-6 mb-4">
+                  <ul class="list-unstyled mb-4 text-start">
+                    <?php foreach ($chunk as $link): ?>
+                      <li class="mb-3">
+                        <a href="<?= htmlspecialchars($link['url']) ?>" target="<?= htmlspecialchars($link['target']) ?>" class="text-white text-decoration-none fw-bold">
+                          <?= htmlspecialchars($link['title']) ?>
+                        </a>
+                      </li>
+                    <?php endforeach; ?>
+                  </ul>
+
+                    <?php if ($index === 0): ?>
+                      <div class="d-flex my-4 justify-content-start">
+                        <img src="/assets/images/footer2.svg" style="max-height:50px;">
+                        <img src="/assets/images/footer1.svg" style="max-height:55px;">
+                      </div>
+                    <?php endif; ?>
+
+                </div> 
+              <?php endforeach; ?>
+
+            <?php endforeach; ?>
 
           </div>
+
         </div>
       </div>
 
-    
-
       <!-- RIGHT IMAGE -->
       <div class="col-lg-5 col-md-5 d-none d-md-block p-0 position-relative">
-        <img src="/assets/images/footer3.jpg"
-             class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
-             alt="Footer Image">
+        <img src="/assets/images/footer3.jpg" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Footer Image">
       </div>
 
     </div>
@@ -102,9 +77,7 @@
       </div>
     </div>
   </div>
-
 </footer>
-
 
 
 

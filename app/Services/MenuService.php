@@ -37,6 +37,17 @@ class MenuService
         // Validation
         $data['name'] = trim($data['name'] ?? '');
         $data['title'] = trim($data['title'] ?? '');
+        $data['location'] = trim($data['location'] ?? 'header');
+
+        $allowedLocations = ['header', 'sidebar', 'footer'];
+        if (!in_array($data['location'], $allowedLocations)) {
+            throw new Exception('Invalid menu location.');
+        }
+
+        // Filter DB columns
+        $allowedFields = ['name', 'title', 'created', 'updated', 'location'];
+        $data = array_intersect_key($data, array_flip($allowedFields));
+
 
         if ($data['name'] === '' || $data['title'] === '') {
             throw new Exception('Name and Title are required.');
@@ -61,6 +72,17 @@ class MenuService
         // Validation
         $data['name'] = trim($data['name'] ?? '');
         $data['title'] = trim($data['title'] ?? '');
+        $data['location'] = trim($data['location'] ?? $existing['location'] ?? 'header');
+        
+        $allowedLocations = ['header', 'sidebar', 'footer'];
+        if (!in_array($data['location'], $allowedLocations)) {
+            throw new Exception('Invalid menu location.');
+        }
+
+        // Filter DB columns
+        $allowedFields = ['name', 'title', 'updated', 'location'];
+        $data = array_intersect_key($data, array_flip($allowedFields));
+
 
         if ($data['name'] === '' || $data['title'] === '') {
             throw new Exception('Name and Title are required.');

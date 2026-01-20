@@ -30,6 +30,7 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Title</th>
+                            <th>Location</th>
                             <th>Created</th>
                             <th>Updated</th>
                             <th>Actions</th>
@@ -42,6 +43,7 @@
                                 <td><?= $menu['id']; ?></td>
                                 <td><?= $menu['name']; ?></td>
                                 <td><?= $menu['title']; ?></td>
+                                <td><?= ucfirst($menu['location']); ?></td>
                                 <td><?= $menu['created']; ?></td>
                                 <td><?= $menu['updated']; ?></td>
                                 <td>
@@ -50,7 +52,7 @@
                                         <input type="hidden" name="csrf_token" value="<?= \App\Middleware\CsrfMiddleware::generateToken(); ?>">
                                         <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
                                     </form>
-                                    <a href="/MenuLinks/index/<?= $menu['id']; ?>" class="btn btn-sm btn-info">View Links</a>
+                                    <a href="/Menulinks/index/<?= $menu['id']; ?>" class="btn btn-sm btn-info">View Links</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
