@@ -45,4 +45,11 @@ class StatisticRepository
     {
         return $this->stat->exists($column, $value);
     }
+ public function activeOrdered(): array
+{
+    return $this->stat->getActiveOrdered();
+}
+
+
+    
 }

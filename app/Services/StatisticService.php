@@ -117,4 +117,9 @@ class StatisticService
     {
         return $this->repo->delete($id);
     }
+    public function getActiveOrdered(): array
+{
+    return $this->repo->activeOrdered();
+}
+
 }

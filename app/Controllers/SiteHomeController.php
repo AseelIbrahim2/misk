@@ -25,23 +25,27 @@ public function __construct()
     $this->statService    = new StatisticService();
     $this->partnerService = new PartnerService();
     $this->newsService    = new NewsService();
+    
 }
 
-public function index(): void
+
+
+   public function index(): void
 {
     $sliders    = $this->sliderService->list();
-    $statistics = $this->statService->list();
+    $statistics = $this->statService->getActiveOrdered();
     $partners   = $this->partnerService->list();
-    $news       = $this->newsService->list(); 
-    $menus = $this->menuService->getMenuWithLinks(); 
+    $news       = $this->newsService->latestForHome(5);
+    $menus      = $this->menuService->getMenuWithLinks(); 
 
-    $this->view('site/pages/index', [
-        'sliders'    => $sliders,
-        'statistics' => $statistics,
-        'partners'   => $partners,
-        'news'       => $news, 
-        'menus' => $menus,
-    ]);
+    $this->view('site/pages/index', compact(
+        'sliders',
+        'statistics',
+        'partners',
+        'news',
+        'menus'
+    ));
 }
+
 
 }

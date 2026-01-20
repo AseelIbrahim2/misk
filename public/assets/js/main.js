@@ -2,25 +2,26 @@
 
 
 /* ================= NEWS SLIDER ================= */
-$(function () {
+
+
+
+$(document).ready(function() {
   const slider = $('.news-slider');
-  
 
-slider.slick({
-  centerMode: true,
-  variableWidth: true,
-  slidesToShow: 1,
-  arrows: false,
-  infinite: true,
-  speed: 700,
-  cssEase: 'ease-out',
-  waitForAnimate: true,
-  useTransform: true,   
-  useCSS: true,         
-  adaptiveHeight: false
-});
-
-
+  // Initialize slick slider
+  slider.slick({
+    centerMode: true,
+    variableWidth: true,
+    slidesToShow: 1,
+    arrows: false,
+    infinite: true,
+    speed: 700,
+    cssEase: 'ease-out',
+    waitForAnimate: true,
+    useTransform: true,
+    useCSS: true,
+    adaptiveHeight: false
+  });
 
   $('.prev-btn').on('click', function () {
     slider.slick('slickPrev');
@@ -30,10 +31,16 @@ slider.slick({
     slider.slick('slickNext');
   });
 
-
+  // Use event delegation to make news cards clickable
+  slider.on('click', '.news-card', function(e) {
+    if (!$(e.target).is('a')) { // Ignore clicks on links
+      const link = $(this).data('link');
+      if (link) {
+        window.location.href = link;
+      }
+    }
+  });
 });
-
-
 
 /* ================= HERO SLIDER + SIDEBAR ================= */
 $(document).ready(function(){

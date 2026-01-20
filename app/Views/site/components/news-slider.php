@@ -3,6 +3,9 @@
   <h2 class="h2 text-center mt-5 mb-3">Featured News</h2>
 
   <div class="news-slider">
+    <?php if (empty($news)): ?>
+      <p class="text-center mt-4">No news available.</p>
+   <?php else: ?>
     <?php foreach ($news as $item): ?>
       <div class="news-card mt-3">
         <div class="img-box position-relative">
@@ -17,12 +20,14 @@
         </div>
         <div class="news-content">
           <h3 class="h3 mt-2"><?= htmlspecialchars($item['title'] ?? '') ?></h3>
-          <a href="/news/<?= $item['id'] ?>" class="inline-link2 text-primary mt-2">Read More</a>
+        <a href="/NewsPage/show/<?= (int)$item['id'] ?>" class="inline-link2 text-primary">Read More</a>
+
+
         </div>
       </div>
     <?php endforeach; ?>
   </div>
-
+ <?php endif; ?>
   <div class="d-flex justify-content-center align-items-center gap-3 mt-4">
     <button class="arrow-btn d-flex justify-content-center align-items-center prev-btn" aria-label="Previous"></button>
     <button class="arrow-btn d-flex justify-content-center align-items-center next-btn" aria-label="Next"></button>
@@ -32,3 +37,4 @@
     <button class="btn btn-primary">See All News</button>
   </div>
 </section>
+                                         

@@ -56,11 +56,11 @@
             </li>
 
             <li class="nav-item">
-              <a href="/news"
-                class="nav-link <?= str_starts_with($currentUri, '/news') ? 'active' : '' ?>">
+              <a href="/news" class="nav-link <?= str_starts_with($currentUri, '/news') ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-newspaper"></i>
                 <p>News</p>
-              </a>
+            </a>
+
             </li>
 
             <li class="nav-item">

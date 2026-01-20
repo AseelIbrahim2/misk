@@ -47,7 +47,7 @@ class NewsService
         $validator->required('title', $clean['title']);
         $validator->max('title', $clean['title'], 255);
 
-        $validator->required('description', $clean['description']);
+       
         $validator->max('description', $clean['description'], 500);
 
         $validator->required('content', $clean['content']);
@@ -82,7 +82,7 @@ class NewsService
 
         $validator->required('title', $clean['title']);
         $validator->max('title', $clean['title'], 255);
-        $validator->required('description', $clean['description']);
+        
         $validator->max('description', $clean['description'], 500);
         $validator->required('content', $clean['content']);
         $validator->in('status', $clean['status'], [0,1,2]);
@@ -100,4 +100,20 @@ class NewsService
         AuthMiddleware::protectPermission(Permissions::DELETE_NEWS);
         $this->repo->delete($id);
     }
+    public function latestForHome(int $limit = 5): array
+{
+    return $this->repo->latestPublished($limit);
+}
+public function findPublishedById(int $id): ?array
+{
+    $news = $this->repo->find($id);
+
+    if (!$news || $news['status'] != 1 || $news['is_deleted'] == 1) {
+        return null;
+    }
+
+    return $news;
+}
+
+
 }

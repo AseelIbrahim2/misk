@@ -7,6 +7,8 @@
     <meta name="robots" content="noindex, noarchive">
     <meta name="format-detection" content="telephone=no">
     <title>Misk Schools</title>
+    <base href="https://misk.ddev.site/">
+
 
    
     <!-- Slick Carousel CSS -->
@@ -19,4 +21,4 @@
 
 </head>
 
-<body >
+<body>

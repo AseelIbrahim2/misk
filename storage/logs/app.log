@@ -794,3 +794,10 @@ Stack trace:
 #3 /var/www/html/public/index.php(20): App\Core\App->__construct()
 #4 {main}
 
+[2026-01-20 15:17:42] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Controllers/NewsController.php(20): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Core/App.php(55): App\Controllers\NewsController->__construct()
+#2 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#3 {main}
+

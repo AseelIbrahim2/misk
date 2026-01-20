@@ -40,4 +40,21 @@ class News extends Model
         ";
         return $this->run($sql, ['id' => $id])->fetch(PDO::FETCH_ASSOC) ?: null;
     }
+    public function getLatestPublished(int $limit = 5): array
+{
+    $sql = "
+        SELECT news.*,
+               media.path AS media_path,
+               media.name AS media_name
+        FROM news
+        LEFT JOIN media ON media.id = news.media_id
+        WHERE news.status = 1
+          AND news.is_deleted = 0
+        ORDER BY news.created DESC
+        LIMIT {$limit}
+    ";
+
+    return $this->run($sql)->fetchAll(\PDO::FETCH_ASSOC);
+}
+
 }

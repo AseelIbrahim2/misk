@@ -36,4 +36,9 @@ class NewsRepository
     {
         return $this->news->delete($id);
     }
+    public function latestPublished(int $limit = 5): array
+{
+    return $this->news->getLatestPublished($limit);
+}
+
 }

@@ -23,21 +23,16 @@ class App {
         // -----------------------------
         // 2. Detect Controller
         // -----------------------------
-        if (!empty($url[0])) {
-            $name = ucfirst(strtolower($url[0]));
+if (!empty($url[0])) {
+    $name = ucfirst($url[0]); // NewsPage
+    $possibleController = $name . "Controller"; // NewsPageController
+    $controllerPath = "../app/Controllers/{$possibleController}.php";
 
-            // Site pages controllers start with Site prefix
-            $siteController = "Site{$name}Controller";
-            $adminController = "{$name}Controller";
-
-            if (file_exists("../app/Controllers/{$siteController}.php")) {
-                $this->controller = $siteController;
-                unset($url[0]);
-            } elseif (file_exists("../app/Controllers/{$adminController}.php")) {
-                $this->controller = $adminController;
-                unset($url[0]);
-            }
-        }
+    if (file_exists($controllerPath)) {
+        $this->controller = $possibleController;
+        unset($url[0]);
+    }
+}
 
         // -----------------------------
         // 3. Build Controller Class

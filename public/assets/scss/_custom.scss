@@ -588,6 +588,10 @@ ul.custom-disc {
       opacity 0.45s ease;
 
     }
+    .news-card .img-box::before {
+      pointer-events: none;
+    }
+
 
     /* ===== ZOOM HOVER ===== */
     .news-card:hover .img-box img {
@@ -626,7 +630,9 @@ ul.custom-disc {
   transform 0.3s ease,
   text-decoration 0.3s ease;
 }
-
+.news-card {
+  cursor: pointer; /* Show pointer on hover */
+}
 .news-card .inline-link2::after {
   content: url('/assets/images/Vectorsider.svg');
   position: absolute;     

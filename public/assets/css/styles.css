@@ -12488,6 +12488,10 @@ ul.custom-disc li::marker {
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
 }
 
+.news-card .img-box::before {
+  pointer-events: none;
+}
+
 /* ===== ZOOM HOVER ===== */
 .news-card:hover .img-box img {
   transform: scale(1.08);
@@ -12520,6 +12524,10 @@ ul.custom-disc li::marker {
   font-weight: 700;
   display: inline-block;
   transition: transform 0.3s ease, text-decoration 0.3s ease;
+}
+
+.news-card {
+  cursor: pointer; /* Show pointer on hover */
 }
 
 .news-card .inline-link2::after {
