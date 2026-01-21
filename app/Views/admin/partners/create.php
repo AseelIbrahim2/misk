@@ -2,68 +2,89 @@
 <?php require_once __DIR__ . '/../layouts/sidebar.php'; ?>
 
 <div class="content-wrapper">
-    <section class="content-header">
-        <h1>Create Partner</h1>
-    </section>
+    <section class="content pt-3">
+        <div class="container-fluid">
 
-    <section class="content mt-3">
-        <form action="/partners/store" method="POST">
-            <input type="hidden" name="csrf_token"
-                   value="<?= \App\Middleware\CsrfMiddleware::generateToken() ?>">
+            <div class="card card-outline card-success">
+                <div class="card-header">
+                    <h3 class="card-title"><i class="fas fa-plus"></i> Create Partner</h3>
+                </div>
 
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text"
-                       name="name"
-                       class="form-control"
-                       value="<?= htmlspecialchars($_SESSION['old']['name'] ?? '') ?>">
+                <form action="/partners/store" method="POST">
+                    <input type="hidden" name="csrf_token" value="<?= \App\Middleware\CsrfMiddleware::generateToken() ?>">
+                    <input type="hidden" name="media_id" id="media_id" value="<?= $_SESSION['old']['media_id'] ?? '' ?>">
+
+                    <div class="card-body">
+
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" name="name" class="form-control"
+                                   value="<?= htmlspecialchars($_SESSION['old']['name'] ?? '') ?>" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Media</label><br>
+                            <button type="button" class="btn btn-outline-primary mb-2" data-toggle="modal" data-target="#mediaModal">
+                                <i class="fas fa-image"></i> Choose Media
+                            </button>
+                            <div class="mt-2">
+                                <img id="mediaPreview" src="<?= !empty($_SESSION['old']['media_path']) ? '/'.$_SESSION['old']['media_path'] : '' ?>"
+                                     class="img-thumbnail <?= !empty($_SESSION['old']['media_path']) ? '' : 'd-none' ?>"
+                                     style="max-width:180px; border-radius:10px;">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Link</label>
+                            <input type="text" name="link" class="form-control"
+                                   value="<?= htmlspecialchars($_SESSION['old']['link'] ?? '') ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Order</label>
+                            <input type="number" name="order" class="form-control"
+                                   value="<?= (int)($_SESSION['old']['order'] ?? 0) ?>">
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer text-right">
+                        <button class="btn btn-success">Create Partner</button>
+                        <a href="/partners" class="btn btn-secondary">Back</a>
+                    </div>
+                </form>
             </div>
 
-           <div class="form-group">
-                <label>Media</label>
+        </div>
+    </section>
+</div>
 
-                <div class="media-gallery d-flex flex-wrap gap-3">
-                    <?php if (!empty($media)): ?>
-                        <?php foreach ($media as $m): ?>
-                            <label style="text-align:center; cursor:pointer;">
-                                <img src="/<?= htmlspecialchars($m['path']) ?>"
-                                    style="width:90px; height:60px; object-fit:cover;
-                                            border:1px solid #ccc; padding:3px;">
-                                <br>
-                                <input type="radio"
-                                    name="media_id"
-                                    value="<?= $m['id'] ?>"
-                                    <?= (($_SESSION['old']['media_id'] ?? '') == $m['id']) ? 'checked' : '' ?>>
-                            </label>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <p class="text-muted">No media available.</p>
-                    <?php endif; ?>
+<!-- Media Modal -->
+<div class="modal fade" id="mediaModal">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-photo-video"></i> Select Media</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <?php foreach ($media as $m): ?>
+                        <div class="col-md-3 mb-3">
+                            <div class="media-item" data-id="<?= $m['id'] ?>" data-path="/<?= htmlspecialchars($m['path']) ?>">
+                                <img src="/<?= htmlspecialchars($m['path']) ?>" class="img-thumbnail" style="cursor:pointer; border-radius:10px;">
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
 
-
-            <div class="form-group">
-                <label>Link</label>
-                <input type="text"
-                       name="link"
-                       class="form-control"
-                       value="<?= htmlspecialchars($_SESSION['old']['link'] ?? '') ?>">
-            </div>
-
-            <div class="form-group">
-                <label>Order</label>
-                <input type="number"
-                       name="order"
-                       class="form-control"
-                       value="<?= (int)($_SESSION['old']['order'] ?? 0) ?>">
-            </div>
-
-            <button class="btn btn-success">Create Partner</button>
-            <a href="/partners" class="btn btn-secondary">Back</a>
-        </form>
-    </section>
+        </div>
+    </div>
 </div>
+
 
 <?php require_once __DIR__ . '/../layouts/footer.php'; ?>
 <?php require_once __DIR__ . '/../layouts/scripts.php'; ?>

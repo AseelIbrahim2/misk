@@ -3,127 +3,106 @@
 <?php require_once __DIR__ . '/../layouts/sidebar.php'; ?>
 
 <div class="content-wrapper">
+<section class="content pt-3">
+<div class="container-fluid">
 
-    <!-- Content Header -->
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>News Management</h1>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="card card-outline card-primary">
+  <div class="card-header d-flex align-items-center">
+    <h3 class="card-title flex-grow-1">
+      <i class="fas fa-newspaper mr-1"></i> News List
+    </h3>
 
-    <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid">
+    <a href="/news/create" class="btn btn-primary btn-sm">
+      <i class="fas fa-plus"></i> Add News
+    </a>
+  </div>
 
-            <div class="row">
-                <div class="col-12">
+  <div class="card-body">
+    <table id="newsTable" class="table table-hover">
+      <thead>
+        <tr>
+          <th width="50">#</th>
+          <th width="260">Title</th>
+          <th width="120">Author</th>
+          <th width="140">Status</th>
+          <th width="140">Created</th>
+          <th width="200">Description</th>
+          <th width="160">Media</th>
+          <th width="140">Actions</th>
+        </tr>
+      </thead>
 
-                    <div class="card">
-                        <div class="card-header d-flex align-items-center">
-                        <h3 class="card-title flex-grow-1">News List</h3>
+      <tbody>
+      <?php foreach ($news as $item): ?>
+        <tr>
+          <td><?= $item['id'] ?></td>
 
-                        <a href="/news/create" class="btn btn-primary btn-sm ms-auto">
-                            <i class="fas fa-plus"></i> Add News
-                        </a>
-                    </div>
-                        <div class="card-body">
-                            <table id="newsTable" class="table table-bordered table-hover">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Title</th>
-                                    <th>Author</th>
-                                    <th>Status</th>
-                                    <th>Created</th>
-                                    <th>Description</th>
-                                    <th>Media</th>
-                                    <th>Actions</th>
-                                </tr>
-                                </thead>
+          <td class="text-truncate" style="max-width:260px">
+            <?= htmlspecialchars($item['title']) ?>
+          </td>
 
-                                <tbody>
-                                <?php foreach ($news as $item): ?>
-                                    <tr>
-                                        <td><?= $item['id'] ?></td>
+          <td><?= htmlspecialchars($item['user_id']) ?></td>
 
-                                        <td><?= htmlspecialchars($item['title']) ?></td>
+          <td>
+            <?php
+              echo match ($item['status']) {
+                0 => '<span class="badge badge-secondary">Pending</span>',
+                1 => '<span class="badge badge-success">Published</span>',
+                2 => '<span class="badge badge-warning">Archived</span>',
+              };
+              if ($item['is_deleted']) {
+                echo ' <span class="badge badge-danger">Deleted</span>';
+              }
+            ?>
+          </td>
 
-                                        <td><?= $item['user_id'] ?></td>
+          <td><?= htmlspecialchars($item['created']) ?></td>
 
-                                        <td>
-                                            <?php
-                                            switch ($item['status']) {
-                                                case 0:
-                                                    echo '<span class="badge bg-secondary">Pending</span>';
-                                                    break;
-                                                case 1:
-                                                    echo '<span class="badge bg-success">Published</span>';
-                                                    break;
-                                                case 2:
-                                                    echo '<span class="badge bg-warning">Archived</span>';
-                                                    break;
-                                            }
+          <td class="text-truncate" style="max-width:200px">
+            <?= htmlspecialchars(mb_strimwidth($item['description'], 0, 80, '...')) ?>
+          </td>
 
-                                            if ($item['is_deleted']) {
-                                                echo ' <span class="badge bg-danger">Deleted</span>';
-                                            }
-                                            ?>
-                                        </td>
+          <td>
+            <?php if (!empty($item['media_path'])): ?>
+              <img src="/<?= htmlspecialchars($item['media_path']) ?>"
+                   class="img-thumbnail"
+                   style="max-width:150px;border-radius:10px">
+            <?php else: ?>
+              <span class="text-muted">N/A</span>
+            <?php endif; ?>
+          </td>
 
-                                        <td><?= $item['created'] ?></td>
+          <td class="text-nowrap">
+            <?php if (!$item['is_deleted']): ?>
+              <a href="/news/edit/<?= $item['id'] ?>"
+                 class="btn btn-sm btn-primary mr-1">
+                <i class="fas fa-edit"></i>
+              </a>
+            <?php endif; ?>
 
-                                        <td>
-                                            <?= htmlspecialchars(mb_strimwidth($item['description'], 0, 50, '...')) ?>
-                                        </td>
-                                        <td>
-                                            <?php if (!empty($item['media_path'])): ?>
-                                                <img src="/<?= htmlspecialchars($item['media_path']) ?>" width="50" style="border-radius:6px">
-                                            <?php else: ?>
-                                                N/A
-                                            <?php endif; ?>
-                                        </td>
+            <form action="/news/delete/<?= $item['id'] ?>"
+                  method="POST"
+                  class="d-inline">
+              <input type="hidden" name="csrf_token"
+                     value="<?= $_SESSION['csrf_token'] ?>">
+              <button class="btn btn-sm btn-danger"
+                      onclick="return confirm('Delete this news?')">
+                <i class="fas fa-trash"></i>
+              </button>
+            </form>
+          </td>
 
-
-                                        <td>
-                                            <?php if (!$item['is_deleted']): ?>
-                                                <a href="/news/edit/<?= $item['id'] ?>"
-                                                   class="btn btn-sm btn-primary">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-                                            <?php endif; ?>
-
-                                            <form action="/news/delete/<?= $item['id'] ?>"
-                                                  method="POST"
-                                                  class="d-inline">
-                                                <input type="hidden" name="csrf_token"
-                                                       value="<?= $_SESSION['csrf_token'] ?>">
-
-                                                <button class="btn btn-sm btn-danger"
-                                                        onclick="return confirm('Delete this news?')">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                                </tbody>
-
-                            </table>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
-
-                </div>
-            </div>
-
-        </div>
-    </section>
+        </tr>
+      <?php endforeach; ?>
+      </tbody>
+    </table>
+  </div>
 </div>
+
+</div>
+</section>
+</div>
+
 
 <?php require_once __DIR__ . '/../layouts/footer.php'; ?>
 <?php require_once __DIR__ . '/../layouts/scripts.php'; ?>

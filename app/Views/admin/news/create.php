@@ -2,83 +2,117 @@
 <?php require __DIR__ . '/../layouts/navbar.php'; ?>
 <?php require __DIR__ . '/../layouts/sidebar.php'; ?>
 
-
 <div class="content-wrapper">
-    <section class="content-header">
-        <h1>Create News</h1>
-    </section>
+<section class="content pt-3">
+<div class="container-fluid">
 
-    <section class="content">
+<div class="card card-outline card-success">
+  <div class="card-header">
+    <h3 class="card-title">
+      <i class="fas fa-plus"></i> Create News
+    </h3>
+  </div>
 
-        <?php if (!empty($_SESSION['errors'])): ?>
-            <div class="alert alert-danger">
-                <ul>
-                    <?php foreach ($_SESSION['errors'] as $fieldErrors): ?>
-                        <?php foreach ($fieldErrors as $error): ?>
-                            <li><?= htmlspecialchars($error) ?></li>
-                        <?php endforeach; ?>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-            <?php unset($_SESSION['errors']); ?>
-        <?php endif; ?>
+  <form action="/news/store" method="POST">
+    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
+    <input type="hidden" name="media_id" id="media_id">
 
-        <form action="/news/store" method="POST">
-            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
+    <div class="card-body">
 
-            <div class="form-group">
-                <label>Title</label>
-                <input type="text" name="title" class="form-control" 
-                       value="<?= htmlspecialchars($_SESSION['old']['title'] ?? '') ?>" required>
-            </div>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" class="form-control"
+               value="<?= htmlspecialchars($_SESSION['old']['title'] ?? '') ?>" required>
+      </div>
 
-            <div class="form-group">
-                <label>Description</label>
-                <textarea name="description" rows="3" class="form-control"><?= htmlspecialchars($_SESSION['old']['description'] ?? '') ?></textarea>
-            </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea name="description" rows="3" class="form-control"><?= htmlspecialchars($_SESSION['old']['description'] ?? '') ?></textarea>
+      </div>
 
-            <div class="form-group">
-                <label>Content</label>
-                <textarea name="content" rows="6" class="form-control" required><?= htmlspecialchars($_SESSION['old']['content'] ?? '') ?></textarea>
-            </div>
+      <div class="form-group">
+        <label>Content</label>
+        <textarea name="content" rows="6" class="form-control" required><?= htmlspecialchars($_SESSION['old']['content'] ?? '') ?></textarea>
+      </div>
 
-            <div class="form-group">
-                <label>Status</label>
-                <select name="status" class="form-control">
-                    <option value="0" <?= (($_SESSION['old']['status'] ?? 0) == 0) ? 'selected' : '' ?>>Pending</option>
-                    <option value="1" <?= (($_SESSION['old']['status'] ?? 0) == 1) ? 'selected' : '' ?>>Published</option>
-                    <option value="2" <?= (($_SESSION['old']['status'] ?? 0) == 2) ? 'selected' : '' ?>>Archived</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Media</label>
-                <select name="media_id" class="form-control">
-                    <option value="">-- Select Media --</option>
-                    <?php foreach ($media as $m): ?>
-                        <?php if($m['type'] === 'image' && $m['is_deleted'] == 0): ?>
-                            <option value="<?= $m['id'] ?>" <?= (($_SESSION['old']['media_id'] ?? '') == $m['id']) ? 'selected' : '' ?>>
-                                <?= htmlspecialchars($m['name']) ?>
-                            </option>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </select>
-            </div>
+      <div class="form-group">
+        <label>Status</label>
+        <select name="status" class="form-control">
+          <option value="0">Pending</option>
+          <option value="1">Published</option>
+          <option value="2">Archived</option>
+        </select>
+      </div>
 
+      <!-- Media Picker -->
+      <div class="form-group">
+        <label>Media</label><br>
 
-            <div class="form-group">
-                <label>Deleted</label>
-                <select name="is_deleted" class="form-control">
-                    <option value="0" <?= (($_SESSION['old']['is_deleted'] ?? 0) == 0) ? 'selected' : '' ?>>No</option>
-                    <option value="1" <?= (($_SESSION['old']['is_deleted'] ?? 0) == 1) ? 'selected' : '' ?>>Yes</option>
-                </select>
-            </div>
+        <button type="button" class="btn btn-outline-primary"
+                data-toggle="modal" data-target="#mediaModal">
+          <i class="fas fa-image"></i> Choose Media
+        </button>
 
-            <button class="btn btn-success">Save</button>
-            <a href="/news/index" class="btn btn-secondary">Cancel</a>
-        </form>
+        <div class="mt-2">
+          <img id="mediaPreview" src="" class="img-thumbnail d-none"
+               style="max-width:180px;border-radius:10px">
+        </div>
+      </div>
 
-        <?php unset($_SESSION['old']); ?>
-    </section>
+      <div class="form-group">
+        <label>Deleted</label>
+        <select name="is_deleted" class="form-control">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="card-footer text-right">
+      <button class="btn btn-success">Save</button>
+      <a href="/news/index" class="btn btn-secondary">Cancel</a>
+    </div>
+
+  </form>
+</div>
+
+</div>
+</section>
+</div>
+
+<!-- Media Modal -->
+<div class="modal fade" id="mediaModal">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">
+          <i class="fas fa-photo-video"></i> Select Media
+        </h5>
+        <button class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <?php foreach ($media as $m): ?>
+            <?php if ($m['type']==='image' && $m['is_deleted']==0): ?>
+              <div class="col-md-3 mb-3">
+                <div class="media-item"
+                     data-id="<?= $m['id'] ?>"
+                     data-path="/<?= htmlspecialchars($m['path'] ?? $m['media_path']) ?>">
+                  <img src="/<?= htmlspecialchars($m['path'] ?? $m['media_path']) ?>"
+                       class="img-thumbnail"
+                       style="cursor:pointer;border-radius:10px">
+                </div>
+              </div>
+            <?php endif; ?>
+          <?php endforeach; ?>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 

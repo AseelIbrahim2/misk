@@ -53,20 +53,20 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+
 <script>
 $(function () {
-    $('#newsTable').DataTable({
-        paging: true,
-        searching: true,
-        ordering: true,
-        info: true,
-        lengthChange: true,
-        pageLength: 10,
-        responsive: true,
-        order: [[4, 'desc']] 
-    });
+  $('#newsTable').DataTable({
+    paging: true,
+    searching: true,
+    ordering: true,
+    info: true,
+    lengthChange: true,
+    pageLength: 10,
+    responsive: true,
+    order: [[4, 'desc']]
+  });
 });
-
 </script>
 
 
@@ -118,6 +118,87 @@ $(function () {
         pageLength: 10,
         responsive: true,
         order: [[4, 'desc']] 
+    });
+});
+</script>
+
+
+<script>
+$(function () {
+  $('#sliderTable').DataTable({
+    autoWidth: false,
+    responsive: true,
+    order: [[0, 'desc']], 
+    dom:
+      "<'row mb-3'<'col-md-6'l><'col-md-6 text-right'f>>" +
+      "<'row'<'col-md-12'tr>>" +
+      "<'row mt-3'<'col-md-5'i><'col-md-7'p>>"
+  });
+});
+</script>
+
+
+<script>
+function selectMedia(id, path) {
+  document.getElementById('media_id').value = id;
+  const img = document.getElementById('mediaPreview');
+  img.src = path;
+  img.classList.remove('d-none');
+  $('#mediaModal').modal('hide');
+}
+</script>
+<script>
+$('.media-item img').click(function(){
+    var parent = $(this).closest('.media-item');
+    var mediaId = parent.data('id');
+    var mediaPath = parent.data('path');
+
+    $('#media_id').val(mediaId);
+    $('#mediaPreview').attr('src', mediaPath).removeClass('d-none');
+    $('#mediaModal').modal('hide');
+});
+</script>
+
+
+<script>
+$('.media-item').on('click', function () {
+  const id   = $(this).data('id');
+  const src  = $(this).data('path');
+
+  $('#media_id').val(id);
+  $('#mediaPreview').attr('src', src).removeClass('d-none');
+
+  $('#mediaModal').modal('hide');
+});
+</script>
+
+
+
+<script>
+$(function () {
+    $('#statisticsTable').DataTable({
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true,
+        lengthChange: true,
+        pageLength: 10,
+        responsive: true,
+        order: [[0, 'desc']]
+    });
+});
+</script>
+
+
+<script>
+$(function() {
+    $('#partnersTable').DataTable({
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true,
+        responsive: true,
+        order: [[0, 'desc']]
     });
 });
 </script>

@@ -801,3 +801,23 @@ Stack trace:
 #2 /var/www/html/public/index.php(20): App\Core\App->__construct()
 #3 {main}
 
+[2026-01-21 13:38:02] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Controllers/MenulinksController.php(19): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Core/App.php(50): App\Controllers\MenuLinksController->__construct()
+#3 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#4 {main}
+
+[2026-01-21 14:59:46] SQLSTATE[22007]: Invalid datetime format: 1366 Incorrect integer value: '' for column `db`.`partners`.`media_id` at row 1 in /var/www/html/app/Core/Model.php:34
+Stack trace:
+#0 /var/www/html/app/Core/Model.php(34): PDOStatement->execute()
+#1 /var/www/html/app/Core/Model.php(74): App\Core\Model->run()
+#2 /var/www/html/app/Repositories/PartnerRepository.php(28): App\Core\Model->create()
+#3 /var/www/html/app/Services/PartnerService.php(44): App\Repositories\PartnerRepository->create()
+#4 /var/www/html/app/Controllers/PartnersController.php(41): App\Services\PartnerService->create()
+#5 [internal function]: App\Controllers\PartnersController->store()
+#6 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#7 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#8 {main}
+
