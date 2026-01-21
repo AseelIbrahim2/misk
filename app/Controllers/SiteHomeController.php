@@ -8,15 +8,24 @@ use App\Services\StatisticService;
 use App\Services\NewsService;
 use App\Services\PartnerService;
 use App\Services\MenuService;
+use App\Services\SiteSettingService;
+
 
 class SiteHomeController extends Controller
 {
     
+
+
+
+
+
     private SliderService $sliderService;
     private StatisticService $statService;
     private PartnerService $partnerService;
     private NewsService $newsService;
     private MenuService $menuService;
+    private SiteSettingService $siteSettingsService ;
+
 
 public function __construct()
 {
@@ -25,6 +34,7 @@ public function __construct()
     $this->statService    = new StatisticService();
     $this->partnerService = new PartnerService();
     $this->newsService    = new NewsService();
+    $this->siteSettingsService  = new SiteSettingService();
     
 }
 
@@ -36,9 +46,11 @@ public function __construct()
     $statistics = $this->statService->getActiveOrdered();
     $partners   = $this->partnerService->list();
     $news       = $this->newsService->latestForHome(5);
-    $menus      = $this->menuService->getMenuWithLinks(); 
+    $menus      = $this->menuService->getMenuWithLinks();
+    $siteSettings =  $this->siteSettingsService->get(); 
 
     $this->view('site/pages/index', compact(
+        'siteSettings',
         'sliders',
         'statistics',
         'partners',

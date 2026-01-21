@@ -1,9 +1,14 @@
+<?php
+$logoPath = !empty($siteSettings['logo_path']) ? htmlspecialchars($siteSettings['logo_path']) : '/assets/images/logo-colored.svg';
+$siteName = htmlspecialchars($siteSettings['site_name'] ?? 'Misk Schools');
+?>
+
 <aside class="sidebar bg-primary d-flex flex-column" id="mainSidebar">
 
   <!-- Sidebar Header -->
   <div class="d-flex justify-content-between align-items-center px-5 py-4">
     <div class="logo-img1">
-      <img src="/assets/images/logo-colored.svg" class="img-fluid" alt="Logo">
+      <img src="<?= $logoPath ?>"  alt="<?= $siteName ?>" class="img-fluid">
     </div>
     <button class="btn-close-custom" id="sidebarClose" aria-label="Close menu">
       <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

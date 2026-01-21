@@ -1,10 +1,14 @@
-            <!-- Navbar -->
+<?php
+$logoPath = !empty($siteSettings['logo_path']) ? htmlspecialchars($siteSettings['logo_path']) : '/assets/images/logo-colored.svg';
+$siteName = htmlspecialchars($siteSettings['site_name'] ?? 'Misk Schools');
+?>
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-tertiary-hover m-0 p-0">
   <div class="container-fluid px-3 px-md-5 d-flex justify-content-between align-items-center">
 
     <!-- Logo -->
     <a href="/" class="d-flex align-items-center text-decoration-none">
-      <img src="/assets/images/logo-colored.svg" alt="Logo" class="logo-img">
+       <img src="<?= $logoPath ?>"  alt="<?= $siteName ?>"  class="logo-img">
     </a>
 
     <!-- Hamburger Button -->

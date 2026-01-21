@@ -71,7 +71,13 @@
         <div class="d-flex flex-wrap align-items-center gap-3 justify-content-center mt-2 mt-md-0">
           <span class="small">Privacy Policy</span>
           <span class="small">Terms & Conditions</span>
-          <span class="small">© Copyright MISK 2023-2024. All Rights Reserved</span>
+          <span class="small">
+          <a href="mailto:<?= htmlspecialchars($siteSettings['email'] ?? '') ?>"
+            class="text-dark text-decoration-none">
+            <?= htmlspecialchars($siteSettings['email'] ?? '') ?>
+          </a>
+        </span>
+
         </div>
 
       </div>

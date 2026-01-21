@@ -10,7 +10,7 @@
 <input type="hidden" name="csrf_token"
        value="<?= \App\Middleware\CsrfMiddleware::generateToken() ?>">
 
-<!-- IMPORTANT: media_id stays the same (backend-safe) -->
+<!-- Media ID محفوظ مسبقًا -->
 <input type="hidden" name="media_id" id="media_id" value="<?= $slider['media_id'] ?>">
 
 <div class="card card-outline card-warning">
@@ -35,15 +35,16 @@
     <!-- Current Image -->
     <div class="form-group">
       <label>Current Image</label><br>
-      <img src="/<?= htmlspecialchars($slider['media_path']) ?>"
-           class="img-thumbnail mb-2"
-           style="max-width:180px;border-radius:10px">
+      <img id="currentMedia"
+           src="<?= !empty($slider['media_path']) ? '/'.htmlspecialchars($slider['media_path']) : '' ?>"
+           class="img-thumbnail"
+           style="max-width:180px;border-radius:10px"
+           <?= empty($slider['media_path']) ? 'class="d-none"' : '' ?>>
     </div>
 
     <!-- Media Picker -->
     <div class="form-group">
       <label>Change Image</label><br>
-
       <button type="button"
               class="btn btn-outline-primary"
               data-toggle="modal"
@@ -53,7 +54,8 @@
 
       <div class="mt-3">
         <img id="mediaPreview"
-             class="img-thumbnail d-none"
+             class="img-thumbnail <?= empty($slider['media_path']) ? 'd-none' : '' ?>"
+             src="<?= !empty($slider['media_path']) ? '/'.htmlspecialchars($slider['media_path']) : '' ?>"
              style="max-width:180px;border-radius:10px">
       </div>
 
@@ -94,13 +96,11 @@
 </div>
 
 </form>
-
 </div>
 </section>
 </div>
 
 <!-- ================= MEDIA PICKER MODAL ================= -->
-
 <div class="modal fade" id="mediaPickerModal" tabindex="-1">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
@@ -114,16 +114,13 @@
 
       <div class="modal-body">
         <div class="row">
-
           <?php foreach ($media as $item): ?>
             <?php if ($item['type'] === 'image' && $item['is_deleted'] == 0): ?>
             <div class="col-md-3 mb-3">
               <div class="card media-item shadow-sm"
                    style="cursor:pointer"
-                   onclick="selectMedia(
-                     <?= $item['id'] ?>,
-                     '/<?= htmlspecialchars($item['path']) ?>'
-                   )">
+                   data-id="<?= $item['id'] ?>"
+                   data-path="/<?= htmlspecialchars($item['path']) ?>">
                 <img src="/<?= htmlspecialchars($item['path']) ?>"
                      class="card-img-top"
                      style="height:140px;object-fit:cover">
@@ -131,7 +128,6 @@
             </div>
             <?php endif; ?>
           <?php endforeach; ?>
-
         </div>
       </div>
 
@@ -139,7 +135,6 @@
   </div>
 </div>
 
-
-
 <?php require __DIR__ . '/../layouts/footer.php'; ?>
 <?php require __DIR__ . '/../layouts/scripts.php'; ?>
+

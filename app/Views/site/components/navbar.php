@@ -1,4 +1,8 @@
 <!-- components/navbar.php -->
+<?php
+$logoPath = !empty($siteSettings['logo_path']) ? htmlspecialchars($siteSettings['logo_path']) : '/assets/images/logo-colored.svg';
+$siteName = htmlspecialchars($siteSettings['site_name'] ?? 'Misk Schools');
+?>
 
 <nav class="navbar navbar-overlay px-4 py-0" id="mainNavbar">
   <div class="container-fluid d-flex justify-content-end align-items-center flex-nowrap">
@@ -6,8 +10,8 @@
     <!-- Logo -->
     <div class="d-flex align-items-center me-5">
       <div class="logo-img1">
-        <a href="#" class="d-flex align-items-center text-decoration-none">
-          <img src="/assets/images/logo-colored.svg" class="img-fluid" alt="Logo">
+        <a href="/" class="d-flex align-items-center text-decoration-none">
+          <img src="<?= $logoPath ?>" class="img-fluid" alt="<?= $siteName ?>">
         </a>
       </div>
     </div>

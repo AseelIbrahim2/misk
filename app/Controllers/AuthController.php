@@ -56,7 +56,7 @@ class AuthController extends Controller
                     exit; // Redirect admins to admin dashboard
                 }
 
-                header('Location: /auth/dashboard'); 
+                header('Location: /site/pages/index'); 
                 exit; // Redirect regular users to user dashboard
 
             } catch (Exception $e) {
@@ -104,7 +104,7 @@ class AuthController extends Controller
                     exit; // Admin users go to admin dashboard
                 }
 
-                header('Location: /auth/dashboard'); 
+                header('Location: /site/pages/index'); 
                 exit; // Regular users go to dashboard
 
             } catch (Exception $e) {
