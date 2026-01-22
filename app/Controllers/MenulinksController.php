@@ -9,7 +9,7 @@ use App\Middleware\AuthMiddleware;
 use App\Config\Permissions;
 use Exception;
 
-class MenuLinksController extends Controller
+class MenulinksController extends Controller
 {
     private MenuLinkService $service;
     private MenuService $menuService;
@@ -45,7 +45,7 @@ class MenuLinksController extends Controller
 
             $links = $this->service->getByMenu($menuId);
 
-            $this->view('admin/menu_links/create', compact('menu', 'links'));
+            $this->view('admin/menu_links/index', compact('menu', 'links'));
         }
 
 
@@ -56,12 +56,12 @@ class MenuLinksController extends Controller
         try {
             $this->service->create($menuId, $_POST);
             $_SESSION['success'] = "Link created successfully";
-            header("Location: /MenuLinks/index/$menuId");
+            header("Location: /Menulinks/index/$menuId");
             exit;
         } catch (Exception $e) {
             $_SESSION['errors'][] = [$e->getMessage()];
             $_SESSION['old'] = $_POST;
-            header("Location: /MenuLinks/create/$menuId");
+            header("Location: /Menulinks/index/$menuId");
             exit;
         }
     }
@@ -79,7 +79,7 @@ class MenuLinksController extends Controller
           
             $links = $this->service->getByMenu($link['menu_id']);
 
-            $this->view('admin/menu_links/edit', compact('link', 'links'));
+            $this->view('admin/menu_links/index', compact('link', 'links'));
         }
         
     public function update(int $id): void
@@ -89,12 +89,12 @@ class MenuLinksController extends Controller
         try {
             $this->service->update($id, $_POST);
             $_SESSION['success'] = "Link updated successfully";
-            header("Location: /MenuLinks/index/" . $_POST['menu_id']);
+            header("Location: /Menulinks/index/" . $_POST['menu_id']);
             exit;
         } catch (Exception $e) {
             $_SESSION['errors'][] = [$e->getMessage()];
             $_SESSION['old'] = $_POST;
-            header("Location: /MenuLinks/edit/$id");
+            header("Location: /Menulinks/index/$id");
             exit;
         }
     }
@@ -111,7 +111,7 @@ class MenuLinksController extends Controller
             $menuId = $_POST['menu_id'] ?? 0;
         }
 
-        header("Location: /MenuLinks/index/$menuId");
+        header("Location: /Menulinks/index/$menuId");
         exit;
     }
 }

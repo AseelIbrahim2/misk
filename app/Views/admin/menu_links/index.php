@@ -68,7 +68,7 @@
                                     Edit
                                 </button>
 
-                                <form action="/MenuLinks/delete/<?= $link['id']; ?>"
+                                <form action="/Menulinks/delete/<?= $link['id']; ?>"
                                       method="POST"
                                       style="display:inline-block;">
                                     <input type="hidden" name="csrf_token"
@@ -87,7 +87,7 @@
                         <div class="modal fade" id="editLinkModal<?= $link['id']; ?>" tabindex="-1">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <form action="/MenuLinks/update/<?= $link['id']; ?>" method="POST">
+                                    <form action="/Menulinks/update/<?= $link['id']; ?>" method="POST">
                                         <div class="modal-header">
                                             <h5 class="modal-title">Edit Link</h5>
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -109,15 +109,22 @@
                                                 <input type="text" name="url" class="form-control"
                                                        value="<?= htmlspecialchars($link['url']); ?>" required>
                                             </div>
+                                                <div class="form-group">
+                                                    <label>Parent Link</label>
+                                                    <select name="parent_id" class="form-control">
+                                                        <option value="">— No Parent (Root) —</option>
 
-                                            <?php foreach ($links as $parent): ?>
-                                                <?php if ($parent['id'] != $link['id']): ?>
-                                                    <option value="<?= $parent['id']; ?>"
-                                                        <?= ($link['parent_id'] == $parent['id']) ? 'selected' : ''; ?>>
-                                                        <?= htmlspecialchars($parent['title']); ?>
-                                                    </option>
-                                                <?php endif; ?>
-                                            <?php endforeach; ?>
+                                                        <?php foreach ($links as $parent): ?>
+                                                            <?php if ($parent['id'] != $link['id']): ?>
+                                                                <option value="<?= $parent['id']; ?>"
+                                                                    <?= ($link['parent_id'] == $parent['id']) ? 'selected' : ''; ?>>
+                                                                    <?= htmlspecialchars($parent['title']); ?>
+                                                                </option>
+                                                            <?php endif; ?>
+                                                        <?php endforeach; ?>
+                                                    </select>
+                                                </div>
+
 
 
                                             <div class="form-group">
@@ -163,7 +170,7 @@
 <div class="modal fade" id="addLinkModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="/MenuLinks/store/<?= $menu['id']; ?>" method="POST">
+            <form action="/Menulinks/store/<?= $menu['id']; ?>" method="POST">
                 <div class="modal-header">
                     <h5 class="modal-title">Add New Link</h5>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>

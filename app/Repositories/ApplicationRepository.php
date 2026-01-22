@@ -32,4 +32,9 @@ class ApplicationRepository
     {
         return $this->application->delete($id);
     }
+    public function create(array $data): int
+{
+    return $this->application->create($data);
+}
+
 }
