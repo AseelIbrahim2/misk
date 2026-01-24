@@ -39,7 +39,7 @@ class AuthMiddleware
             // If user is already logged in
             $dest = in_array('admin', $_SESSION['user']['roles'] ?? [])
                 ? '/admin/dashboard' // Admin goes to admin dashboard
-                : '/auth/dashboard'; // Regular user goes to user dashboard
+                : '/site/pages'; // Regular user goes to user dashboard
             header("Location: $dest"); 
             exit; // Redirect logged-in user away from guest-only pages
         }

@@ -1,6 +1,7 @@
 <?php
 $logoPath = !empty($siteSettings['logo_path']) ? htmlspecialchars($siteSettings['logo_path']) : '/assets/images/logo-colored.svg';
 $siteName = htmlspecialchars($siteSettings['site_name'] ?? 'Misk Schools');
+$currentUser = $_SESSION['user']['username'] ?? 'Guest'; // تأكد أن اسم المستخدم موجود في الجلسة
 ?>
 
 <aside class="sidebar bg-primary d-flex flex-column" id="mainSidebar">
@@ -8,7 +9,7 @@ $siteName = htmlspecialchars($siteSettings['site_name'] ?? 'Misk Schools');
   <!-- Sidebar Header -->
   <div class="d-flex justify-content-between align-items-center px-5 py-4">
     <div class="logo-img1">
-      <img src="<?= $logoPath ?>"  alt="<?= $siteName ?>" class="img-fluid">
+      <img src="<?= $logoPath ?>" alt="<?= $siteName ?>" class="img-fluid">
     </div>
     <button class="btn-close-custom" id="sidebarClose" aria-label="Close menu">
       <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -63,19 +64,35 @@ $siteName = htmlspecialchars($siteSettings['site_name'] ?? 'Misk Schools');
   </div>
 
   <!-- Sidebar Footer -->
-  <div class="mt-auto px-5 py-4">
-    <hr class="custom-hr">
-    <div class="input-group bg-white rounded-0 p-2">
-      <span class="input-group-text bg-transparent border-0 text-muted">Search</span>
-      <input type="text" class="form-control border-0 shadow-none">
-      <span class="input-group-text bg-transparent border-0">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </span>
+  <div class="mt-auto px-4 py-3 border-top border-secondary">
+
+    <!-- Search Box -->
+    <div class="mb-3">
+      <div class="input-group bg-white rounded-0 p-1">
+        <span class="input-group-text bg-transparent border-0 text-muted">🔍</span>
+        <input type="text" class="form-control border-0 shadow-none" placeholder="Search...">
+      </div>
     </div>
+
+    <!-- User Info + Logout -->
+    <div class="d-flex align-items-center justify-content-between mt-2">
+      <div class="d-flex align-items-center">
+        <div class="avatar bg-light text-primary rounded-circle d-flex justify-content-center align-items-center me-2" style="width: 35px; height: 35px; font-weight: bold;">
+          <?= strtoupper(substr($currentUser, 0, 1)) ?>
+        </div>
+        <span class="text-white fw-semibold"><?= htmlspecialchars($currentUser) ?></span>
+      </div>
+      <a href="/auth/logout" class="btn btn-sm btn-outline-light d-flex align-items-center">
+        Logout
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right ms-1" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M10 15a1 1 0 0 1-1-1v-2H4.5A1.5 1.5 0 0 1 3 10.5v-5A1.5 1.5 0 0 1 4.5 4H9V2a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-5zM9 1v2H4.5A.5.5 0 0 0 4 3.5v5c0 .276.224.5.5.5H9v2a1 1 0 0 1-1 1H4.5A1.5 1.5 0 0 1 3 10.5v-5A1.5 1.5 0 0 1 4.5 4H8a1 1 0 0 1 1 1z"/>
+          <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L14.293 8l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+        </svg>
+      </a>
+    </div>
+
   </div>
+
 </aside>
 
 <div class="sidebar-overlay" id="sidebarOverlay"></div>

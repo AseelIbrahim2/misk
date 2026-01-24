@@ -15,10 +15,6 @@ class SiteHomeController extends Controller
 {
     
 
-
-
-
-
     private SliderService $sliderService;
     private StatisticService $statService;
     private PartnerService $partnerService;

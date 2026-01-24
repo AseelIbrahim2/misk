@@ -986,3 +986,1446 @@ Stack trace:
 #5 /var/www/html/public/index.php(20): App\Core\App->__construct()
 #6 {main}
 
+[2026-01-22 15:00:00] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Controllers/ApplicationController.php(17): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Core/App.php(50): App\Controllers\ApplicationController->__construct()
+#2 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#3 {main}
+
+[2026-01-22 15:00:00] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(50): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:00:03] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/AdmissionsPageController.php(29): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\AdmissionsPageController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:00:04] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(50): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:07:07] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(45): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:07:07] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(45): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:17:49] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/AdmissionsPageController.php(29): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\AdmissionsPageController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:17:49] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:17:50] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:17:53] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:17:53] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:17:58] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:17:58] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:18:02] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:18:03] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:18:03] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:18:03] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:18:50] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Controllers/ApplicationController.php(17): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Core/App.php(50): App\Controllers\ApplicationController->__construct()
+#2 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#3 {main}
+
+[2026-01-22 15:18:50] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:18:56] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:18:57] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:18:57] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:19:52] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:19:52] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:19:54] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:19:58] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:19:58] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(41): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(72): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:21:19] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:33:30] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:33:34] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:33:34] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:33:56] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:33:56] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:34:51] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-22 15:34:51] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 16:42:08] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 16:42:10] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:00:52] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:00:52] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:01:27] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:01:27] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:01:46] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:01:46] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:03:20] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:03:20] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:04:17] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:04:17] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:07:36] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(67): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:07:36] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(67): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:07:59] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(67): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:07:59] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(67): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:09:11] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(67): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:09:11] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(67): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:10:42] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(67): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(47): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:10:42] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(67): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(47): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:10:46] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(67): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(47): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:10:46] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(67): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(47): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:12:11] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(67): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(47): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:13:14] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(67): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(47): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:13:14] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(67): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(47): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(47): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:22:02] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:22:02] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:22:47] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:23:43] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:24:40] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:26:01] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:26:17] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:26:17] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:27:14] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:27:14] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:28:05] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:28:05] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:28:46] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:28:46] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:28:53] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:29:04] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:29:04] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:29:15] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:29:16] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:35:32] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:35:32] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:39:46] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:41:00] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:41:31] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:42:04] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:43:18] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:43:32] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:43:32] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:45:08] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:46:58] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:46:59] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:48:48] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:49:47] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:50:48] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 17:50:48] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 18:11:00] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 18:11:01] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 18:11:01] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 18:11:16] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 18:11:25] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 18:11:31] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 18:11:43] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:11:43] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:11:57] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:11:57] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:11:58] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:11:58] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:13:12] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:13:12] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:13:34] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:13:34] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:13:41] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:13:43] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:13:46] Access denied: Role required -> admin in /var/www/html/app/Middleware/AuthMiddleware.php:59
+Stack trace:
+#0 /var/www/html/app/Controllers/AdminController.php(30): App\Middleware\AuthMiddleware::protectRole()
+#1 [internal function]: App\Controllers\AdminController->dashboard()
+#2 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#3 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#4 {main}
+
+[2026-01-24 18:13:46] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:13:48] Access denied: Role required -> admin in /var/www/html/app/Middleware/AuthMiddleware.php:59
+Stack trace:
+#0 /var/www/html/app/Controllers/AdminController.php(30): App\Middleware\AuthMiddleware::protectRole()
+#1 [internal function]: App\Controllers\AdminController->dashboard()
+#2 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#3 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#4 {main}
+
+[2026-01-24 18:13:48] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:13:48] Access denied: Role required -> admin in /var/www/html/app/Middleware/AuthMiddleware.php:59
+Stack trace:
+#0 /var/www/html/app/Controllers/AdminController.php(30): App\Middleware\AuthMiddleware::protectRole()
+#1 [internal function]: App\Controllers\AdminController->dashboard()
+#2 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#3 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#4 {main}
+
+[2026-01-24 18:13:49] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:13:54] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:13:54] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:13:57] Access denied: Role required -> admin in /var/www/html/app/Middleware/AuthMiddleware.php:59
+Stack trace:
+#0 /var/www/html/app/Controllers/AdminController.php(30): App\Middleware\AuthMiddleware::protectRole()
+#1 [internal function]: App\Controllers\AdminController->dashboard()
+#2 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#3 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#4 {main}
+
+[2026-01-24 18:13:57] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:14:01] Access denied: Role required -> admin in /var/www/html/app/Middleware/AuthMiddleware.php:59
+Stack trace:
+#0 /var/www/html/app/Controllers/AdminController.php(30): App\Middleware\AuthMiddleware::protectRole()
+#1 [internal function]: App\Controllers\AdminController->dashboard()
+#2 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#3 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#4 {main}
+
+[2026-01-24 18:14:01] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:14:21] Access denied: Role required -> admin in /var/www/html/app/Middleware/AuthMiddleware.php:59
+Stack trace:
+#0 /var/www/html/app/Controllers/AdminController.php(30): App\Middleware\AuthMiddleware::protectRole()
+#1 [internal function]: App\Controllers\AdminController->dashboard()
+#2 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#3 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#4 {main}
+
+[2026-01-24 18:14:21] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:14:28] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:14:36] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 18:14:40] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 18:14:53] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 18:15:05] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:15:05] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:15:51] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:15:51] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:15:52] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:15:52] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:16:20] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:16:20] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:16:22] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:16:22] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:16:34] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:16:38] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 18:18:56] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 18:19:01] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Middleware/AuthMiddleware.php(75): App\Middleware\AuthMiddleware::protect()
+#1 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#2 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#3 [internal function]: App\Controllers\SiteHomeController->index()
+#4 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#5 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#6 {main}
+
+[2026-01-24 18:19:14] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 18:19:14] Access denied: Permission required -> manage_site_settings in /var/www/html/app/Middleware/AuthMiddleware.php:83
+Stack trace:
+#0 /var/www/html/app/Services/SiteSettingService.php(24): App\Middleware\AuthMiddleware::protectPermission()
+#1 /var/www/html/app/Controllers/SiteHomeController.php(46): App\Services\SiteSettingService->get()
+#2 [internal function]: App\Controllers\SiteHomeController->index()
+#3 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+
+[2026-01-24 20:08:18] Access denied: Role required -> admin in /var/www/html/app/Middleware/AuthMiddleware.php:59
+Stack trace:
+#0 /var/www/html/app/Controllers/AdminController.php(30): App\Middleware\AuthMiddleware::protectRole()
+#1 [internal function]: App\Controllers\AdminController->dashboard()
+#2 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#3 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#4 {main}
+
+[2026-01-24 20:08:39] Access denied: Role required -> admin in /var/www/html/app/Middleware/AuthMiddleware.php:59
+Stack trace:
+#0 /var/www/html/app/Controllers/AdminController.php(30): App\Middleware\AuthMiddleware::protectRole()
+#1 [internal function]: App\Controllers\AdminController->dashboard()
+#2 /var/www/html/app/Core/App.php(66): call_user_func_array()
+#3 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#4 {main}
+
+[2026-01-24 21:17:47] Unauthorized access attempt to protected page in /var/www/html/app/Middleware/AuthMiddleware.php:21
+Stack trace:
+#0 /var/www/html/app/Controllers/AuthController.php(124): App\Middleware\AuthMiddleware::protect()
+#1 [internal function]: App\Controllers\AuthController->logout()
+#2 /var/www/html/app/Core/App.php(84): call_user_func()
+#3 /var/www/html/app/Core/App.php(19): App\Core\App->loadRootController()
+#4 /var/www/html/public/index.php(20): App\Core\App->__construct()
+#5 {main}
+

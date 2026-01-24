@@ -143,15 +143,5 @@ class AuthController extends Controller
         exit; // Redirect to login page after logout
     }
 
-    // Show user dashboard
-    public function dashboard(): void
-    {
-        AuthMiddleware::protect(); 
-        // Only allow logged-in users to access dashboard
 
-        $this->view('auth/dashboard', [
-            'username' => $_SESSION['user']['username']
-        ]); 
-        // Render dashboard view and pass username for display
-    }
 }

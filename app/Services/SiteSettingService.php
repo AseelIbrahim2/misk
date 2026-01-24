@@ -21,7 +21,7 @@ class SiteSettingService
 
     public function get(): array
     {
-        AuthMiddleware::protectPermission(Permissions::MANAGE_SITE_SETTINGS);
+      
         return $this->repo->get();
     }
 
