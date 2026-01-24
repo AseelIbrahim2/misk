@@ -10,50 +10,41 @@ use App\Services\PartnerService;
 use App\Services\MenuService;
 use App\Services\SiteSettingService;
 
-
 class SiteHomeController extends Controller
 {
-    
-
     private SliderService $sliderService;
     private StatisticService $statService;
     private PartnerService $partnerService;
     private NewsService $newsService;
     private MenuService $menuService;
-    private SiteSettingService $siteSettingsService ;
+    private SiteSettingService $siteSettingsService;
 
+    public function __construct()
+    {
+        $this->menuService = new MenuService();
+        $this->sliderService = new SliderService();
+        $this->statService = new StatisticService();
+        $this->partnerService = new PartnerService();
+        $this->newsService = new NewsService();
+        $this->siteSettingsService = new SiteSettingService();
+    }
 
-public function __construct()
-{
-    $this->menuService = new MenuService();
-    $this->sliderService  = new SliderService();
-    $this->statService    = new StatisticService();
-    $this->partnerService = new PartnerService();
-    $this->newsService    = new NewsService();
-    $this->siteSettingsService  = new SiteSettingService();
-    
-}
+    public function index(): void
+    {
+        $sliders = $this->sliderService->list();
+        $statistics = $this->statService->getActiveOrdered();
+        $partners = $this->partnerService->list();
+        $news = $this->newsService->latestForHome(5);
+        $menus = $this->menuService->getMenuWithLinks(); 
+        $siteSettings = $this->siteSettingsService->get();
 
-
-
-   public function index(): void
-{
-    $sliders    = $this->sliderService->list();
-    $statistics = $this->statService->getActiveOrdered();
-    $partners   = $this->partnerService->list();
-    $news       = $this->newsService->latestForHome(5);
-    $menus      = $this->menuService->getMenuWithLinks();
-    $siteSettings =  $this->siteSettingsService->get(); 
-
-    $this->view('site/pages/index', compact(
-        'siteSettings',
-        'sliders',
-        'statistics',
-        'partners',
-        'news',
-        'menus'
-    ));
-}
-
-
+        $this->view('site/pages/index', compact(
+            'siteSettings',
+            'sliders',
+            'statistics',
+            'partners',
+            'news',
+            'menus'
+        ));
+    }
 }

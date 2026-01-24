@@ -22,7 +22,7 @@ class MenuService
     {
         $menus = $this->repo->all();
         foreach ($menus as &$menu) {
-            $menu['links'] = $this->repo->getLinks($menu['id']);
+            $menu['links'] = $this->repo->getMenuWithLinks($menu['id']); 
         }
         return $menus;
     }
@@ -34,7 +34,6 @@ class MenuService
 
     public function create(array $data): int
     {
-        // Validation
         $data['name'] = trim($data['name'] ?? '');
         $data['title'] = trim($data['title'] ?? '');
         $data['location'] = trim($data['location'] ?? 'header');
@@ -44,61 +43,34 @@ class MenuService
             throw new Exception('Invalid menu location.');
         }
 
-        // Filter DB columns
-        $allowedFields = ['name', 'title', 'created', 'updated', 'location'];
-        $data = array_intersect_key($data, array_flip($allowedFields));
-
-
-        if ($data['name'] === '' || $data['title'] === '') {
-            throw new Exception('Name and Title are required.');
-        }
-        if (strlen($data['name']) > 100 || strlen($data['title']) > 150) {
-            throw new Exception('Name or Title too long.');
-        }
-
-        // Timestamps
         $data['created'] = date('Y-m-d H:i:s');
         $data['updated'] = date('Y-m-d H:i:s');
 
-        // Filter only allowed DB columns
-        $allowedFields = ['name', 'title', 'created', 'updated'];
-        $data = array_intersect_key($data, array_flip($allowedFields));
-
-        return $this->repo->create($data);
+        return $this->repo->create([
+            'name' => $data['name'],
+            'title' => $data['title'],
+            'location' => $data['location'],
+            'created' => $data['created'],
+            'updated' => $data['updated']
+        ]);
     }
 
     public function update(int $id, array $data): bool
     {
-        // Validation
-        $data['name'] = trim($data['name'] ?? '');
-        $data['title'] = trim($data['title'] ?? '');
-        $data['location'] = trim($data['location'] ?? $existing['location'] ?? 'header');
-        
-        $allowedLocations = ['header', 'sidebar', 'footer'];
-        if (!in_array($data['location'], $allowedLocations)) {
-            throw new Exception('Invalid menu location.');
-        }
+        $existing = $this->repo->find($id);
+        if (!$existing) throw new Exception('Menu not found');
 
-        // Filter DB columns
-        $allowedFields = ['name', 'title', 'updated', 'location'];
-        $data = array_intersect_key($data, array_flip($allowedFields));
-
-
-        if ($data['name'] === '' || $data['title'] === '') {
-            throw new Exception('Name and Title are required.');
-        }
-        if (strlen($data['name']) > 100 || strlen($data['title']) > 150) {
-            throw new Exception('Name or Title too long.');
-        }
-
-        // Updated timestamp
+        $data['name'] = trim($data['name'] ?? $existing['name']);
+        $data['title'] = trim($data['title'] ?? $existing['title']);
+        $data['location'] = trim($data['location'] ?? $existing['location']);
         $data['updated'] = date('Y-m-d H:i:s');
 
-        // Filter only allowed DB columns
-        $allowedFields = ['name', 'title', 'updated'];
-        $data = array_intersect_key($data, array_flip($allowedFields));
-
-        return $this->repo->update($id, $data);
+        return $this->repo->update($id, [
+            'name' => $data['name'],
+            'title' => $data['title'],
+            'location' => $data['location'],
+            'updated' => $data['updated']
+        ]);
     }
 
     public function delete(int $id): bool

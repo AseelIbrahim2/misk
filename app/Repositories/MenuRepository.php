@@ -50,9 +50,9 @@ class MenuRepository
         return $this->menu->delete($id);
     }
 
-    public function getLinks(int $menuId): array
+ public function getMenuWithLinks(int $menuId): array
     {
-        return $this->link->getWhere('menu_id', $menuId);
+        return $this->link->getLinksByMenu($menuId);
     }
 
     
