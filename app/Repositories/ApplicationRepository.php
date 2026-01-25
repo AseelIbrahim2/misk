@@ -36,5 +36,11 @@ class ApplicationRepository
 {
     return $this->application->create($data);
 }
+public function emailExists(string $email): bool
+{
+    return $this->application->exists('email', $email);
+}
+
+
 
 }

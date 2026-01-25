@@ -1,8 +1,8 @@
-
-    <!-- section 1 -->
- <section class="container py-5 my-5 h-100">
+<!-- section 1 -->
+<section class="container py-5 my-5 h-100">
   <!-- Apply Now Section -->
   <div class="row justify-content-center">
+
     <!-- Left Column (Title) -->
     <div class="col-12 col-md-4 mb-4 mb-md-0">
       <h2 class="h2 fw-bold">Apply Now</h2>
@@ -10,18 +10,36 @@
 
     <!-- Right Column (Form) -->
     <div class="col-12 col-md-8">
+
+      <!-- ❌ Not Logged In Error -->
+      <?php if (!empty($_SESSION['auth_error'])): ?>
+        <div class="alert alert-warning">
+          <?= $_SESSION['auth_error']; ?>
+        </div>
+        <?php unset($_SESSION['auth_error']); ?>
+      <?php endif; ?>
+
+      <!-- ❌ Validation Errors -->
       <?php if (!empty($_SESSION['errors'])): ?>
         <div class="alert alert-danger">
           <?php foreach ($_SESSION['errors'] as $fieldErrors): ?>
             <?php foreach ($fieldErrors as $error): ?>
-              <p class="mb-0"><?= $error ?></p>
+              <p class="mb-0"><?= htmlspecialchars($error) ?></p>
             <?php endforeach; ?>
           <?php endforeach; ?>
-          <?php unset($_SESSION['errors']); ?>
         </div>
+        <?php unset($_SESSION['errors']); ?>
       <?php endif; ?>
 
-      <form method="POST" action="/AdmissionsPage/store">
+      <!-- ✅ Success Message -->
+      <?php if (!empty($_SESSION['success'])): ?>
+        <div class="alert alert-success">
+          <?= $_SESSION['success']; ?>
+        </div>
+        <?php unset($_SESSION['success']); ?>
+      <?php endif; ?>
+
+      <form id="apply-form" method="POST" action="/AdmissionsPage/store">
         <input type="hidden" name="csrf_token" value="<?= \App\Middleware\CsrfMiddleware::generateToken(); ?>">
 
         <div class="mb-3">
@@ -32,7 +50,6 @@
             class="form-control"
             placeholder="Full Name"
             value="<?= $_SESSION['old']['full_name'] ?? '' ?>"
-            required
           />
         </div>
 
@@ -44,7 +61,6 @@
             class="form-control"
             placeholder="Email Address"
             value="<?= $_SESSION['old']['email'] ?? '' ?>"
-            required
           />
         </div>
 
@@ -53,7 +69,9 @@
           <select name="age" class="form-select">
             <option disabled <?= empty($_SESSION['old']['age']) ? 'selected' : '' ?>>Age</option>
             <?php for ($i = 5; $i <= 18; $i++): ?>
-              <option value="<?= $i ?>" <?= (isset($_SESSION['old']['age']) && $_SESSION['old']['age'] == $i) ? 'selected' : '' ?>><?= $i ?></option>
+              <option value="<?= $i ?>" <?= (($_SESSION['old']['age'] ?? '') == $i) ? 'selected' : '' ?>>
+                <?= $i ?>
+              </option>
             <?php endfor; ?>
           </select>
         </div>
@@ -76,9 +94,12 @@
       </form>
 
       <?php unset($_SESSION['old']); ?>
+
     </div>
   </div>
 </section>
+
+
 
     <!-- section 2 -->
      <section class="container py-5 my-5 h-100 ">

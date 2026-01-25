@@ -2,6 +2,8 @@
 $logoPath   = !empty($siteSettings['logo_path']) ? htmlspecialchars($siteSettings['logo_path']) : '/assets/images/logo-colored.svg';
 $siteName   = htmlspecialchars($siteSettings['site_name'] ?? 'Misk Schools');
 $currentUser = $_SESSION['user']['username'] ?? 'Guest';
+$isLoggedIn = isset($_SESSION['user']); 
+$avatarLetter = $isLoggedIn ? strtoupper($currentUser[0]) : '?';
 
 function renderMenuLinks(array $links)
 {
@@ -36,7 +38,6 @@ function renderMenuLinks(array $links)
 ?>
 
 <aside class="sidebar bg-primary d-flex flex-column" id="mainSidebar">
-
 
   <!-- Sidebar Header -->
   <div class="d-flex justify-content-between align-items-center px-5 py-4">
@@ -84,7 +85,7 @@ function renderMenuLinks(array $links)
 
     <!-- Search -->
     <div class="mb-3">
-      <div class="input-group bg-white p-1">
+      <div class="input-group bg-white p-2">
         <span class="input-group-text bg-transparent border-0">🔍</span>
         <input type="text" class="form-control border-0 shadow-none" placeholder="Search...">
       </div>
@@ -94,18 +95,26 @@ function renderMenuLinks(array $links)
     <div class="d-flex justify-content-between align-items-center">
       <div class="d-flex align-items-center">
         <div class="avatar bg-light text-primary rounded-circle d-flex justify-content-center align-items-center me-2"
-             style="width:35px;height:35px;font-weight:bold;">
-          <?= strtoupper($currentUser[0]) ?>
+            style="width:35px;height:35px;font-weight:bold;">
+          <?= $avatarLetter ?>
         </div>
+
         <span class="text-white"><?= htmlspecialchars($currentUser) ?></span>
       </div>
 
-      <a href="/auth/logout" class="btn btn-sm btn-outline-light">
-        Logout
-      </a>
+      <?php if ($isLoggedIn): ?>
+        <a href="/auth/logout" class="btn btn-sm btn-outline-light">
+          Logout
+        </a>
+      <?php else: ?>
+        <a href="/auth/login" class="btn btn-sm btn-outline-light">
+          Login
+        </a>
+      <?php endif; ?>
     </div>
 
   </div>
 </aside>
 
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
+

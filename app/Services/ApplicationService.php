@@ -17,6 +17,8 @@ class ApplicationService
         $this->repo = new ApplicationRepository();
     }
 
+    /* ================= ADMIN ================= */
+
     public function list(): array
     {
         AuthMiddleware::protectPermission(Permissions::VIEW_APPLICATIONS);
@@ -41,25 +43,59 @@ class ApplicationService
             'updated' => date('Y-m-d H:i:s')
         ]);
     }
-    public function create(array $data): int
+
+    public function delete(int $id): void
+    {
+        AuthMiddleware::protectPermission(Permissions::DELETE_APPLICATIONS);
+        $this->repo->delete($id);
+    }
+
+    /* ================= FRONT (ADMISSIONS) ================= */
+
+ public function store(array $data): void
 {
-    $validator = new \App\Core\Validator();
+    // 1️⃣ Auth check
+    if (!AuthMiddleware::check()) {
+        throw new Exception(json_encode([
+            'auth' => ['You must be logged in to submit an application']
+        ]));
+    }
+
+    $validator = new Validator();
 
     $full_name = $validator->sanitize($data['full_name'] ?? '');
     $email     = $validator->sanitize($data['email'] ?? '');
     $age       = (int)($data['age'] ?? 0);
     $message   = $validator->sanitize($data['message'] ?? '');
 
-    $validator->required('full_name', $full_name);
-    $validator->required('email', $email);
-    $validator->required('age', $age);
-
-    if ($validator->fails()) {
-        throw new \Exception(json_encode($validator->errors()));
+    // 2️⃣ Duplicate check (بعد تعريف email)
+    if ($this->repo->emailExists($email)) {
+        throw new Exception(json_encode([
+            'email' => ['An application with this email already exists']
+        ]));
     }
 
+    // 3️⃣ Validation
+    $validator->required('full_name', $full_name);
+    $validator->required('email', $email);
+    $validator->email('email', $email);
 
-    return $this->repo->create([
+    $errors = [];
+
+    if ($validator->fails()) {
+        $errors = $validator->errors();
+    }
+
+    if ($age < 5 || $age > 18) {
+        $errors['age'][] = 'Age must be between 5 and 18';
+    }
+
+    if (!empty($errors)) {
+        throw new Exception(json_encode($errors));
+    }
+
+    // 4️⃣ Store
+    $this->repo->create([
         'full_name' => $full_name,
         'email'     => $email,
         'age'       => $age,
@@ -68,11 +104,5 @@ class ApplicationService
     ]);
 }
 
-    
 
-    public function delete(int $id): void
-    {
-        AuthMiddleware::protectPermission(Permissions::DELETE_APPLICATIONS);
-        $this->repo->delete($id);
-    }
 }
